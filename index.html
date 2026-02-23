@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ismael Ben Chikh - Portfolio</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="alternate" type="application/rss+xml" title="Ismael Ben Chikh - Portfolio RSS Feed" href="rss.xml">
+    
+    <style>
+    /* Styles pour la section Veille */
+    .veille-section *, .veille-section *::before, .veille-section *::after { box-sizing: border-box; }
+
+    .veille-section {
+      font-family: 'DM Sans', sans-serif;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* ── HERO ── */
+    .veille-section .hero {
+      position: relative;
+      padding: 120px 40px 80px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .veille-section .hero-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'Syne', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent-color);
+      border: 1px solid rgba(var(--accent-color-rgb), 0.3);
+      padding: 6px 14px;
+      border-radius: 100px;
+      margin-bottom: 32px;
+      opacity: 0;
+      animation: veilleFadeUp 0.6s ease forwards;
+    }
+
+    .veille-section .hero-label::before {
+      content: '';
+      width: 6px; height: 6px;
+      background: var(--accent-color);
+      border-radius: 50%;
+      animation: veillePulse 2s infinite;
+    }
+
+    @keyframes veillePulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.7); }
+    }
+
+    .veille-section .hero h1 {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(2.8rem, 6vw, 5rem);
+      font-weight: 800;
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+      opacity: 0;
+      animation: veilleFadeUp 0.6s ease 0.15s forwards;
+    }
+
+    .veille-section .hero h1 span {
+      background: linear-gradient(135deg, #64ffda, #7dd3fc);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      filter: brightness(1.1);
+    }
+
+    .veille-section .hero-sub {
+      margin-top: 24px;
+      font-size: 1.1rem;
+      font-weight: 300;
+      color: var(--text-muted);
+      max-width: 560px;
+      line-height: 1.7;
+      opacity: 0;
+      animation: veilleFadeUp 0.6s ease 0.3s forwards;
+    }
+
+    /* ── GLOW BG ── */
+    .veille-section .glow-blob {
+      position: absolute;
+      top: 60px; right: -100px;
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(var(--accent-color-rgb), 0.12) 0%, transparent 70%);
+      pointer-events: none;
+      border-radius: 50%;
+    }
+
+    /* ── SECTION ── */
+    .veille-section section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 40px 100px;
+    }
+
+    .veille-section .section-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 40px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .veille-section .section-title::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border-color);
+    }
+
+    /* ── TECH CARDS ── */
+    .veille-section .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    .veille-section .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 32px;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    .veille-section .card.visible {
+      animation: veilleFadeUp 0.6s ease forwards;
+    }
+
+    .veille-section .card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(var(--accent-color-rgb), 0.3);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.4), 0 0 40px rgba(var(--accent-color-rgb), 0.15);
+    }
+
+    .veille-section .card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--accent-color), #38bdf8);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .veille-section .card:hover::before { opacity: 1; }
+
+    .veille-section .card-tag {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 6px;
+      margin-bottom: 20px;
+    }
+
+    .veille-section .tag-react { background: rgba(97,218,251,0.1); color: #61dafb; }
+    .veille-section .tag-node  { background: rgba(104,160,99,0.15); color: #68a063; }
+    .veille-section .tag-next  { background: rgba(var(--accent-color-rgb), 0.1); color: var(--accent-color); }
+
+    .veille-section .card h3 {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      letter-spacing: -0.02em;
+      color: var(--text-color);
+    }
+
+    .veille-section .card p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    .veille-section .card-footer {
+      margin-top: 24px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border-color);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .veille-section .pill {
+      font-size: 11px;
+      color: var(--text-muted);
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border-color);
+      padding: 4px 10px;
+      border-radius: 100px;
+    }
+
+    /* ── TEXTE PRINCIPAL ── */
+    .veille-section .text-block {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 48px;
+      line-height: 1.85;
+      font-size: 0.97rem;
+      color: var(--text-muted);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .veille-section .text-block::after {
+      content: '';
+      position: absolute;
+      bottom: -60px; right: -60px;
+      width: 200px; height: 200px;
+      background: radial-gradient(circle, rgba(var(--accent-color-rgb), 0.07), transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .veille-section .text-block h2 {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: var(--text-color);
+    }
+
+    .veille-section .text-block p + p { margin-top: 16px; }
+
+    .veille-section .text-block strong {
+      color: var(--text-color);
+      font-weight: 500;
+    }
+
+    /* ── SOURCES ── */
+    .veille-section .sources-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 14px;
+    }
+
+    .veille-section .source-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 20px 24px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+
+    .veille-section .source-card:hover {
+      border-color: rgba(var(--accent-color-rgb), 0.4);
+      transform: translateY(-2px);
+    }
+
+    .veille-section .source-icon {
+      width: 36px; height: 36px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+
+    .veille-section .source-info strong {
+      display: block;
+      font-family: 'Syne', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--text-color);
+      margin-bottom: 2px;
+    }
+
+    .veille-section .source-info span {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    /* ── ANIMATIONS ── */
+    @keyframes veilleFadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── DIVIDER ── */
+    .veille-section .divider {
+      height: 1px;
+      background: var(--border-color);
+      margin: 0 40px 80px;
+      max-width: 1100px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 600px) {
+      .veille-section .hero, .veille-section section { padding-left: 20px; padding-right: 20px; }
+      .veille-section .text-block { padding: 28px; }
+      .veille-section .hero { padding-top: 80px; }
+    }
+  </style>
+</head>
+
+<body>
+    <div class="container">
+        <button class="sidebar-toggle" aria-label="Ouvrir le menu latéral">
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <aside class="sidebar">
+            <div class="geometric-shapes">
+                <div class="shape"></div>
+                <div class="shape"></div>
+                <div class="shape"></div>
+            </div>
+            <div class="theme-switch">
+                <input type="checkbox" id="theme-toggle">
+                <label for="theme-toggle" class="switch">
+                    <i class="fas fa-sun"></i>
+                    <i class="fas fa-moon"></i>
+                </label>
+            </div>
+            <div class="profile">
+                <h2>Ismael Ben Chikh</h2>
+                <p>Étudiant en BTS SIO</p>
+            </div>
+
+            <nav>
+                <ul>
+                    <li><a href="#home"><i class="fas fa-home"></i> Accueil</a></li>
+                    <li><a href="#about"><i class="fas fa-user"></i> À propos</a></li>
+                    <li><a href="#education"><i class="fas fa-graduation-cap"></i> Parcours</a></li>
+                    <li><a href="#skills"><i class="fas fa-tools"></i> Compétences</a></li>
+                    <li><a href="#tools"><i class="fas fa-wrench"></i> Outils</a></li>
+                    <li><a href="#projects"><i class="fas fa-code"></i> Projets</a></li>
+                    <li><a href="#veille"><i class="fas fa-lightbulb"></i> Veille Techno</a></li>
+                    <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="social-links">
+                <a href="mailto:ismael@example.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                <a href="https://github.com" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="rss.xml" target="_blank" aria-label="Flux RSS" title="S'abonner au flux RSS"><i class="fas fa-rss"></i></a>
+            </div>
+
+            <div class="copyright">
+                <p>© Copyright <span id="current-year">2026</span></p>
+                <p>Ismael Ben Chikh</p>
+                <p>Tous droits réservés</p>
+            </div>
+        </aside>
+
+        <main class="content">
+            <!-- Section Accueil -->
+            <section id="home" class="section">
+                <div class="home-shapes">
+                    <div class="home-shape"></div>
+                    <div class="home-shape"></div>
+                    <div class="home-shape"></div>
+                </div>
+                <div class="animation-container">
+                    <h1 class="hero-title animate-fadeInDown">Bienvenue</h1>
+                    <p class="hero-subtitle animate-fadeInUp">
+                        Je suis <span class="typed-text"></span><span class="cursor"></span>
+                    </p>
+                    <p class="hero-role animate-fadeInUp">Étudiant en BTS SIO SLAM</p>
+                    <div class="hero-ctas animate-fadeInUp">
+                        <a href="#projects" class="btn-primary">
+                            <span>Voir mes projets</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <a href="#contact" class="btn-secondary">
+                            <span>Me contacter</span>
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section À propos -->
+            <section id="about" class="section">
+                <h2>À propos</h2>
+                <div class="about-card">
+                    <p>Je suis un étudiant en BTS Services Informatiques aux Organisations (SIO), spécialisé en développement d'applications (SLAM). Passionné par la programmation et les technologies web.</p>
+                    <p>Je travaille sur des projets variés en HTML, CSS, JavaScript, PHP et C# pour développer mes compétences et explorer de nouvelles technologies.</p>
+                </div>
+            </section>
+
+            <section id="education" class="section">
+                <h2>Parcours Scolaire</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-marker">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div class="timeline-content">
+                            <h3>BTS Services Informatiques aux Organisations (SIO)</h3>
+                            <span class="timeline-date">2024 - 2026</span>
+                            <p class="timeline-school">INSTA - Paris (75)</p>
+                            <p>Spécialité : SLAM (Solutions Logicielles et Applications Métiers)</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div class="timeline-content">
+                            <h3>Baccalauréat Général</h3>
+                            <span class="timeline-date">2020 - 2023</span>
+                            <p>Spécialités : Mathématiques, Informatique et Sciences Physiques</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <div class="timeline-content">
+                            <h3>Collège</h3>
+                            <span class="timeline-date">2016 - 2020</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section Compétences -->
+            <section id="skills" class="section">
+                <h2>Compétences Techniques</h2>
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fab fa-html5"></i>
+                        </div>
+                        <h3>HTML5</h3>
+                        <p>Structuration web</p>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fab fa-css3-alt"></i>
+                        </div>
+                        <h3>CSS3</h3>
+                        <p>Stylisation responsive</p>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fab fa-js-square"></i>
+                        </div>
+                        <h3>JavaScript</h3>
+                        <p>Interactivité frontend</p>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fab fa-php"></i>
+                        </div>
+                        <h3>PHP</h3>
+                        <p>Développement backend</p>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <h3>MySQL</h3>
+                        <p>Base de données</p>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fab fa-cuttlefish"></i>
+                        </div>
+                        <h3>C#</h3>
+                        <p>Programmation orientée objet</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section Outils -->
+            <section id="tools" class="section">
+                <h2>Outils Utilisés</h2>
+                <div class="tools-grid">
+                    <div class="tool-card">
+                        <div class="tool-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h3>VS Code</h3>
+                        <p>Éditeur de code</p>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-icon">
+                            <i class="fab fa-git-alt"></i>
+                        </div>
+                        <h3>Git</h3>
+                        <p>Contrôle de version</p>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-icon">
+                            <i class="fab fa-github"></i>
+                        </div>
+                        <h3>GitHub</h3>
+                        <p>Dépôt de code</p>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-icon">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <h3>MySQL</h3>
+                        <p>Base de données</p>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-icon">
+                            <i class="fas fa-object-group"></i>
+                        </div>
+                        <h3>Figma</h3>
+                        <p>Design UI/UX</p>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-icon">
+                            <i class="fas fa-cube"></i>
+                        </div>
+                        <h3>Visual Studio</h3>
+                        <p>Développement C#</p>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-icon">
+                            <i class="fas fa-layer-group"></i>
+                        </div>
+                        <h3>Looping</h3>
+                        <p>Planification projets</p>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-icon">
+                            <i class="fas fa-link"></i>
+                        </div>
+                        <h3>Make</h3>
+                        <p>Automatisation apps</p>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-icon">
+                            <i class="fas fa-sitemap"></i>
+                        </div>
+                        <h3>StartUML</h3>
+                        <p>Modélisation UML</p>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-icon">
+                            <i class="fas fa-project-diagram"></i>
+                        </div>
+                        <h3>Lucidchart</h3>
+                        <p>Diagrammes en ligne</p>
+                    </div>
+                </div>
+            </section>
+
+
+            <!-- Section Projets -->
+            <section id="projects" class="section">
+                <h2>Mes Projets</h2>
+                <div class="projects-filter">
+                    <button class="filter-btn active" data-filter="all">TOUT</button>
+                    <button class="filter-btn" data-filter="web">WEB</button>
+                    <button class="filter-btn" data-filter="app">APPLICATION</button>
+                    <button class="filter-btn" data-filter="game">JEU</button>
+                </div>
+                <div class="projects-grid">
+                
+
+                    
+                    <!-- Projet 3: Flappy Bird -->
+                    <div class="project-card" data-category="game">
+                        <div class="project-header">
+                            <i class="fas fa-gamepad"></i>
+                        </div>
+                        <h3>Flappy Bird</h3>
+                        <p>Jeu interactif avec mécanique de saut et obstacles</p>
+                        <span class="project-date">2025</span>
+                    </div>
+
+                    <!-- Projet 4: Filtre Mail -->
+                    <div class="project-card" data-category="web">
+                        <div class="project-header">
+                            <i class="fas fa-envelope-open"></i>
+                        </div>
+                        <h3>Filtre Mail</h3>
+                        <p>Système de filtrage d'emails avec automatisation Make</p>
+                        <span class="project-date">2025</span>
+                    </div>
+
+                    <!-- Projet 5: Parc Auto -->
+                    <div class="project-card" data-category="app">
+                        <div class="project-header">
+                            <i class="fas fa-truck"></i>
+                        </div>
+                        <h3>Parc Auto</h3>
+                        <p>Gestion de flotte avec suivi des véhicules C#</p>
+                        <span class="project-date">2025</span>
+                    </div>
+
+                    <!-- Projet 6: E-commerce Tech -->
+                    <div class="project-card" data-category="web">
+                        <div class="project-header">
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
+                        <h3>E-commerce Tech</h3>
+                        <p>Plateforme de vente de produits technologiques</p>
+                        <span class="project-date">2025</span>
+                    </div>
+
+                    <!-- Projet 7: Tetris -->
+                    <div class="project-card" data-category="game">
+                        <div class="project-header">
+                            <i class="fas fa-cube"></i>
+                        </div>
+                        <h3>Tetris</h3>
+                        <p>Jeu classique Tetris avec scoring et animations</p>
+                        <span class="project-date">2025</span>
+                    </div>
+
+                    <!-- Projet 8: Blog Smarty -->
+                    <div class="project-card" data-category="web">
+                        <div class="project-header">
+                            <i class="fas fa-blog"></i>
+                        </div>
+                        <h3>Blog Smarty</h3>
+                        <p>Blog avec moteur de template Smarty et commentaires</p>
+                        <span class="project-date">2025</span>
+                    </div>
+
+                    <!-- Projet 9: Mediathèque -->
+                    <div class="project-card" data-category="web">
+                        <div class="project-header">
+                            <i class="fas fa-library"></i>
+                        </div>
+                        <h3>Mediathèque</h3>
+                        <p>Plateforme de gestion de ressources multimédia</p>
+                        <span class="project-date">2025</span>
+                    </div>
+
+                    <!-- Projet 10: Car Rental -->
+                    <div class="project-card" data-category="web">
+                        <div class="project-header">
+                            <i class="fas fa-key"></i>
+                        </div>
+                        <h3>Car Rental</h3>
+                        <p>Plateforme de location de voitures en ligne</p>
+                        <span class="project-date">2025</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section Veille Technologique -->
+            <section id="veille" class="section veille-section">
+                <!-- HERO -->
+                <div class="hero">
+                    <div class="glow-blob"></div>
+                    <div class="hero-label">Veille Technologique · BTS SIO SLAM</div>
+                    <h1>Frameworks<br/><span>Modernes</span></h1>
+                    <p class="hero-sub">
+                        Une exploration des outils qui définissent le développement web d'aujourd'hui —
+                        de React à Next.js, en passant par Node.js et l'écosystème JavaScript full-stack.
+                    </p>
+                </div>
+
+                <!-- TEXTE DE PRÉSENTATION -->
+                <section>
+                    <p class="section-title">Présentation</p>
+                    <div class="text-block">
+                        <h2>Pourquoi s'intéresser aux frameworks modernes ?</h2>
+                        <p>
+                            Le développement web est l'un des secteurs informatiques les plus dynamiques qui soit. En l'espace de quelques années,
+                            la manière de concevoir, de construire et de déployer des applications a radicalement évolué. Au cœur de cette transformation,
+                            on trouve les <strong>frameworks modernes</strong> — ces boîtes à outils qui permettent aux développeurs de créer des applications
+                            performantes, maintenables et scalables.
+                        </p>
+                        <p>
+                            En tant que futur développeur SLAM, comprendre et maîtriser ces outils n'est pas optionnel : c'est le socle du métier.
+                            Le marché ne recherche plus simplement quelqu'un qui "sait coder", mais quelqu'un capable de <strong>choisir le bon outil
+                            selon le contexte</strong>, de comprendre l'écosystème dans sa globalité, et de monter en compétence rapidement sur
+                            de nouvelles technologies.
+                        </p>
+                        <p>
+                            Cette veille m'a permis d'identifier trois grandes familles d'outils qui structurent aujourd'hui le développement web :
+                            les <strong>frameworks front-end</strong> (React, Vue, Angular), les <strong>solutions back-end JavaScript</strong> (Node.js, Express)
+                            et les <strong>méta-frameworks</strong> qui unifient les deux mondes (Next.js, Nuxt.js). Ensemble, ils forment une stack
+                            cohérente et très demandée sur le marché du travail.
+                        </p>
+                    </div>
+                </section>
+
+                <!-- CARDS TECHNOLOGIES -->
+                <section>
+                    <p class="section-title">Technologies explorées</p>
+                    <div class="cards-grid">
+
+                        <div class="card">
+                            <span class="card-tag tag-react">Front-end</span>
+                            <h3>React, Vue & Angular</h3>
+                            <p>
+                                Trois philosophies, un même objectif : créer des interfaces réactives et maintenables.
+                                React domine le marché avec 40 % des offres d'emploi front-end en France.
+                                Vue séduit par sa courbe d'apprentissage douce, Angular par sa rigueur d'entreprise.
+                            </p>
+                            <div class="card-footer">
+                                <span class="pill">Composants</span>
+                                <span class="pill">SPA</span>
+                                <span class="pill">TypeScript</span>
+                                <span class="pill">Virtual DOM</span>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <span class="card-tag tag-node">Back-end</span>
+                            <h3>Node.js & Express</h3>
+                            <p>
+                                JavaScript conquiert le back-end. Node.js, grâce à son architecture non bloquante,
+                                excelle dans les applications temps réel. Express structure et simplifie la création
+                                d'API REST, pilier de toute architecture moderne.
+                            </p>
+                            <div class="card-footer">
+                                <span class="pill">API REST</span>
+                                <span class="pill">Event-driven</span>
+                                <span class="pill">Full-stack JS</span>
+                                <span class="pill">NPM</span>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <span class="card-tag tag-next">Méta-frameworks</span>
+                            <h3>Next.js & Nuxt.js</h3>
+                            <p>
+                                L'état de l'art du web moderne. Ces méta-frameworks introduisent le SSR, la génération
+                                statique et le rendu hybride — combinant performance, SEO optimal et expérience développeur
+                                exceptionnelle. Utilisés par TikTok, Twitch, et des milliers de startups.
+                            </p>
+                            <div class="card-footer">
+                                <span class="pill">SSR</span>
+                                <span class="pill">SSG</span>
+                                <span class="pill">SEO</span>
+                                <span class="pill">Rendu hybride</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+                <div class="divider"></div>
+
+                <!-- SOURCES -->
+                <section>
+                    <p class="section-title">Sources utilisées</p>
+                    <div class="sources-grid">
+
+                        <a class="source-card" href="https://developer.mozilla.org" target="_blank">
+                            <div class="source-icon" style="background:rgba(255,144,0,0.1);">🦊</div>
+                            <div class="source-info">
+                                <strong>MDN Web Docs</strong>
+                                <span>Documentation officielle</span>
+                            </div>
+                        </a>
+
+                        <a class="source-card" href="https://react.dev" target="_blank">
+                            <div class="source-icon" style="background:rgba(97,218,251,0.1);">⚛️</div>
+                            <div class="source-info">
+                                <strong>React.dev</strong>
+                                <span>Doc officielle React</span>
+                            </div>
+                        </a>
+
+                        <a class="source-card" href="https://nextjs.org/docs" target="_blank">
+                            <div class="source-icon" style="background:rgba(255,255,255,0.06);">▲</div>
+                            <div class="source-info">
+                                <strong>Next.js Docs</strong>
+                                <span>Vercel / Next.js</span>
+                            </div>
+                        </a>
+
+                        <a class="source-card" href="https://vuejs.org" target="_blank">
+                            <div class="source-icon" style="background:rgba(79,192,141,0.1);">💚</div>
+                            <div class="source-info">
+                                <strong>Vue.js</strong>
+                                <span>Doc officielle Vue</span>
+                            </div>
+                        </a>
+
+                        <a class="source-card" href="https://nodejs.org" target="_blank">
+                            <div class="source-icon" style="background:rgba(104,160,99,0.12);">🟢</div>
+                            <div class="source-info">
+                                <strong>Node.js</strong>
+                                <span>Doc & blog officiel</span>
+                            </div>
+                        </a>
+
+                        <a class="source-card" href="https://survey.stackoverflow.co" target="_blank">
+                            <div class="source-icon" style="background:rgba(244,128,36,0.1);">📊</div>
+                            <div class="source-info">
+                                <strong>Stack Overflow Survey</strong>
+                                <span>Tendances annuelles</span>
+                            </div>
+                        </a>
+
+                        <a class="source-card" href="https://stateofjs.com" target="_blank">
+                            <div class="source-icon" style="background:rgba(100,255,218,0.12);">📈</div>
+                            <div class="source-info">
+                                <strong>State of JS</strong>
+                                <span>Baromètre annuel JS</span>
+                            </div>
+                        </a>
+
+                        <a class="source-card" href="https://dev.to" target="_blank">
+                            <div class="source-icon" style="background:rgba(255,255,255,0.06);">✍️</div>
+                            <div class="source-info">
+                                <strong>DEV.to</strong>
+                                <span>Communauté dev</span>
+                            </div>
+                        </a>
+
+                    </div>
+                </section>
+
+                <!-- SCROLL ANIMATION -->
+                <script>
+                    const observer = new IntersectionObserver((entries) => {
+                        entries.forEach((entry, i) => {
+                            if (entry.isIntersecting) {
+                                setTimeout(() => {
+                                    entry.target.classList.add('visible');
+                                    entry.target.style.animationDelay = '0s';
+                                }, 0);
+                                observer.unobserve(entry.target);
+                            }
+                        });
+                    }, { threshold: 0.1 });
+
+                    document.querySelectorAll('.veille-section .card').forEach((card, i) => {
+                        card.style.animationDelay = `${i * 0.12}s`;
+                        observer.observe(card);
+                    });
+                </script>
+            </section>
+
+            <!-- Section Contact -->
+            <section id="contact" class="section">
+                <h2>Contact</h2>
+                <div class="contact-container">
+                    <div class="contact-info">
+                        <h3>Mes coordonnées</h3>
+                        <p><i class="fas fa-envelope"></i> ibnc75@gmail.com</p>
+                        <p><i class="fas fa-phone"></i> +33 6 12 34 56 78</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Paris, France</p>
+                        <div class="contact-social">
+                            <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
+                            <a href="https://linkedin.com/in/ismael-b" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                    <form class="contact-form" action="https://formsubmit.co/ibnc75@gmail.com" method="POST">
+                        <input type="text" name="name" placeholder="Nom" required>
+                        <input type="email" name="email" placeholder="Email" required>
+                        <textarea name="message" placeholder="Message" required></textarea>
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_next" value="http://127.0.0.1/PortfolioV2/merci.html">
+                        <button type="submit">Envoyer</button>
+                    </form>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <div class="sidebar-overlay"></div>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

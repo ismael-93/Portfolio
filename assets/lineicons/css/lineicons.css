@@ -1,0 +1,26 @@
+
+/*! LineIcons Web Font - https://lineicons.com/ */
+@font-face {
+  font-family: 'LineIcons';
+  src: url('/assets/lineicons/fonts/LineIcons.woff2') format('woff2'),
+       url('/assets/lineicons/fonts/LineIcons.woff') format('woff'),
+       url('/assets/lineicons/fonts/LineIcons.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+.lni {
+  display: inline-block;
+  font: normal normal normal 1em/1 'LineIcons';
+  speak: none;
+  text-transform: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Quelques icônes de base */
+.lni-pallet:before { content: "\eb2d"; }
+.lni-grid-alt:before { content: "\eb12"; }
+.lni-sun:before { content: "\eb3c"; }
+.lni-moon:before { content: "\eb3d"; }
