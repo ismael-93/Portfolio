@@ -1,0 +1,1067 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veille Technologique — Ismael Ben Chikh | BTS SIO SLAM</title>
+    <meta name="description" content="Veille technologique de Ismael Ben Chikh sur les frameworks web modernes : React, Vue, Angular, Node.js, Next.js.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        /* ── PAGE VEILLE DÉDIÉE ── */
+        :root {
+            --v-accent: var(--accent-color, #6366f1);
+            --v-accent-rgb: var(--accent-color-rgb, 99,102,241);
+        }
+
+        * { box-sizing: border-box; }
+
+        .veille-page {
+            min-height: 100vh;
+            background: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'DM Sans', sans-serif;
+        }
+
+        .v-nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(var(--bg-color-rgb, 10,10,20), 0.85);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--border-color);
+            padding: 0 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 60px;
+        }
+
+        .v-nav-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        .v-nav-back:hover { color: var(--accent-color); }
+
+        .v-nav-title {
+            font-family: 'Syne', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--text-color);
+            letter-spacing: 0.04em;
+        }
+
+        .v-nav-tag {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--accent-color);
+            background: rgba(var(--accent-color-rgb), 0.1);
+            border: 1px solid rgba(var(--accent-color-rgb), 0.25);
+            padding: 3px 10px;
+            border-radius: 100px;
+        }
+
+        /* ── HERO ── */
+        .v-hero {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 100px 40px 60px;
+            position: relative;
+        }
+
+        .v-hero-glow {
+            pointer-events: none;
+            position: absolute;
+            top: 0; right: -80px;
+            width: 600px; height: 600px;
+            background: radial-gradient(circle, rgba(var(--accent-color-rgb), 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .v-hero-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: var(--accent-color);
+            border: 1px solid rgba(var(--accent-color-rgb), 0.3);
+            padding: 6px 14px;
+            border-radius: 100px;
+            margin-bottom: 28px;
+        }
+
+        .v-hero-label::before {
+            content: '';
+            width: 6px; height: 6px;
+            background: var(--accent-color);
+            border-radius: 50%;
+            animation: vPulse 2s infinite;
+        }
+
+        @keyframes vPulse {
+            0%,100% { opacity:1; transform:scale(1); }
+            50%      { opacity:0.4; transform:scale(0.7); }
+        }
+
+        .v-hero h1 {
+            font-family: 'Syne', sans-serif;
+            font-size: clamp(2.4rem, 5vw, 4.2rem);
+            font-weight: 800;
+            line-height: 1.06;
+            letter-spacing: -0.03em;
+            margin-bottom: 20px;
+        }
+
+        .v-hero h1 span {
+            background: linear-gradient(135deg, var(--accent-color), #38bdf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .v-hero-sub {
+            font-size: 1.05rem;
+            font-weight: 300;
+            color: var(--text-muted);
+            max-width: 580px;
+            line-height: 1.75;
+            margin-bottom: 36px;
+        }
+
+        /* Stats hero */
+        .v-hero-stats {
+            display: flex;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .v-stat {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .v-stat-num {
+            font-family: 'Syne', sans-serif;
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--accent-color);
+        }
+
+        .v-stat-lbl {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+        }
+
+        /* ── WRAPPER SECTIONS ── */
+        .v-section {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 40px 80px;
+        }
+
+        .v-section-label {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 36px;
+        }
+
+        .v-section-label::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--border-color);
+        }
+
+        /* ── INTRO CARD ── */
+        .v-intro-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 48px;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 80px;
+        }
+
+        .v-intro-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent-color), #38bdf8, #a78bfa);
+        }
+
+        .v-intro-card::after {
+            content: '';
+            position: absolute;
+            bottom: -80px; right: -80px;
+            width: 250px; height: 250px;
+            background: radial-gradient(circle, rgba(var(--accent-color-rgb),0.07) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .v-intro-card h2 {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.55rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            letter-spacing: -0.02em;
+        }
+
+        .v-intro-card p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            line-height: 1.8;
+            margin-bottom: 16px;
+        }
+
+        .v-intro-card p:last-child { margin-bottom: 0; }
+
+        .v-intro-card strong { color: var(--text-color); font-weight: 600; }
+
+        /* ── METHODO ── */
+        .v-methodo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 18px;
+            margin-bottom: 80px;
+        }
+
+        .v-methodo-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 28px 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s;
+        }
+
+        .v-methodo-card:hover {
+            border-color: rgba(var(--accent-color-rgb), 0.35);
+            transform: translateY(-4px);
+            box-shadow: 0 16px 48px rgba(0,0,0,0.35);
+        }
+
+        .v-methodo-icon {
+            width: 46px; height: 46px;
+            border-radius: 12px;
+            background: rgba(var(--accent-color-rgb), 0.1);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 20px;
+            color: var(--accent-color);
+        }
+
+        .v-methodo-card h3 {
+            font-family: 'Syne', sans-serif;
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--text-color);
+        }
+
+        .v-methodo-card p {
+            font-size: 0.84rem;
+            color: var(--text-muted);
+            line-height: 1.65;
+        }
+
+        /* ── TECH CARDS ENRICHIES ── */
+        .v-tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 22px;
+            margin-bottom: 80px;
+        }
+
+        .v-tech-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 18px;
+            padding: 30px;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+        }
+
+        .v-tech-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(var(--accent-color-rgb), 0.3);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+        }
+
+        .v-tech-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 2px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .v-tech-card:hover::before { opacity: 1; }
+        .v-tech-card--react::before  { background: linear-gradient(90deg,#61dafb,#3b9dbf); }
+        .v-tech-card--node::before   { background: linear-gradient(90deg,#68a063,#3c7a39); }
+        .v-tech-card--next::before   { background: linear-gradient(90deg,var(--accent-color),#38bdf8); }
+        .v-tech-card--ts::before     { background: linear-gradient(90deg,#3178c6,#1a5fa8); }
+
+        .v-tech-tag {
+            display: inline-block;
+            font-size: 10px; font-weight: 700;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            padding: 3px 10px;
+            border-radius: 6px;
+            margin-bottom: 18px;
+        }
+
+        .tag-react { background:rgba(97,218,251,0.1); color:#61dafb; }
+        .tag-node  { background:rgba(104,160,99,0.12); color:#68a063; }
+        .tag-next  { background:rgba(var(--accent-color-rgb),0.1); color:var(--accent-color); }
+        .tag-ts    { background:rgba(49,120,198,0.12); color:#3178c6; }
+
+        .v-tech-card h3 {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            letter-spacing: -0.02em;
+        }
+
+        .v-tech-card p {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            line-height: 1.7;
+            margin-bottom: 18px;
+        }
+
+        /* Barre de popularité */
+        .v-tech-meter {
+            margin-bottom: 18px;
+        }
+
+        .v-tech-meter-header {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-bottom: 6px;
+        }
+
+        .v-tech-meter-track {
+            height: 5px;
+            background: rgba(255,255,255,0.06);
+            border-radius: 100px;
+            overflow: hidden;
+        }
+
+        .v-tech-meter-fill {
+            height: 100%;
+            border-radius: 100px;
+            width: 0;
+            transition: width 1.4s cubic-bezier(0.22,1,0.36,1);
+        }
+
+        .fill-react { background: linear-gradient(90deg,#61dafb,#3b9dbf); }
+        .fill-node  { background: linear-gradient(90deg,#68a063,#3c7a39); }
+        .fill-next  { background: linear-gradient(90deg,var(--accent-color),#38bdf8); }
+        .fill-ts    { background: linear-gradient(90deg,#3178c6,#1a5fa8); }
+
+        .v-tech-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 7px;
+        }
+
+        .v-pill {
+            font-size: 10px;
+            color: var(--text-muted);
+            background: rgba(255,255,255,0.04);
+            border: 1px solid var(--border-color);
+            padding: 3px 9px;
+            border-radius: 100px;
+        }
+
+        /* ── TABLEAU COMPARATIF ── */
+        .v-table-wrap {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 18px;
+            overflow: hidden;
+            margin-bottom: 80px;
+        }
+
+        .v-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .v-table th {
+            font-family: 'Syne', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            padding: 16px 20px;
+            text-align: left;
+            background: rgba(255,255,255,0.025);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .v-table td {
+            padding: 15px 20px;
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            border-bottom: 1px solid var(--border-color);
+            vertical-align: middle;
+        }
+
+        .v-table tr:last-child td { border-bottom: none; }
+
+        .v-table tr:hover td { background: rgba(var(--accent-color-rgb),0.03); }
+
+        .v-table td:first-child {
+            font-weight: 700;
+            color: var(--text-color);
+            font-family: 'Syne', sans-serif;
+            font-size: 0.9rem;
+        }
+
+        .v-badge {
+            display: inline-block;
+            font-size: 10px;
+            font-weight: 700;
+            padding: 2px 8px;
+            border-radius: 100px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .v-badge--high    { background:rgba(34,197,94,0.12);  color:#22c55e; }
+        .v-badge--med     { background:rgba(251,191,36,0.12); color:#f59e0b; }
+        .v-badge--low     { background:rgba(239,68,68,0.1);   color:#ef4444; }
+        .v-badge--accent  { background:rgba(var(--accent-color-rgb),0.12); color:var(--accent-color); }
+
+        /* ── TIMELINE ── */
+        .v-timeline {
+            position: relative;
+            padding-left: 32px;
+            margin-bottom: 80px;
+        }
+
+        .v-timeline::before {
+            content: '';
+            position: absolute;
+            left: 8px; top: 0; bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--accent-color), transparent);
+        }
+
+        .v-tl-item {
+            position: relative;
+            margin-bottom: 36px;
+        }
+
+        .v-tl-dot {
+            position: absolute;
+            left: -28px;
+            top: 4px;
+            width: 12px; height: 12px;
+            border-radius: 50%;
+            background: var(--accent-color);
+            border: 2px solid var(--bg-color);
+            box-shadow: 0 0 10px rgba(var(--accent-color-rgb),0.5);
+        }
+
+        .v-tl-date {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            color: var(--accent-color);
+            text-transform: uppercase;
+            margin-bottom: 6px;
+        }
+
+        .v-tl-title {
+            font-family: 'Syne', sans-serif;
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--text-color);
+            margin-bottom: 6px;
+        }
+
+        .v-tl-desc {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            line-height: 1.7;
+        }
+
+        /* ── SOURCES ENRICHIES ── */
+        .v-sources-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 14px;
+            margin-bottom: 80px;
+        }
+
+        .v-source-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            text-decoration: none;
+            transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+        }
+
+        .v-source-card:hover {
+            border-color: rgba(var(--accent-color-rgb),0.4);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+        }
+
+        .v-source-icon {
+            width: 40px; height: 40px;
+            border-radius: 10px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+
+        .v-source-info strong {
+            display: block;
+            font-family: 'Syne', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--text-color);
+            margin-bottom: 3px;
+        }
+
+        .v-source-info span {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        .v-source-card .v-source-arrow {
+            margin-left: auto;
+            color: var(--accent-color);
+            font-size: 0.75rem;
+            opacity: 0;
+            transition: opacity 0.2s, transform 0.2s;
+        }
+
+        .v-source-card:hover .v-source-arrow {
+            opacity: 1;
+            transform: translateX(3px);
+        }
+
+        /* ── SYNTHÈSE ── */
+        .v-synthese {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 48px;
+            margin-bottom: 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .v-synthese::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #a78bfa, var(--accent-color), #38bdf8);
+        }
+
+        .v-synthese h2 {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            letter-spacing: -0.02em;
+        }
+
+        .v-synthese-points {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+            margin-top: 24px;
+        }
+
+        .v-synthese-point {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            line-height: 1.55;
+        }
+
+        .v-synthese-point i { color: var(--accent-color); margin-top: 2px; flex-shrink: 0; }
+
+        /* ── FOOTER PAGE ── */
+        .v-footer {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 40px 60px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-top: 1px solid var(--border-color);
+            padding-top: 32px;
+        }
+
+        .v-footer-text {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+        }
+
+        .v-footer-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(var(--accent-color-rgb),0.1);
+            border: 1px solid rgba(var(--accent-color-rgb),0.25);
+            color: var(--accent-color);
+            padding: 8px 18px;
+            border-radius: 100px;
+            text-decoration: none;
+            font-size: 0.82rem;
+            font-weight: 600;
+            transition: background 0.2s, box-shadow 0.2s;
+        }
+
+        .v-footer-back:hover {
+            background: var(--accent-color);
+            color: #fff;
+            box-shadow: 0 4px 20px rgba(var(--accent-color-rgb),0.4);
+        }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 700px) {
+            .v-nav { padding: 0 20px; }
+            .v-hero, .v-section { padding-left: 20px; padding-right: 20px; }
+            .v-intro-card, .v-synthese { padding: 24px 20px; }
+            .v-synthese-points { grid-template-columns: 1fr; }
+            .v-hero h1 { font-size: 2rem; }
+            .v-table th, .v-table td { padding: 12px 12px; font-size: 0.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ── TOPBAR ── -->
+<div class="veille-page">
+    <nav class="v-nav">
+        <a href="index.html#veille" class="v-nav-back"><i class="fas fa-arrow-left"></i> Retour au portfolio</a>
+        <span class="v-nav-title">Veille Technologique</span>
+        <span class="v-nav-tag">BTS SIO SLAM — 2025–2026</span>
+    </nav>
+
+    <!-- ── HERO ── -->
+    <div class="v-hero">
+        <div class="v-hero-glow"></div>
+        <div class="v-hero-label">Veille Technologique · BTS SIO SLAM</div>
+        <h1>Frameworks Web<br><span>Modernes</span></h1>
+        <p class="v-hero-sub">
+            Une analyse approfondie de l'écosystème JavaScript moderne — des frameworks front-end aux méta-frameworks full-stack, en passant par TypeScript et les outils qui structurent le marché du travail aujourd'hui.
+        </p>
+        <div class="v-hero-stats">
+            <div class="v-stat">
+                <span class="v-stat-num">4</span>
+                <span class="v-stat-lbl">Technologies analysées</span>
+            </div>
+            <div class="v-stat">
+                <span class="v-stat-num">8+</span>
+                <span class="v-stat-lbl">Sources consultées</span>
+            </div>
+            <div class="v-stat">
+                <span class="v-stat-num">2026</span>
+                <span class="v-stat-lbl">Données à jour</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ── INTRO ── -->
+    <div class="v-section">
+        <p class="v-section-label">Contexte & Démarche</p>
+        <div class="v-intro-card">
+            <h2>Pourquoi surveiller l'écosystème des frameworks modernes ?</h2>
+            <p>Le développement web est l'un des secteurs informatiques les plus dynamiques. En l'espace de quelques années, la manière de concevoir, de construire et de déployer des applications a <strong>radicalement évolué</strong>. Au cœur de cette transformation, on trouve les <strong>frameworks JavaScript modernes</strong> — ces boîtes à outils qui permettent aux développeurs de créer des applications performantes, maintenables et scalables.</p>
+            <p>En tant que futur développeur SLAM, comprendre ces outils n'est pas optionnel : c'est le <strong>socle du métier</strong>. Le marché ne recherche plus simplement quelqu'un qui "sait coder", mais quelqu'un capable de <strong>choisir le bon outil selon le contexte</strong>, de comprendre l'écosystème dans sa globalité, et de monter en compétence rapidement sur de nouvelles technologies.</p>
+            <p>Cette veille identifie les <strong>trois grandes familles</strong> qui structurent le développement web aujourd'hui : les frameworks front-end (React, Vue, Angular), les solutions back-end JavaScript (Node.js, Express) et les méta-frameworks qui unifient les deux mondes (Next.js, Nuxt.js). Ensemble, ils forment une stack cohérente et très demandée.</p>
+        </div>
+
+        <!-- ── MÉTHODOLOGIE ── -->
+        <p class="v-section-label">Méthodologie de veille</p>
+        <div class="v-methodo-grid">
+            <div class="v-methodo-card">
+                <div class="v-methodo-icon"><i class="fas fa-rss"></i></div>
+                <h3>Flux RSS & Alertes</h3>
+                <p>Surveillance via Google Alerts et flux RSS des blogs officiels (React, Node.js, Vercel) pour capter les sorties et annonces en temps réel.</p>
+            </div>
+            <div class="v-methodo-card">
+                <div class="v-methodo-icon"><i class="fas fa-chart-bar"></i></div>
+                <h3>Baromètres annuels</h3>
+                <p>Analyse des rapports State of JS et Stack Overflow Developer Survey pour mesurer la popularité, la satisfaction et l'adoption réelle des technologies.</p>
+            </div>
+            <div class="v-methodo-card">
+                <div class="v-methodo-icon"><i class="fas fa-book-open"></i></div>
+                <h3>Documentation officielle</h3>
+                <p>Lecture régulière des changelogs et docs officielles (MDN, React.dev, Next.js docs) pour suivre l'évolution des APIs et des paradigmes.</p>
+            </div>
+            <div class="v-methodo-card">
+                <div class="v-methodo-icon"><i class="fas fa-users"></i></div>
+                <h3>Communautés & forums</h3>
+                <p>Veille communautaire via DEV.to, Reddit r/webdev, GitHub Discussions et X (Twitter tech) pour identifier les tendances émergentes.</p>
+            </div>
+        </div>
+
+        <!-- ── TECHNOLOGIES ── -->
+        <p class="v-section-label">Technologies explorées</p>
+        <div class="v-tech-grid">
+
+            <div class="v-tech-card v-tech-card--react">
+                <span class="v-tech-tag tag-react">Front-end</span>
+                <h3>React & Vue.js</h3>
+                <p>Deux philosophies complémentaires pour créer des interfaces réactives. React domine le marché avec 40 % des offres d'emploi front-end en France. Vue séduit par sa courbe d'apprentissage douce et sa flexibilité.</p>
+                <div class="v-tech-meter">
+                    <div class="v-tech-meter-header">
+                        <span>Adoption marché (State of JS 2024)</span>
+                        <span style="color:var(--accent-color);font-weight:700;">83%</span>
+                    </div>
+                    <div class="v-tech-meter-track">
+                        <div class="v-tech-meter-fill fill-react" data-width="83"></div>
+                    </div>
+                </div>
+                <div class="v-tech-pills">
+                    <span class="v-pill">Composants</span>
+                    <span class="v-pill">Virtual DOM</span>
+                    <span class="v-pill">SPA</span>
+                    <span class="v-pill">TypeScript</span>
+                    <span class="v-pill">Hooks</span>
+                </div>
+            </div>
+
+            <div class="v-tech-card v-tech-card--node">
+                <span class="v-tech-tag tag-node">Back-end</span>
+                <h3>Node.js & Express</h3>
+                <p>JavaScript conquiert le back-end. Node.js, grâce à son architecture non bloquante (Event Loop), excelle dans les applications temps réel et les APIs haute performance. Express simplifie la création d'API REST.</p>
+                <div class="v-tech-meter">
+                    <div class="v-tech-meter-header">
+                        <span>Utilisation (Stack Overflow 2024)</span>
+                        <span style="color:#68a063;font-weight:700;">61%</span>
+                    </div>
+                    <div class="v-tech-meter-track">
+                        <div class="v-tech-meter-fill fill-node" data-width="61"></div>
+                    </div>
+                </div>
+                <div class="v-tech-pills">
+                    <span class="v-pill">API REST</span>
+                    <span class="v-pill">Event-driven</span>
+                    <span class="v-pill">NPM ecosystem</span>
+                    <span class="v-pill">Async/Await</span>
+                </div>
+            </div>
+
+            <div class="v-tech-card v-tech-card--next">
+                <span class="v-tech-tag tag-next">Méta-framework</span>
+                <h3>Next.js & Nuxt.js</h3>
+                <p>L'état de l'art du web moderne. Ces méta-frameworks introduisent SSR, SSG et le rendu hybride — combinant performance, SEO optimal et expérience développeur exceptionnelle. Utilisés par TikTok, Twitch, et des milliers de startups.</p>
+                <div class="v-tech-meter">
+                    <div class="v-tech-meter-header">
+                        <span>Satisfaction développeurs (2024)</span>
+                        <span style="color:var(--accent-color);font-weight:700;">74%</span>
+                    </div>
+                    <div class="v-tech-meter-track">
+                        <div class="v-tech-meter-fill fill-next" data-width="74"></div>
+                    </div>
+                </div>
+                <div class="v-tech-pills">
+                    <span class="v-pill">SSR</span>
+                    <span class="v-pill">SSG</span>
+                    <span class="v-pill">SEO optimisé</span>
+                    <span class="v-pill">App Router</span>
+                    <span class="v-pill">RSC</span>
+                </div>
+            </div>
+
+            <div class="v-tech-card v-tech-card--ts">
+                <span class="v-tech-tag tag-ts">Langage</span>
+                <h3>TypeScript</h3>
+                <p>Le JavaScript avec un filet de sécurité. TypeScript est désormais incontournable dans les équipes professionnelles — il améliore la maintenabilité du code, réduit les bugs et facilite la collaboration sur des bases de code larges.</p>
+                <div class="v-tech-meter">
+                    <div class="v-tech-meter-header">
+                        <span>Adoption (State of JS 2024)</span>
+                        <span style="color:#3178c6;font-weight:700;">78%</span>
+                    </div>
+                    <div class="v-tech-meter-track">
+                        <div class="v-tech-meter-fill fill-ts" data-width="78"></div>
+                    </div>
+                </div>
+                <div class="v-tech-pills">
+                    <span class="v-pill">Typage statique</span>
+                    <span class="v-pill">Interfaces</span>
+                    <span class="v-pill">Generics</span>
+                    <span class="v-pill">DX améliorée</span>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- ── TABLEAU COMPARATIF ── -->
+        <p class="v-section-label">Tableau comparatif</p>
+        <div class="v-table-wrap">
+            <table class="v-table">
+                <thead>
+                    <tr>
+                        <th>Framework</th>
+                        <th>Type</th>
+                        <th>Courbe d'apprentissage</th>
+                        <th>Popularité marché</th>
+                        <th>Usage idéal</th>
+                        <th>Licence</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>React</td>
+                        <td>Front-end (UI)</td>
+                        <td><span class="v-badge v-badge--med">Modérée</span></td>
+                        <td><span class="v-badge v-badge--high">Très élevée</span></td>
+                        <td>SPA, dashboards, apps complexes</td>
+                        <td>MIT</td>
+                    </tr>
+                    <tr>
+                        <td>Vue.js</td>
+                        <td>Front-end (UI)</td>
+                        <td><span class="v-badge v-badge--high">Facile</span></td>
+                        <td><span class="v-badge v-badge--med">Élevée</span></td>
+                        <td>Sites vitrine dynamiques, prototypage</td>
+                        <td>MIT</td>
+                    </tr>
+                    <tr>
+                        <td>Angular</td>
+                        <td>Front-end (framework complet)</td>
+                        <td><span class="v-badge v-badge--low">Difficile</span></td>
+                        <td><span class="v-badge v-badge--med">Élevée</span></td>
+                        <td>Apps d'entreprise, grandes équipes</td>
+                        <td>MIT</td>
+                    </tr>
+                    <tr>
+                        <td>Node.js</td>
+                        <td>Back-end (runtime)</td>
+                        <td><span class="v-badge v-badge--med">Modérée</span></td>
+                        <td><span class="v-badge v-badge--high">Très élevée</span></td>
+                        <td>APIs REST, temps réel, microservices</td>
+                        <td>MIT</td>
+                    </tr>
+                    <tr>
+                        <td>Next.js</td>
+                        <td>Méta-framework Full-stack</td>
+                        <td><span class="v-badge v-badge--med">Modérée</span></td>
+                        <td><span class="v-badge v-badge--high">Très élevée</span></td>
+                        <td>Sites SEO, e-commerce, apps hybrides</td>
+                        <td>MIT</td>
+                    </tr>
+                    <tr>
+                        <td>TypeScript</td>
+                        <td>Surcouche JavaScript</td>
+                        <td><span class="v-badge v-badge--med">Modérée</span></td>
+                        <td><span class="v-badge v-badge--high">Très élevée</span></td>
+                        <td>Tout projet > équipe ou > 6 mois</td>
+                        <td>Apache 2.0</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- ── TIMELINE ── -->
+        <p class="v-section-label">Chronologie d'adoption</p>
+        <div class="v-timeline">
+            <div class="v-tl-item">
+                <div class="v-tl-dot"></div>
+                <div class="v-tl-date">2013 — React</div>
+                <div class="v-tl-title">Facebook publie React en open source</div>
+                <p class="v-tl-desc">Révolution du paradigme UI avec le Virtual DOM et les composants réutilisables. Adoption massive par Facebook, Instagram, puis toute l'industrie.</p>
+            </div>
+            <div class="v-tl-item">
+                <div class="v-tl-dot"></div>
+                <div class="v-tl-date">2014 — Vue.js</div>
+                <div class="v-tl-title">Evan You crée Vue.js</div>
+                <p class="v-tl-desc">Alternative plus légère et accessible à React/Angular. Vue devient extrêmement populaire en Asie et dans la communauté indépendante.</p>
+            </div>
+            <div class="v-tl-item">
+                <div class="v-tl-dot"></div>
+                <div class="v-tl-date">2016 — Next.js</div>
+                <div class="v-tl-title">Vercel lance Next.js</div>
+                <p class="v-tl-desc">Premier méta-framework React avec SSR intégré. Résout les problèmes de SEO des SPA et introduit le rendu côté serveur accessible à tous.</p>
+            </div>
+            <div class="v-tl-item">
+                <div class="v-tl-dot"></div>
+                <div class="v-tl-date">2019 — TypeScript mainstream</div>
+                <div class="v-tl-title">TypeScript devient incontournable</div>
+                <p class="v-tl-desc">Angular l'impose depuis le début, React et Vue l'adoptent massivement. TypeScript devient le standard de facto dans les projets professionnels.</p>
+            </div>
+            <div class="v-tl-item">
+                <div class="v-tl-dot"></div>
+                <div class="v-tl-date">2023–2026 — React Server Components</div>
+                <div class="v-tl-title">L'ère du rendu hybride et des RSC</div>
+                <p class="v-tl-desc">Next.js 13+ introduit l'App Router et les React Server Components — un changement de paradigme majeur qui repense fondamentalement la frontière entre client et serveur.</p>
+            </div>
+        </div>
+
+        <!-- ── SYNTHÈSE ── -->
+        <p class="v-section-label">Bilan de veille</p>
+        <div class="v-synthese">
+            <h2>Ce que cette veille m'a appris</h2>
+            <p style="font-size:0.93rem;color:var(--text-muted);line-height:1.75;">L'écosystème JavaScript est en constante évolution, mais certains choix technologiques se stabilisent. Cette veille m'a permis de comprendre non seulement les outils, mais aussi les <strong style="color:var(--text-color)">raisons de leurs choix</strong> dans un contexte professionnel.</p>
+            <div class="v-synthese-points">
+                <div class="v-synthese-point">
+                    <i class="fas fa-check-circle"></i>
+                    React reste le framework front-end dominant en 2024-2026, incontournable pour un développeur SLAM
+                </div>
+                <div class="v-synthese-point">
+                    <i class="fas fa-check-circle"></i>
+                    TypeScript n'est plus optionnel — il est attendu dans tout projet professionnel sérieux
+                </div>
+                <div class="v-synthese-point">
+                    <i class="fas fa-check-circle"></i>
+                    Next.js s'impose comme la solution full-stack de référence pour les nouvelles applications web
+                </div>
+                <div class="v-synthese-point">
+                    <i class="fas fa-check-circle"></i>
+                    Node.js unifie le langage front/back et simplifie la stack technique des équipes
+                </div>
+                <div class="v-synthese-point">
+                    <i class="fas fa-check-circle"></i>
+                    La maîtrise de ces outils est un avantage concurrentiel fort sur le marché du travail
+                </div>
+                <div class="v-synthese-point">
+                    <i class="fas fa-check-circle"></i>
+                    La veille régulière est indispensable — le secteur évolue plus vite que les formations
+                </div>
+            </div>
+        </div>
+
+        <!-- ── SOURCES ── -->
+        <p class="v-section-label">Sources de veille</p>
+        <div class="v-sources-grid">
+            <a class="v-source-card" href="https://developer.mozilla.org" target="_blank">
+                <div class="v-source-icon" style="background:rgba(255,144,0,0.1);">🦊</div>
+                <div class="v-source-info">
+                    <strong>MDN Web Docs</strong>
+                    <span>Documentation officielle</span>
+                </div>
+                <i class="fas fa-external-link-alt v-source-arrow"></i>
+            </a>
+            <a class="v-source-card" href="https://react.dev" target="_blank">
+                <div class="v-source-icon" style="background:rgba(97,218,251,0.1);">⚛️</div>
+                <div class="v-source-info">
+                    <strong>React.dev</strong>
+                    <span>Documentation officielle React</span>
+                </div>
+                <i class="fas fa-external-link-alt v-source-arrow"></i>
+            </a>
+            <a class="v-source-card" href="https://nextjs.org/docs" target="_blank">
+                <div class="v-source-icon" style="background:rgba(255,255,255,0.06);">▲</div>
+                <div class="v-source-info">
+                    <strong>Next.js Docs</strong>
+                    <span>Vercel / Next.js</span>
+                </div>
+                <i class="fas fa-external-link-alt v-source-arrow"></i>
+            </a>
+            <a class="v-source-card" href="https://vuejs.org" target="_blank">
+                <div class="v-source-icon" style="background:rgba(79,192,141,0.1);">💚</div>
+                <div class="v-source-info">
+                    <strong>Vue.js Official</strong>
+                    <span>Documentation officielle Vue</span>
+                </div>
+                <i class="fas fa-external-link-alt v-source-arrow"></i>
+            </a>
+            <a class="v-source-card" href="https://nodejs.org" target="_blank">
+                <div class="v-source-icon" style="background:rgba(104,160,99,0.12);">🟢</div>
+                <div class="v-source-info">
+                    <strong>Node.js</strong>
+                    <span>Doc & blog officiel</span>
+                </div>
+                <i class="fas fa-external-link-alt v-source-arrow"></i>
+            </a>
+            <a class="v-source-card" href="https://survey.stackoverflow.co" target="_blank">
+                <div class="v-source-icon" style="background:rgba(244,128,36,0.1);">📊</div>
+                <div class="v-source-info">
+                    <strong>Stack Overflow Survey</strong>
+                    <span>Tendances développeurs</span>
+                </div>
+                <i class="fas fa-external-link-alt v-source-arrow"></i>
+            </a>
+            <a class="v-source-card" href="https://stateofjs.com" target="_blank">
+                <div class="v-source-icon" style="background:rgba(100,255,218,0.12);">📈</div>
+                <div class="v-source-info">
+                    <strong>State of JS</strong>
+                    <span>Baromètre annuel JavaScript</span>
+                </div>
+                <i class="fas fa-external-link-alt v-source-arrow"></i>
+            </a>
+            <a class="v-source-card" href="https://dev.to" target="_blank">
+                <div class="v-source-icon" style="background:rgba(255,255,255,0.06);">✍️</div>
+                <div class="v-source-info">
+                    <strong>DEV.to</strong>
+                    <span>Communauté développeurs</span>
+                </div>
+                <i class="fas fa-external-link-alt v-source-arrow"></i>
+            </a>
+        </div>
+    </div>
+
+    <!-- ── FOOTER ── -->
+    <footer class="v-footer">
+        <p class="v-footer-text">Ismael Ben Chikh · BTS SIO SLAM · INSTA Paris · 2025–2026</p>
+        <a href="index.html" class="v-footer-back"><i class="fas fa-arrow-left"></i> Retour au portfolio</a>
+    </footer>
+</div>
+
+<script>
+    // Anime les barres de progression au scroll
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const fill = entry.target;
+                const w = fill.dataset.width;
+                fill.style.width = w + '%';
+                observer.unobserve(fill);
+            }
+        });
+    }, { threshold: 0.3 });
+
+    document.querySelectorAll('.v-tech-meter-fill').forEach(el => observer.observe(el));
+
+    // Applique le thème sauvegardé
+    const saved = localStorage.getItem('theme');
+    if (saved === 'light') document.body.classList.add('light-theme');
+</script>
+
+</body>
+</html>

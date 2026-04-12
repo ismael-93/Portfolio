@@ -1,332 +1,756 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ismael Ben Chikh - Portfolio</title>
-    
+    <title>Ismael Ben Chikh — Développeur SLAM | Portfolio BTS SIO</title>
+    <meta name="description"
+        content="Portfolio de Ismael Ben Chikh, étudiant BTS SIO SLAM à Paris. Découvrez mes projets web, applications C#, et mes stages en entreprise.">
+    <meta name="keywords" content="BTS SIO, SLAM, développeur, portfolio, HTML, CSS, JavaScript, PHP, C#, Paris">
+    <meta name="author" content="Ismael Ben Chikh">
+
+    <!-- Open Graph / Social sharing -->
+    <meta property="og:title" content="Ismael Ben Chikh — Développeur SLAM | Portfolio BTS SIO">
+    <meta property="og:description"
+        content="Portfolio de Ismael Ben Chikh, étudiant BTS SIO SLAM à Paris. Projets web, C#, stages en entreprise.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ismael-benchikh.fr">
+    <meta property="og:image" content="assets/img/avatar1.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Ismael Ben Chikh — Portfolio BTS SIO SLAM">
+    <meta name="twitter:description" content="Découvrez mes projets web, applications C# et mes stages en entreprise.">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="alternate" type="application/rss+xml" title="Ismael Ben Chikh - Portfolio RSS Feed" href="rss.xml">
-    
+
     <style>
-    /* Styles pour la section Veille */
-    .veille-section *, .veille-section *::before, .veille-section *::after { box-sizing: border-box; }
+        /* Styles pour la section Veille */
+        .veille-section *,
+        .veille-section *::before,
+        .veille-section *::after {
+            box-sizing: border-box;
+        }
 
-    .veille-section {
-      font-family: 'DM Sans', sans-serif;
-      position: relative;
-      overflow: hidden;
-    }
+        .veille-section {
+            font-family: 'DM Sans', sans-serif;
+            position: relative;
+            overflow: hidden;
+        }
 
-    /* ── HERO ── */
-    .veille-section .hero {
-      position: relative;
-      padding: 120px 40px 80px;
-      max-width: 1100px;
-      margin: 0 auto;
-    }
+        /* ── HERO ── */
+        .veille-section .hero {
+            position: relative;
+            padding: 120px 40px 80px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
 
-    .veille-section .hero-label {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-family: 'Syne', sans-serif;
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--accent-color);
-      border: 1px solid rgba(var(--accent-color-rgb), 0.3);
-      padding: 6px 14px;
-      border-radius: 100px;
-      margin-bottom: 32px;
-      opacity: 0;
-      animation: veilleFadeUp 0.6s ease forwards;
-    }
+        .veille-section .hero-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-family: 'Syne', sans-serif;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--accent-color);
+            border: 1px solid rgba(var(--accent-color-rgb), 0.3);
+            padding: 6px 14px;
+            border-radius: 100px;
+            margin-bottom: 32px;
+            opacity: 0;
+            animation: veilleFadeUp 0.6s ease forwards;
+        }
 
-    .veille-section .hero-label::before {
-      content: '';
-      width: 6px; height: 6px;
-      background: var(--accent-color);
-      border-radius: 50%;
-      animation: veillePulse 2s infinite;
-    }
+        .veille-section .hero-label::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            background: var(--accent-color);
+            border-radius: 50%;
+            animation: veillePulse 2s infinite;
+        }
 
-    @keyframes veillePulse {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.4; transform: scale(0.7); }
-    }
+        @keyframes veillePulse {
 
-    .veille-section .hero h1 {
-      font-family: 'Syne', sans-serif;
-      font-size: clamp(2.8rem, 6vw, 5rem);
-      font-weight: 800;
-      line-height: 1.05;
-      letter-spacing: -0.03em;
-      opacity: 0;
-      animation: veilleFadeUp 0.6s ease 0.15s forwards;
-    }
+            0%,
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
 
-    .veille-section .hero h1 span {
-      background: linear-gradient(135deg, #64ffda, #7dd3fc);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      filter: brightness(1.1);
-    }
+            50% {
+                opacity: 0.4;
+                transform: scale(0.7);
+            }
+        }
 
-    .veille-section .hero-sub {
-      margin-top: 24px;
-      font-size: 1.1rem;
-      font-weight: 300;
-      color: var(--text-muted);
-      max-width: 560px;
-      line-height: 1.7;
-      opacity: 0;
-      animation: veilleFadeUp 0.6s ease 0.3s forwards;
-    }
+        .veille-section .hero h1 {
+            font-family: 'Syne', sans-serif;
+            font-size: clamp(2.8rem, 6vw, 5rem);
+            font-weight: 800;
+            line-height: 1.05;
+            letter-spacing: -0.03em;
+            opacity: 0;
+            animation: veilleFadeUp 0.6s ease 0.15s forwards;
+        }
 
-    /* ── GLOW BG ── */
-    .veille-section .glow-blob {
-      position: absolute;
-      top: 60px; right: -100px;
-      width: 500px; height: 500px;
-      background: radial-gradient(circle, rgba(var(--accent-color-rgb), 0.12) 0%, transparent 70%);
-      pointer-events: none;
-      border-radius: 50%;
-    }
+        .veille-section .hero h1 span {
+            color: var(--accent-color);
+        }
 
-    /* ── SECTION ── */
-    .veille-section section {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 40px 100px;
-    }
+        .veille-section .hero-sub {
+            margin-top: 24px;
+            font-size: 1.1rem;
+            font-weight: 300;
+            color: var(--text-muted);
+            max-width: 560px;
+            line-height: 1.7;
+            opacity: 0;
+            animation: veilleFadeUp 0.6s ease 0.3s forwards;
+        }
 
-    .veille-section .section-title {
-      font-family: 'Syne', sans-serif;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      margin-bottom: 40px;
-      display: flex;
-      align-items: center;
-      gap: 16px;
-    }
+        /* ── GLOW BG ── */
+        .veille-section .glow-blob {
+            position: absolute;
+            top: 60px;
+            right: -100px;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(var(--accent-color-rgb), 0.12) 0%, transparent 70%);
+            pointer-events: none;
+            border-radius: 50%;
+        }
 
-    .veille-section .section-title::after {
-      content: '';
-      flex: 1;
-      height: 1px;
-      background: var(--border-color);
-    }
+        /* ── SECTION ── */
+        .veille-section section {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 40px 100px;
+        }
 
-    /* ── TECH CARDS ── */
-    .veille-section .cards-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 20px;
-    }
+        /* ── RSS TICKER WRAPPER ── */
+        .veille-section .rss-ticker-wrapper {
+            max-width: 1100px;
+            margin: 48px auto 140px;
+            padding: 0 40px;
+        }
 
-    .veille-section .card {
-      background: var(--card-bg);
-      border: 1px solid var(--border-color);
-      border-radius: 16px;
-      padding: 32px;
-      position: relative;
-      overflow: hidden;
-      transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
-      opacity: 0;
-      transform: translateY(30px);
-    }
+        .veille-section .section-title {
+            font-family: 'Syne', sans-serif;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 40px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
 
-    .veille-section .card.visible {
-      animation: veilleFadeUp 0.6s ease forwards;
-    }
+        .veille-section .section-title::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--border-color);
+        }
 
-    .veille-section .card:hover {
-      transform: translateY(-4px);
-      border-color: rgba(var(--accent-color-rgb), 0.3);
-      box-shadow: 0 20px 60px rgba(0,0,0,0.4), 0 0 40px rgba(var(--accent-color-rgb), 0.15);
-    }
+        /* ── TECH CARDS ── */
+        .veille-section .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
 
-    .veille-section .card::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 2px;
-      background: linear-gradient(90deg, var(--accent-color), #38bdf8);
-      opacity: 0;
-      transition: opacity 0.3s;
-    }
+        .veille-section .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 32px;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+            opacity: 0;
+            transform: translateY(30px);
+        }
 
-    .veille-section .card:hover::before { opacity: 1; }
+        .veille-section .card.visible {
+            animation: veilleFadeUp 0.6s ease forwards;
+        }
 
-    .veille-section .card-tag {
-      display: inline-block;
-      font-size: 10px;
-      font-weight: 600;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      padding: 4px 10px;
-      border-radius: 6px;
-      margin-bottom: 20px;
-    }
+        .veille-section .card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(var(--accent-color-rgb), 0.3);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4), 0 0 40px rgba(var(--accent-color-rgb), 0.15);
+        }
 
-    .veille-section .tag-react { background: rgba(97,218,251,0.1); color: #61dafb; }
-    .veille-section .tag-node  { background: rgba(104,160,99,0.15); color: #68a063; }
-    .veille-section .tag-next  { background: rgba(var(--accent-color-rgb), 0.1); color: var(--accent-color); }
+        .veille-section .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--accent-color), #38bdf8);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
 
-    .veille-section .card h3 {
-      font-family: 'Syne', sans-serif;
-      font-size: 1.25rem;
-      font-weight: 700;
-      margin-bottom: 12px;
-      letter-spacing: -0.02em;
-      color: var(--text-color);
-    }
+        .veille-section .card:hover::before {
+            opacity: 1;
+        }
 
-    .veille-section .card p {
-      font-size: 0.9rem;
-      color: var(--text-muted);
-      line-height: 1.7;
-    }
+        .veille-section .card-tag {
+            display: inline-block;
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            padding: 4px 10px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+        }
 
-    .veille-section .card-footer {
-      margin-top: 24px;
-      padding-top: 20px;
-      border-top: 1px solid var(--border-color);
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
+        .veille-section .tag-react {
+            background: rgba(97, 218, 251, 0.1);
+            color: #61dafb;
+        }
 
-    .veille-section .pill {
-      font-size: 11px;
-      color: var(--text-muted);
-      background: rgba(255,255,255,0.04);
-      border: 1px solid var(--border-color);
-      padding: 4px 10px;
-      border-radius: 100px;
-    }
+        .veille-section .tag-node {
+            background: rgba(104, 160, 99, 0.15);
+            color: #68a063;
+        }
 
-    /* ── TEXTE PRINCIPAL ── */
-    .veille-section .text-block {
-      background: var(--card-bg);
-      border: 1px solid var(--border-color);
-      border-radius: 16px;
-      padding: 48px;
-      line-height: 1.85;
-      font-size: 0.97rem;
-      color: var(--text-muted);
-      position: relative;
-      overflow: hidden;
-    }
+        .veille-section .tag-next {
+            background: rgba(var(--accent-color-rgb), 0.1);
+            color: var(--accent-color);
+        }
 
-    .veille-section .text-block::after {
-      content: '';
-      position: absolute;
-      bottom: -60px; right: -60px;
-      width: 200px; height: 200px;
-      background: radial-gradient(circle, rgba(var(--accent-color-rgb), 0.07), transparent 70%);
-      border-radius: 50%;
-      pointer-events: none;
-    }
+        .veille-section .card h3 {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            letter-spacing: -0.02em;
+            color: var(--text-color);
+        }
 
-    .veille-section .text-block h2 {
-      font-family: 'Syne', sans-serif;
-      font-size: 1.6rem;
-      font-weight: 700;
-      margin-bottom: 20px;
-      color: var(--text-color);
-    }
+        .veille-section .card p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.7;
+        }
 
-    .veille-section .text-block p + p { margin-top: 16px; }
+        .veille-section .card-footer {
+            margin-top: 24px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
 
-    .veille-section .text-block strong {
-      color: var(--text-color);
-      font-weight: 500;
-    }
+        .veille-section .pill {
+            font-size: 11px;
+            color: var(--text-muted);
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid var(--border-color);
+            padding: 4px 10px;
+            border-radius: 100px;
+        }
 
-    /* ── SOURCES ── */
-    .veille-section .sources-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 14px;
-    }
+        /* ── TEXTE PRINCIPAL ── */
+        .veille-section .text-block {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 48px;
+            line-height: 1.85;
+            font-size: 0.97rem;
+            color: var(--text-muted);
+            position: relative;
+            overflow: hidden;
+        }
 
-    .veille-section .source-card {
-      background: var(--card-bg);
-      border: 1px solid var(--border-color);
-      border-radius: 12px;
-      padding: 20px 24px;
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      text-decoration: none;
-      transition: border-color 0.2s, transform 0.2s;
-    }
+        .veille-section .text-block::after {
+            content: '';
+            position: absolute;
+            bottom: -60px;
+            right: -60px;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(var(--accent-color-rgb), 0.07), transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
 
-    .veille-section .source-card:hover {
-      border-color: rgba(var(--accent-color-rgb), 0.4);
-      transform: translateY(-2px);
-    }
+        .veille-section .text-block h2 {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--text-color);
+        }
 
-    .veille-section .source-icon {
-      width: 36px; height: 36px;
-      border-radius: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 18px;
-      flex-shrink: 0;
-    }
+        .veille-section .text-block p+p {
+            margin-top: 16px;
+        }
 
-    .veille-section .source-info strong {
-      display: block;
-      font-family: 'Syne', sans-serif;
-      font-size: 0.85rem;
-      font-weight: 700;
-      color: var(--text-color);
-      margin-bottom: 2px;
-    }
+        .veille-section .text-block strong {
+            color: var(--text-color);
+            font-weight: 500;
+        }
 
-    .veille-section .source-info span {
-      font-size: 0.75rem;
-      color: var(--text-muted);
-    }
+        /* ── SOURCES ── */
+        .veille-section .sources-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 14px;
+        }
 
-    /* ── ANIMATIONS ── */
-    @keyframes veilleFadeUp {
-      from { opacity: 0; transform: translateY(24px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
+        .veille-section .source-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 20px 24px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            text-decoration: none;
+            transition: border-color 0.2s, transform 0.2s;
+        }
 
-    /* ── DIVIDER ── */
-    .veille-section .divider {
-      height: 1px;
-      background: var(--border-color);
-      margin: 0 40px 80px;
-      max-width: 1100px;
-      margin-left: auto;
-      margin-right: auto;
-    }
+        .veille-section .source-card:hover {
+            border-color: rgba(var(--accent-color-rgb), 0.4);
+            transform: translateY(-2px);
+        }
 
-    /* ── RESPONSIVE ── */
-    @media (max-width: 600px) {
-      .veille-section .hero, .veille-section section { padding-left: 20px; padding-right: 20px; }
-      .veille-section .text-block { padding: 28px; }
-      .veille-section .hero { padding-top: 80px; }
-    }
-  </style>
+        .veille-section .source-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            flex-shrink: 0;
+        }
+
+        .veille-section .source-info strong {
+            display: block;
+            font-family: 'Syne', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--text-color);
+            margin-bottom: 2px;
+        }
+
+        .veille-section .source-info span {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        /* ── ANIMATIONS ── */
+        @keyframes veilleFadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(24px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ── DIVIDER ── */
+        .veille-section .divider {
+            height: 1px;
+            background: var(--border-color);
+            margin: 0 40px 80px;
+            max-width: 1100px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 600px) {
+
+            .veille-section .hero,
+            .veille-section section {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+
+            .veille-section .text-block {
+                padding: 28px;
+            }
+
+            .veille-section .hero {
+                padding-top: 80px;
+            }
+        }
+    </style>
+
+    <style>
+        /* ══════════════════════════════════════
+           BOUTON DÉMO PROJET
+        ══════════════════════════════════════ */
+        .project-demo-btn {
+            font-size: 0.78rem;
+            color: #fff;
+            background: var(--accent-color);
+            border: 1px solid var(--accent-color);
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            padding: 4px 10px;
+            border-radius: 100px;
+            cursor: pointer;
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+
+        .project-demo-btn:hover {
+            background: transparent;
+            color: var(--accent-color);
+        }
+
+        /* ══════════════════════════════════════
+           BOUTON CTA VEILLE COMPLÈTE
+        ══════════════════════════════════════ */
+        .veille-cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(var(--accent-color-rgb), 0.1);
+            border: 1px solid rgba(var(--accent-color-rgb), 0.3);
+            color: var(--accent-color);
+            text-decoration: none;
+            padding: 12px 22px;
+            border-radius: 12px;
+            font-size: 0.88rem;
+            font-weight: 600;
+            transition: background 0.22s, box-shadow 0.22s, transform 0.22s;
+        }
+
+        .veille-cta-btn:hover {
+            background: var(--accent-color);
+            color: #fff;
+            box-shadow: 0 8px 28px rgba(var(--accent-color-rgb), 0.4);
+            transform: translateY(-2px);
+        }
+
+        /* ══════════════════════════════════════
+           BARRES DE POPULARITÉ VEILLE
+        ══════════════════════════════════════ */
+        .veille-meter {
+            margin: 18px 0 14px;
+        }
+
+        .veille-meter-header {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-bottom: 6px;
+        }
+
+        .veille-meter-pct {
+            font-weight: 700;
+        }
+
+        .veille-meter-track {
+            height: 5px;
+            background: rgba(255, 255, 255, 0.06);
+            border-radius: 100px;
+            overflow: hidden;
+        }
+
+        .veille-meter-fill {
+            height: 100%;
+            width: 0;
+            border-radius: 100px;
+            transition: width 1.4s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        /* ══════════════════════════════════════
+           MODALE PROJET
+        ══════════════════════════════════════ */
+        .project-modal-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            background: rgba(0, 0, 0, 0.75);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .project-modal-overlay.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .project-modal {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            width: 100%;
+            max-width: 780px;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            transform: translateY(30px) scale(0.97);
+            transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+            scrollbar-width: thin;
+        }
+
+        .project-modal-overlay.active .project-modal {
+            transform: translateY(0) scale(1);
+        }
+
+        .project-modal-close {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            background: rgba(255, 255, 255, 0.07);
+            border: 1px solid var(--border-color);
+            color: var(--text-muted);
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 15px;
+            transition: background 0.2s, color 0.2s, transform 0.2s;
+            z-index: 1;
+        }
+
+        .project-modal-close:hover {
+            background: rgba(var(--accent-color-rgb), 0.15);
+            color: var(--accent-color);
+            transform: rotate(90deg);
+        }
+
+        /* — Header — */
+        .project-modal-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 28px 28px 0;
+        }
+
+        .project-modal-icon {
+            width: 52px;
+            height: 52px;
+            border-radius: 14px;
+            background: linear-gradient(135deg, var(--accent-color), #38bdf8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            color: #fff;
+            flex-shrink: 0;
+        }
+
+        .project-modal-title {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--text-color);
+            margin: 0 0 4px;
+            letter-spacing: -0.02em;
+        }
+
+        .project-modal-badge {
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--accent-color);
+            background: rgba(var(--accent-color-rgb), 0.1);
+            border: 1px solid rgba(var(--accent-color-rgb), 0.25);
+            padding: 3px 10px;
+            border-radius: 100px;
+        }
+
+        /* — Zone vidéo — */
+        .project-modal-video-wrap {
+            margin: 24px 28px 0;
+            border-radius: 12px;
+            overflow: hidden;
+            background: #0a0a0f;
+            aspect-ratio: 16 / 9;
+            position: relative;
+        }
+
+        .project-modal-video {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: contain;
+        }
+
+        .project-modal-video-placeholder {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            color: var(--text-muted);
+            background: rgba(var(--accent-color-rgb), 0.04);
+            border: 2px dashed rgba(var(--accent-color-rgb), 0.2);
+            border-radius: 12px;
+        }
+
+        .project-modal-video-placeholder i {
+            font-size: 40px;
+            color: rgba(var(--accent-color-rgb), 0.35);
+        }
+
+        .project-modal-video-placeholder span {
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--text-color);
+        }
+
+        .project-modal-video-placeholder small {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        .project-modal-video-placeholder code {
+            background: rgba(255, 255, 255, 0.06);
+            padding: 2px 8px;
+            border-radius: 6px;
+            font-family: monospace;
+            font-size: 0.78rem;
+            color: var(--accent-color);
+        }
+
+        /* — Body — */
+        .project-modal-body {
+            padding: 24px 28px 32px;
+        }
+
+        .project-modal-desc {
+            font-size: 0.93rem;
+            color: var(--text-muted);
+            line-height: 1.75;
+            margin-bottom: 20px;
+        }
+
+        .project-modal-desc strong {
+            color: var(--text-color);
+            font-weight: 600;
+        }
+
+        .project-modal-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 24px;
+        }
+
+        /* — Features — */
+        .project-modal-features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-bottom: 24px;
+        }
+
+        .modal-feature {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.4;
+        }
+
+        .modal-feature i {
+            color: var(--accent-color);
+            margin-top: 2px;
+            flex-shrink: 0;
+        }
+
+        /* — GitHub link — */
+        .project-modal-github {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-color);
+            color: var(--text-muted);
+            text-decoration: none;
+            padding: 9px 18px;
+            border-radius: 10px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: border-color 0.2s, color 0.2s, background 0.2s;
+        }
+
+        .project-modal-github:hover {
+            border-color: rgba(var(--accent-color-rgb), 0.4);
+            color: var(--accent-color);
+            background: rgba(var(--accent-color-rgb), 0.07);
+        }
+
+        /* — Responsive — */
+        @media (max-width: 600px) {
+            .project-modal-header {
+                padding: 20px 20px 0;
+            }
+
+            .project-modal-video-wrap {
+                margin: 16px 20px 0;
+            }
+
+            .project-modal-body {
+                padding: 18px 20px 24px;
+            }
+
+            .project-modal-features {
+                grid-template-columns: 1fr;
+            }
+
+            .project-modal-title {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
 </head>
 
 <body>
+    <!-- Barre de progression de scroll -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Bouton retour en haut -->
+    <button class="back-to-top" id="backToTop" aria-label="Retour en haut">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
     <div class="container">
         <button class="sidebar-toggle" aria-label="Ouvrir le menu latéral">
             <i class="fas fa-bars"></i>
@@ -346,28 +770,53 @@
                 </label>
             </div>
             <div class="profile">
+                <div class="profile-avatar-ring">
+                    <img src="assets/img/avatar1.png" alt="Photo de profil Ismael Ben Chikh" class="profile-avatar"
+                        loading="lazy"
+                        onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                    <div class="profile-avatar-fallback" style="display:none"><i class="fas fa-user"></i></div>
+                </div>
                 <h2>Ismael Ben Chikh</h2>
-                <p>Étudiant en BTS SIO</p>
+                <p>Étudiant en BTS SIO SLAM</p>
+                <div class="profile-status">
+                    <span class="status-dot"></span>
+                    <span>Disponible pour opportunités</span>
+                </div>
             </div>
 
             <nav>
                 <ul>
-                    <li><a href="#home"><i class="fas fa-home"></i> Accueil</a></li>
-                    <li><a href="#about"><i class="fas fa-user"></i> À propos</a></li>
-                    <li><a href="#education"><i class="fas fa-graduation-cap"></i> Parcours</a></li>
-                    <li><a href="#skills"><i class="fas fa-tools"></i> Compétences</a></li>
-                    <li><a href="#tools"><i class="fas fa-wrench"></i> Outils</a></li>
-                    <li><a href="#projects"><i class="fas fa-code"></i> Projets</a></li>
-                    <li><a href="#veille"><i class="fas fa-lightbulb"></i> Veille Techno</a></li>
-                    <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+                    <li><a href="#home" id="nav-home"><i class="fas fa-home"></i> Accueil</a></li>
+                    <li><a href="#about" id="nav-about"><i class="fas fa-user"></i> À propos</a></li>
+                    <li><a href="#education" id="nav-education"><i class="fas fa-graduation-cap"></i> Parcours</a></li>
+                    <li><a href="#bts-sio" id="nav-bts-sio"><i class="fas fa-university"></i> BTS SIO</a></li>
+                    <li><a href="#skills" id="nav-skills"><i class="fas fa-tools"></i> Compétences</a></li>
+                    <li><a href="#languages" id="nav-languages"><i class="fas fa-globe-europe"></i> Langues & Soft
+                            Skills</a></li>
+                    <li><a href="#tools" id="nav-tools"><i class="fas fa-wrench"></i> Outils</a></li>
+                    <li><a href="#projects" id="nav-projects"><i class="fas fa-code"></i> Projets</a></li>
+                    <li><a href="#stage" id="nav-stage"><i class="fas fa-briefcase"></i> Stages</a></li>
+                    <li><a href="#synthese" id="nav-synthese"><i class="fas fa-table"></i> Tableau de synthèse</a></li>
+                    <li><a href="#veille" id="nav-veille"><i class="fas fa-lightbulb"></i> Veille Techno</a></li>
+                    <li><a href="#learning" id="nav-learning"><i class="fas fa-book-open"></i> Apprentissage</a></li>
+                    <li><a href="#contact" id="nav-contact"><i class="fas fa-envelope"></i> Contact</a></li>
                 </ul>
             </nav>
 
+            <a href="assets/img/candidature bts.pdf" target="_blank" class="cv-download-btn"
+                aria-label="Télécharger le CV">
+                <i class="fas fa-download"></i>
+                <span>Télécharger mon CV</span>
+            </a>
+
             <div class="social-links">
-                <a href="mailto:ismael@example.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
-                <a href="https://github.com" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                <a href="rss.xml" target="_blank" aria-label="Flux RSS" title="S'abonner au flux RSS"><i class="fas fa-rss"></i></a>
+                <a href="mailto:ibnc75@gmail.com" aria-label="Email" title="Email"><i class="fas fa-envelope"></i></a>
+                <a href="https://github.com/ismael-93" target="_blank" aria-label="GitHub" title="GitHub"><i
+                        class="fab fa-github"></i></a>
+                <a href="https://linkedin.com/in/ismael-b" target="_blank" aria-label="LinkedIn" title="LinkedIn"><i
+                        class="fab fa-linkedin"></i></a>
+                <a href="rss.xml" target="_blank" aria-label="Flux RSS" title="S'abonner au flux RSS"><i
+                        class="fas fa-rss"></i></a>
             </div>
 
             <div class="copyright">
@@ -379,44 +828,120 @@
 
         <main class="content">
             <!-- Section Accueil -->
-            <section id="home" class="section">
+            <section id="home" class="section" style="position:relative; overflow:hidden;">
+                <canvas id="hero-canvas"></canvas>
                 <div class="home-shapes">
                     <div class="home-shape"></div>
                     <div class="home-shape"></div>
                     <div class="home-shape"></div>
                 </div>
                 <div class="animation-container">
-                    <h1 class="hero-title animate-fadeInDown">Bienvenue</h1>
+                    <div class="hero-badge animate-fadeInDown">
+                        <span class="hero-badge-dot"></span>
+                        BTS SIO SLAM — Paris 2024–2026
+                    </div>
+                    <h1 class="hero-title animate-fadeInDown">Bonjour, je suis<br><span
+                            class="hero-name-gradient">Ismael Ben Chikh</span></h1>
                     <p class="hero-subtitle animate-fadeInUp">
-                        Je suis <span class="typed-text"></span><span class="cursor"></span>
+                        <span class="typed-prefix">Développeur </span><span class="typed-text"></span><span
+                            class="cursor"></span>
                     </p>
-                    <p class="hero-role animate-fadeInUp">Étudiant en BTS SIO SLAM</p>
+                    <p class="hero-role animate-fadeInUp">Passionné par le développement web & les applications métiers
+                    </p>
                     <div class="hero-ctas animate-fadeInUp">
-                        <a href="#projects" class="btn-primary">
+                        <a href="#projects" class="btn-primary" id="hero-btn-projects">
                             <span>Voir mes projets</span>
                             <i class="fas fa-arrow-right"></i>
                         </a>
-                        <a href="#contact" class="btn-secondary">
+                        <a href="#contact" class="btn-secondary" id="hero-btn-contact">
                             <span>Me contacter</span>
                             <i class="fas fa-envelope"></i>
                         </a>
+                        <a href="assets/img/candidature bts.pdf" target="_blank" class="btn-outline" id="hero-btn-cv">
+                            <span>Mon CV</span>
+                            <i class="fas fa-file-pdf"></i>
+                        </a>
+                    </div>
+                    <!-- Stats animées -->
+                    <div class="hero-stats animate-fadeInUp">
+                        <div class="hero-stat">
+                            <span class="hero-stat-number" data-target="9">0</span>
+                            <span class="hero-stat-label">Projets réalisés</span>
+                        </div>
+                        <div class="hero-stat">
+                            <span class="hero-stat-number" data-target="2">0</span>
+                            <span class="hero-stat-label">Stages en entreprise</span>
+                        </div>
+                        <div class="hero-stat">
+                            <span class="hero-stat-number" data-target="7">0</span>
+                            <span class="hero-stat-label">Technologies maîtrisées</span>
+                        </div>
                     </div>
                 </div>
             </section>
 
             <!-- Section À propos -->
-            <section id="about" class="section">
+            <section id="about" class="section reveal-section">
                 <h2>À propos</h2>
-                <div class="about-card">
-                    <p>Je suis un étudiant en BTS Services Informatiques aux Organisations (SIO), spécialisé en développement d'applications (SLAM). Passionné par la programmation et les technologies web.</p>
-                    <p>Je travaille sur des projets variés en HTML, CSS, JavaScript, PHP et C# pour développer mes compétences et explorer de nouvelles technologies.</p>
+                <div class="about-grid">
+                    <div class="about-card reveal-item">
+                        <div class="about-text">
+                            <p>Je suis un étudiant en <strong>BTS Services Informatiques aux Organisations
+                                    (SIO)</strong>, spécialisé en développement d'applications (<strong>SLAM</strong>).
+                                Passionné par la programmation et les technologies web, je construis des solutions
+                                complètes du design à la mise en production.</p>
+                            <p>Je travaille sur des projets variés en <strong>HTML, CSS, JavaScript, PHP</strong> et
+                                <strong>C#</strong> pour développer mes compétences et explorer de nouvelles
+                                technologies.
+                            </p>
+                            <p>Actuellement en 2ème année à l'<strong>INSTA Paris</strong>, j'ai réalisé deux stages
+                                chez <strong>MNC Location</strong> où j'ai pu mettre en pratique mes compétences sur des
+                                projets réels.</p>
+                        </div>
+                        <div class="about-tags">
+                            <span class="about-tag"><i class="fas fa-map-marker-alt"></i> Paris, France</span>
+                            <span class="about-tag"><i class="fas fa-graduation-cap"></i> BTS SIO SLAM</span>
+                            <span class="about-tag"><i class="fas fa-code"></i> Développeur Full-Stack</span>
+                            <span class="about-tag"><i class="fas fa-heart"></i> Passionné par l'IT</span>
+                        </div>
+                    </div>
+                    <div class="about-highlights reveal-item">
+                        <div class="highlight-card">
+                            <div class="highlight-icon"><i class="fas fa-globe"></i></div>
+                            <div>
+                                <strong>Développement Web</strong>
+                                <p>Sites vitrine, e-commerce, blogs</p>
+                            </div>
+                        </div>
+                        <div class="highlight-card">
+                            <div class="highlight-icon"><i class="fas fa-desktop"></i></div>
+                            <div>
+                                <strong>Applications Desktop</strong>
+                                <p>C# WPF, Architecture MVVM</p>
+                            </div>
+                        </div>
+                        <div class="highlight-card">
+                            <div class="highlight-icon"><i class="fas fa-database"></i></div>
+                            <div>
+                                <strong>Bases de données</strong>
+                                <p>MySQL, conception et requêtes</p>
+                            </div>
+                        </div>
+                        <div class="highlight-card">
+                            <div class="highlight-icon"><i class="fas fa-paint-brush"></i></div>
+                            <div>
+                                <strong>UI / UX Design</strong>
+                                <p>Figma, maquettage responsive</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </section>
 
-            <section id="education" class="section">
+            <section id="education" class="section reveal-section">
                 <h2>Parcours Scolaire</h2>
                 <div class="timeline">
-                    <div class="timeline-item">
+                    <div class="timeline-item reveal-item">
                         <div class="timeline-marker">
                             <i class="fas fa-graduation-cap"></i>
                         </div>
@@ -427,17 +952,17 @@
                             <p>Spécialité : SLAM (Solutions Logicielles et Applications Métiers)</p>
                         </div>
                     </div>
-                    <div class="timeline-item">
+                    <div class="timeline-item reveal-item">
                         <div class="timeline-marker">
                             <i class="fas fa-graduation-cap"></i>
                         </div>
                         <div class="timeline-content">
                             <h3>Baccalauréat Général</h3>
                             <span class="timeline-date">2020 - 2023</span>
-                            <p>Spécialités : Mathématiques, Informatique et Sciences Physiques</p>
+                            <p>Spécialités : Mathématiques, Physique-Chimie</p>
                         </div>
                     </div>
-                    <div class="timeline-item">
+                    <div class="timeline-item reveal-item">
                         <div class="timeline-marker">
                             <i class="fas fa-book"></i>
                         </div>
@@ -449,126 +974,356 @@
                 </div>
             </section>
 
-            <!-- Section Compétences -->
-            <section id="skills" class="section">
-                <h2>Compétences Techniques</h2>
-                <div class="skills-grid">
-                    <div class="skill-card">
-                        <div class="skill-icon">
-                            <i class="fab fa-html5"></i>
+            <!-- Section BTS SIO — Présentation des options -->
+            <section id="bts-sio" class="section reveal-section">
+                <h2>Le BTS SIO</h2>
+                <p class="bts-sio-intro">Le <strong>Brevet de Technicien Supérieur Services Informatiques aux
+                        Organisations</strong> se divise en deux options complémentaires. Voici leur rôle et leurs
+                    différences.</p>
+
+                <div class="bts-options-grid">
+
+                    <!-- SLAM -->
+                    <div class="bts-option-card bts-option-card--slam reveal-item">
+                        <div class="bts-option-header">
+                            <div class="bts-option-icon bts-option-icon--slam">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <div>
+                                <span class="bts-option-acronym">SLAM</span>
+                                <span class="bts-option-full">Solutions Logicielles et Applications Métiers</span>
+                            </div>
+                            <span class="bts-option-badge bts-option-badge--active">Ma spécialité</span>
                         </div>
-                        <h3>HTML5</h3>
-                        <p>Structuration web</p>
+                        <p class="bts-option-desc">
+                            L'option SLAM forme des <strong>développeurs d'applications</strong> capables de concevoir,
+                            coder, tester et maintenir des logiciels pour les entreprises. Du site web à l'application
+                            desktop, en passant par les bases de données.
+                        </p>
+                        <div class="bts-option-skills">
+                            <span class="bts-skill-tag"><i class="fas fa-laptop-code"></i> Développement web (HTML, CSS,
+                                JS, PHP)</span>
+                            <span class="bts-skill-tag"><i class="fas fa-desktop"></i> Applications desktop (C#, WPF,
+                                .NET)</span>
+                            <span class="bts-skill-tag"><i class="fas fa-database"></i> Bases de données (MySQL,
+                                SQL)</span>
+                            <span class="bts-skill-tag"><i class="fas fa-sitemap"></i> Modélisation UML / MCD</span>
+                            <span class="bts-skill-tag"><i class="fab fa-git-alt"></i> Versioning Git & GitHub</span>
+                            <span class="bts-skill-tag"><i class="fas fa-project-diagram"></i> Méthodes Agile /
+                                Scrum</span>
+                        </div>
+                        <div class="bts-option-footer">
+                            <div class="bts-option-stat">
+                                <span class="bts-option-stat-num">3</span>
+                                <span class="bts-option-stat-lbl">Blocs de compétences</span>
+                            </div>
+                            <div class="bts-option-stat">
+                                <span class="bts-option-stat-num">2</span>
+                                <span class="bts-option-stat-lbl">Stages en entreprise</span>
+                            </div>
+                            <div class="bts-option-stat">
+                                <span class="bts-option-stat-num">E5</span>
+                                <span class="bts-option-stat-lbl">Épreuve professionnelle</span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="skill-card">
-                        <div class="skill-icon">
-                            <i class="fab fa-css3-alt"></i>
+
+                    <!-- SISR -->
+                    <div class="bts-option-card bts-option-card--sisr reveal-item">
+                        <div class="bts-option-header">
+                            <div class="bts-option-icon bts-option-icon--sisr">
+                                <i class="fas fa-network-wired"></i>
+                            </div>
+                            <div>
+                                <span class="bts-option-acronym">SISR</span>
+                                <span class="bts-option-full">Solutions d'Infrastructure, Systèmes et Réseaux</span>
+                            </div>
                         </div>
-                        <h3>CSS3</h3>
-                        <p>Stylisation responsive</p>
+                        <p class="bts-option-desc">
+                            L'option SISR forme des <strong>administrateurs systèmes et réseaux</strong> capables de
+                            déployer, configurer et sécuriser les infrastructures informatiques des organisations.
+                        </p>
+                        <div class="bts-option-skills">
+                            <span class="bts-skill-tag bts-skill-tag--sisr"><i class="fas fa-server"></i> Administration
+                                serveurs (Linux, Windows Server)</span>
+                            <span class="bts-skill-tag bts-skill-tag--sisr"><i class="fas fa-wifi"></i> Réseaux (TCP/IP,
+                                VLAN, routage)</span>
+                            <span class="bts-skill-tag bts-skill-tag--sisr"><i class="fas fa-shield-alt"></i>
+                                Cybersécurité & pare-feux</span>
+                            <span class="bts-skill-tag bts-skill-tag--sisr"><i class="fas fa-cloud"></i> Virtualisation
+                                (VMware, VirtualBox)</span>
+                            <span class="bts-skill-tag bts-skill-tag--sisr"><i class="fas fa-headset"></i> Support
+                                utilisateurs (helpdesk)</span>
+                            <span class="bts-skill-tag bts-skill-tag--sisr"><i class="fas fa-lock"></i> Active Directory
+                                & GPO</span>
+                        </div>
+                        <div class="bts-option-footer">
+                            <div class="bts-option-stat">
+                                <span class="bts-option-stat-num">3</span>
+                                <span class="bts-option-stat-lbl">Blocs de compétences</span>
+                            </div>
+                            <div class="bts-option-stat">
+                                <span class="bts-option-stat-num">2</span>
+                                <span class="bts-option-stat-lbl">Stages en entreprise</span>
+                            </div>
+                            <div class="bts-option-stat">
+                                <span class="bts-option-stat-num">E4</span>
+                                <span class="bts-option-stat-lbl">Épreuve professionnelle</span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="skill-card">
-                        <div class="skill-icon">
-                            <i class="fab fa-js-square"></i>
-                        </div>
-                        <h3>JavaScript</h3>
-                        <p>Interactivité frontend</p>
-                    </div>
-                    <div class="skill-card">
-                        <div class="skill-icon">
-                            <i class="fab fa-php"></i>
-                        </div>
-                        <h3>PHP</h3>
-                        <p>Développement backend</p>
-                    </div>
-                    <div class="skill-card">
-                        <div class="skill-icon">
-                            <i class="fas fa-database"></i>
-                        </div>
-                        <h3>MySQL</h3>
-                        <p>Base de données</p>
-                    </div>
-                    <div class="skill-card">
-                        <div class="skill-icon">
-                            <i class="fab fa-cuttlefish"></i>
-                        </div>
-                        <h3>C#</h3>
-                        <p>Programmation orientée objet</p>
+
+                </div>
+
+                <!-- Point commun -->
+                <div class="bts-common-banner reveal-item">
+                    <div class="bts-common-icon"><i class="fas fa-shield-alt"></i></div>
+                    <div class="bts-common-text">
+                        <strong>Bloc commun aux deux options — B3 : Cybersécurité des services informatiques</strong>
+                        <span>Protéger les données, sécuriser les échanges et garantir la disponibilité des services
+                            sont des compétences transversales exigées dans les deux spécialités.</span>
                     </div>
                 </div>
             </section>
 
-            <!-- Section Outils -->
-            <section id="tools" class="section">
-                <h2>Outils Utilisés</h2>
-                <div class="tools-grid">
-                    <div class="tool-card">
-                        <div class="tool-icon">
-                            <i class="fas fa-code"></i>
-                        </div>
-                        <h3>VS Code</h3>
-                        <p>Éditeur de code</p>
+            <!-- Section Compétences -->
+            <section id="skills" class="section reveal-section">
+                <h2>Compétences Techniques</h2>
+                <!-- Icônes rapides -->
+                <div class="skills-grid" style="margin-bottom:3rem;">
+                    <div class="skill-card reveal-item">
+                        <div class="skill-icon"><i class="fab fa-html5"></i></div>
+                        <h3>HTML5</h3>
+                        <p>Structuration web</p>
                     </div>
-                    <div class="tool-card">
-                        <div class="tool-icon">
-                            <i class="fab fa-git-alt"></i>
-                        </div>
-                        <h3>Git</h3>
-                        <p>Contrôle de version</p>
+                    <div class="skill-card reveal-item">
+                        <div class="skill-icon"><i class="fab fa-css3-alt"></i></div>
+                        <h3>CSS3</h3>
+                        <p>Stylisation responsive</p>
                     </div>
-                    <div class="tool-card">
-                        <div class="tool-icon">
-                            <i class="fab fa-github"></i>
-                        </div>
-                        <h3>GitHub</h3>
-                        <p>Dépôt de code</p>
+                    <div class="skill-card reveal-item">
+                        <div class="skill-icon"><i class="fab fa-js-square"></i></div>
+                        <h3>JavaScript</h3>
+                        <p>Interactivité frontend</p>
                     </div>
-                    <div class="tool-card">
-                        <div class="tool-icon">
-                            <i class="fas fa-database"></i>
-                        </div>
+                    <div class="skill-card reveal-item">
+                        <div class="skill-icon"><i class="fab fa-php"></i></div>
+                        <h3>PHP</h3>
+                        <p>Développement backend</p>
+                    </div>
+                    <div class="skill-card reveal-item">
+                        <div class="skill-icon"><i class="fas fa-database"></i></div>
                         <h3>MySQL</h3>
                         <p>Base de données</p>
                     </div>
-                    <div class="tool-card">
-                        <div class="tool-icon">
-                            <i class="fas fa-object-group"></i>
+                    <div class="skill-card reveal-item">
+                        <div class="skill-icon"><i class="fab fa-cuttlefish"></i></div>
+                        <h3>C#</h3>
+                        <p>Programmation orientée objet</p>
+                    </div>
+                    <div class="skill-card reveal-item">
+                        <div class="skill-icon"><i class="fab fa-python"></i></div>
+                        <h3>Python</h3>
+                        <p>Scripts & jeux algorithmiques</p>
+                    </div>
+                </div>
+                <!-- Barres de progression -->
+                <div class="skills-bars-grid">
+                    <div class="skill-bar-group reveal-item">
+                        <h3 class="skill-bar-category"><i class="fas fa-globe"></i> Développement Web</h3>
+                        <div class="skill-bar-item">
+                            <div class="skill-bar-header"><span>HTML5 / CSS3</span><span
+                                    class="skill-bar-pct">90%</span></div>
+                            <div class="skill-bar-track">
+                                <div class="skill-bar-fill" data-width="90"></div>
+                            </div>
                         </div>
+                        <div class="skill-bar-item">
+                            <div class="skill-bar-header"><span>JavaScript</span><span class="skill-bar-pct">75%</span>
+                            </div>
+                            <div class="skill-bar-track">
+                                <div class="skill-bar-fill" data-width="75"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <div class="skill-bar-header"><span>PHP</span><span class="skill-bar-pct">70%</span></div>
+                            <div class="skill-bar-track">
+                                <div class="skill-bar-fill" data-width="70"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill-bar-group reveal-item">
+                        <h3 class="skill-bar-category"><i class="fas fa-desktop"></i> Développement Applicatif</h3>
+                        <div class="skill-bar-item">
+                            <div class="skill-bar-header"><span>C# / WPF</span><span class="skill-bar-pct">75%</span>
+                            </div>
+                            <div class="skill-bar-track">
+                                <div class="skill-bar-fill" data-width="75"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <div class="skill-bar-header"><span>MySQL</span><span class="skill-bar-pct">80%</span></div>
+                            <div class="skill-bar-track">
+                                <div class="skill-bar-fill" data-width="80"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <div class="skill-bar-header"><span>POO / Architecture MVVM</span><span
+                                    class="skill-bar-pct">70%</span></div>
+                            <div class="skill-bar-track">
+                                <div class="skill-bar-fill" data-width="70"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <div class="skill-bar-header"><span>Python</span><span class="skill-bar-pct">60%</span>
+                            </div>
+                            <div class="skill-bar-track">
+                                <div class="skill-bar-fill" data-width="60"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill-bar-group reveal-item">
+                        <h3 class="skill-bar-category"><i class="fas fa-project-diagram"></i> Méthodes & Outils</h3>
+                        <div class="skill-bar-item">
+                            <div class="skill-bar-header"><span>Git / GitHub</span><span
+                                    class="skill-bar-pct">80%</span></div>
+                            <div class="skill-bar-track">
+                                <div class="skill-bar-fill" data-width="80"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <div class="skill-bar-header"><span>Figma / UX Design</span><span
+                                    class="skill-bar-pct">65%</span></div>
+                            <div class="skill-bar-track">
+                                <div class="skill-bar-fill" data-width="65"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <div class="skill-bar-header"><span>Modélisation UML</span><span
+                                    class="skill-bar-pct">70%</span></div>
+                            <div class="skill-bar-track">
+                                <div class="skill-bar-fill" data-width="70"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section Langues & Soft Skills -->
+            <section id="languages" class="section reveal-section">
+                <h2>Langues &amp; Soft Skills</h2>
+                <div class="lang-soft-grid">
+
+                    <!-- Langues -->
+                    <div class="lang-panel reveal-item">
+                        <h3 class="lang-panel-title"><i class="fas fa-globe-europe"></i> Langues parlées</h3>
+                        <div class="lang-bars">
+                            <div class="lang-item">
+                                <div class="lang-header">
+                                    <span class="lang-name">🇫🇷 Français</span>
+                                    <span class="lang-level-badge">Langue natale</span>
+                                </div>
+                                <div class="lang-track">
+                                    <div class="lang-fill" data-width="100"></div>
+                                </div>
+                            </div>
+                            <div class="lang-item">
+                                <div class="lang-header">
+                                    <span class="lang-name">🇬🇧 Anglais</span>
+                                    <span class="lang-level-badge">B2 — Professionnel</span>
+                                </div>
+                                <div class="lang-track">
+                                    <div class="lang-fill" data-width="72"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Soft Skills -->
+                    <div class="soft-panel reveal-item">
+                        <h3 class="lang-panel-title"><i class="fas fa-heart"></i> Soft Skills</h3>
+                        <div class="soft-skills-grid">
+                            <div class="soft-card">
+                                <div class="soft-icon"><i class="fas fa-users"></i></div>
+                                <span>Travail en équipe</span>
+                            </div>
+                            <div class="soft-card">
+                                <div class="soft-icon"><i class="fas fa-user-check"></i></div>
+                                <span>Autonomie</span>
+                            </div>
+                            <div class="soft-card">
+                                <div class="soft-icon"><i class="fas fa-puzzle-piece"></i></div>
+                                <span>Résolution de problèmes</span>
+                            </div>
+                            <div class="soft-card">
+                                <div class="soft-icon"><i class="fas fa-random"></i></div>
+                                <span>Adaptabilité</span>
+                            </div>
+                            <div class="soft-card">
+                                <div class="soft-icon"><i class="fas fa-comments"></i></div>
+                                <span>Communication</span>
+                            </div>
+                            <div class="soft-card">
+                                <div class="soft-icon"><i class="fas fa-lightbulb"></i></div>
+                                <span>Curiosité tech.</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- Section Outils -->
+            <section id="tools" class="section reveal-section">
+                <h2>Outils Utilisés</h2>
+                <div class="tools-grid">
+                    <div class="tool-card reveal-item">
+                        <div class="tool-icon"><i class="fas fa-code"></i></div>
+                        <h3>VS Code</h3>
+                        <p>Éditeur de code</p>
+                    </div>
+                    <div class="tool-card reveal-item">
+                        <div class="tool-icon"><i class="fab fa-git-alt"></i></div>
+                        <h3>Git</h3>
+                        <p>Contrôle de version</p>
+                    </div>
+                    <div class="tool-card reveal-item">
+                        <div class="tool-icon"><i class="fab fa-github"></i></div>
+                        <h3>GitHub</h3>
+                        <p>Dépôt de code</p>
+                    </div>
+                    <div class="tool-card reveal-item">
+                        <div class="tool-icon"><i class="fas fa-database"></i></div>
+                        <h3>MySQL</h3>
+                        <p>Base de données</p>
+                    </div>
+                    <div class="tool-card reveal-item">
+                        <div class="tool-icon"><i class="fas fa-object-group"></i></div>
                         <h3>Figma</h3>
                         <p>Design UI/UX</p>
                     </div>
-                    <div class="tool-card">
-                        <div class="tool-icon">
-                            <i class="fas fa-cube"></i>
-                        </div>
+                    <div class="tool-card reveal-item">
+                        <div class="tool-icon"><i class="fas fa-cube"></i></div>
                         <h3>Visual Studio</h3>
                         <p>Développement C#</p>
                     </div>
-                    <div class="tool-card">
-                        <div class="tool-icon">
-                            <i class="fas fa-layer-group"></i>
-                        </div>
+                    <div class="tool-card reveal-item">
+                        <div class="tool-icon"><i class="fas fa-layer-group"></i></div>
                         <h3>Looping</h3>
                         <p>Planification projets</p>
                     </div>
-                    <div class="tool-card">
-                        <div class="tool-icon">
-                            <i class="fas fa-link"></i>
-                        </div>
+                    <div class="tool-card reveal-item">
+                        <div class="tool-icon"><i class="fas fa-link"></i></div>
                         <h3>Make</h3>
                         <p>Automatisation apps</p>
                     </div>
-                    <div class="tool-card">
-                        <div class="tool-icon">
-                            <i class="fas fa-sitemap"></i>
-                        </div>
+                    <div class="tool-card reveal-item">
+                        <div class="tool-icon"><i class="fas fa-sitemap"></i></div>
                         <h3>StartUML</h3>
                         <p>Modélisation UML</p>
                     </div>
-                    <div class="tool-card">
-                        <div class="tool-icon">
-                            <i class="fas fa-project-diagram"></i>
-                        </div>
+                    <div class="tool-card reveal-item">
+                        <div class="tool-icon"><i class="fas fa-project-diagram"></i></div>
                         <h3>Lucidchart</h3>
                         <p>Diagrammes en ligne</p>
                     </div>
@@ -577,7 +1332,7 @@
 
 
             <!-- Section Projets -->
-            <section id="projects" class="section">
+            <section id="projects" class="section reveal-section">
                 <h2>Mes Projets</h2>
                 <div class="projects-filter">
                     <button class="filter-btn active" data-filter="all">TOUT</button>
@@ -586,88 +1341,539 @@
                     <button class="filter-btn" data-filter="game">JEU</button>
                 </div>
                 <div class="projects-grid">
-                
 
-                    
-                    <!-- Projet 3: Flappy Bird -->
-                    <div class="project-card" data-category="game">
+                    <!-- Projet: Flappy Bird -->
+                    <div class="project-card reveal-item" data-category="game">
                         <div class="project-header">
                             <i class="fas fa-gamepad"></i>
+                            <span class="project-type-badge">Jeu</span>
                         </div>
-                        <h3>Flappy Bird</h3>
-                        <p>Jeu interactif avec mécanique de saut et obstacles</p>
-                        <span class="project-date">2025</span>
+                        <div class="project-body">
+                            <h3>Flappy Bird</h3>
+                            <p>Jeu interactif développé en JavaScript avec mécanique de saut, génération procédurale
+                                d'obstacles et système de score.</p>
+                            <div class="project-tech">
+                                <span class="p-tech">HTML5</span>
+                                <span class="p-tech">CSS3</span>
+                                <span class="p-tech">JavaScript</span>
+                            </div>
+                        </div>
+                        <div class="project-footer">
+                            <span class="project-date"><i class="fas fa-calendar"></i> 2024</span>
+                            <a href="http://localhost/FLOPPY" target="_blank" class="project-link"><i
+                                    class="fas fa-external-link-alt"></i> Voir le projet</a>
+                        </div>
                     </div>
 
-                    <!-- Projet 4: Filtre Mail -->
-                    <div class="project-card" data-category="web">
+                    <!-- Projet: Filtre Mail -->
+                    <div class="project-card reveal-item" data-category="web">
                         <div class="project-header">
                             <i class="fas fa-envelope-open"></i>
+                            <span class="project-type-badge">Web</span>
                         </div>
-                        <h3>Filtre Mail</h3>
-                        <p>Système de filtrage d'emails avec automatisation Make</p>
-                        <span class="project-date">2025</span>
+                        <div class="project-body">
+                            <h3>Filtre Mail</h3>
+                            <p>Système de filtrage automatique d'emails avec règles personnalisées grâce à
+                                l'automatisation Make (Integromat).</p>
+                            <div class="project-tech">
+                                <span class="p-tech">Make</span>
+                                <span class="p-tech">API</span>
+                                <span class="p-tech">Automation</span>
+                            </div>
+                        </div>
+                        <div class="project-footer">
+                            <span class="project-date"><i class="fas fa-calendar"></i> 2025</span>
+                        </div>
                     </div>
 
-                    <!-- Projet 5: Parc Auto -->
-                    <div class="project-card" data-category="app">
+                    <!-- Projet: Parc Auto -->
+                    <div class="project-card reveal-item" data-category="app">
                         <div class="project-header">
-                            <i class="fas fa-truck"></i>
+                            <i class="fas fa-car"></i>
+                            <span class="project-type-badge">Application</span>
                         </div>
-                        <h3>Parc Auto</h3>
-                        <p>Gestion de flotte avec suivi des véhicules C#</p>
-                        <span class="project-date">2025</span>
+                        <div class="project-body">
+                            <h3>Parc Auto</h3>
+                            <p>Application desktop de gestion de flotte automobile en C# WPF avec authentification,
+                                suivi kilométrique et export PDF.</p>
+                            <div class="project-tech">
+                                <span class="p-tech">C#</span>
+                                <span class="p-tech">WPF</span>
+                                <span class="p-tech">MySQL</span>
+                                <span class="p-tech">.NET 8</span>
+                            </div>
+                        </div>
+                        <div class="project-footer">
+                            <span class="project-date"><i class="fas fa-calendar"></i> 2025</span>
+                            <a href="https://github.com/ismael-93" target="_blank" class="project-link"><i
+                                    class="fab fa-github"></i> Code</a>
+                            <button class="project-demo-btn" onclick="openProjectModal('parc-auto')"><i
+                                    class="fas fa-play-circle"></i> Voir la démo</button>
+                        </div>
                     </div>
 
-                    <!-- Projet 6: E-commerce Tech -->
-                    <div class="project-card" data-category="web">
+                    <!-- Projet: E-commerce Tech -->
+                    <div class="project-card reveal-item" data-category="web">
                         <div class="project-header">
                             <i class="fas fa-shopping-cart"></i>
+                            <span class="project-type-badge">Web</span>
                         </div>
-                        <h3>E-commerce Tech</h3>
-                        <p>Plateforme de vente de produits technologiques</p>
-                        <span class="project-date">2025</span>
+                        <div class="project-body">
+                            <h3>E-commerce Tech</h3>
+                            <p>Plateforme complète de vente en ligne de produits technologiques avec panier, gestion des
+                                commandes et back-office admin.</p>
+                            <div class="project-tech">
+                                <span class="p-tech">PHP</span>
+                                <span class="p-tech">MySQL</span>
+                                <span class="p-tech">JavaScript</span>
+                            </div>
+                        </div>
+                        <div class="project-footer">
+                            <span class="project-date"><i class="fas fa-calendar"></i> 2025</span>
+                            <a href="http://localhost/ecom2026/public" target="_blank" class="project-link"><i
+                                    class="fas fa-external-link-alt"></i> Voir le projet</a>
+                        </div>
                     </div>
 
-                    <!-- Projet 7: Tetris -->
-                    <div class="project-card" data-category="game">
+                    <!-- Projet: Tetris -->
+                    <div class="project-card reveal-item" data-category="game">
                         <div class="project-header">
-                            <i class="fas fa-cube"></i>
+                            <i class="fas fa-th"></i>
+                            <span class="project-type-badge">Jeu</span>
                         </div>
-                        <h3>Tetris</h3>
-                        <p>Jeu classique Tetris avec scoring et animations</p>
-                        <span class="project-date">2025</span>
+                        <div class="project-body">
+                            <h3>Tetris</h3>
+                            <p>Jeu classique Tetris recréé en JavaScript vanilla avec rotation des pièces, scoring
+                                progressif et animations fluides.</p>
+                            <div class="project-tech">
+                                <span class="p-tech">HTML5</span>
+                                <span class="p-tech">CSS3</span>
+                                <span class="p-tech">JavaScript</span>
+                            </div>
+                        </div>
+                        <div class="project-footer">
+                            <span class="project-date"><i class="fas fa-calendar"></i> 2025</span>
+                            <a href="http://localhost/Tetris" target="_blank" class="project-link"><i
+                                    class="fas fa-external-link-alt"></i> Voir le projet</a>
+                        </div>
                     </div>
 
-                    <!-- Projet 8: Blog Smarty -->
-                    <div class="project-card" data-category="web">
+                    <!-- Projet: Blog Smarty -->
+                    <div class="project-card reveal-item" data-category="web">
                         <div class="project-header">
                             <i class="fas fa-blog"></i>
+                            <span class="project-type-badge">Web</span>
                         </div>
-                        <h3>Blog Smarty</h3>
-                        <p>Blog avec moteur de template Smarty et commentaires</p>
-                        <span class="project-date">2025</span>
+                        <div class="project-body">
+                            <h3>Blog Smarty</h3>
+                            <p>Blog dynamique avec moteur de template Smarty, système de commentaires, catégories et
+                                interface d'administration.</p>
+                            <div class="project-tech">
+                                <span class="p-tech">PHP</span>
+                                <span class="p-tech">Smarty</span>
+                                <span class="p-tech">MySQL</span>
+                            </div>
+                        </div>
+                        <div class="project-footer">
+                            <span class="project-date"><i class="fas fa-calendar"></i> 2025</span>
+                            <a href="http://localhost/blog" target="_blank" class="project-link"><i
+                                    class="fas fa-external-link-alt"></i> Voir le projet</a>
+                        </div>
                     </div>
 
-                    <!-- Projet 9: Mediathèque -->
-                    <div class="project-card" data-category="web">
+                    <!-- Projet: Mediathèque -->
+                    <div class="project-card reveal-item" data-category="web">
                         <div class="project-header">
-                            <i class="fas fa-library"></i>
+                            <i class="fas fa-photo-video"></i>
+                            <span class="project-type-badge">Web</span>
                         </div>
-                        <h3>Mediathèque</h3>
-                        <p>Plateforme de gestion de ressources multimédia</p>
-                        <span class="project-date">2025</span>
+                        <div class="project-body">
+                            <h3>Médiathèque</h3>
+                            <p>Plateforme de gestion de ressources multimédia (livres, films, musiques) avec recherche
+                                avancée et profils utilisateurs.</p>
+                            <div class="project-tech">
+                                <span class="p-tech">PHP</span>
+                                <span class="p-tech">MySQL</span>
+                                <span class="p-tech">Bootstrap</span>
+                            </div>
+                        </div>
+                        <div class="project-footer">
+                            <span class="project-date"><i class="fas fa-calendar"></i> 2025</span>
+                            <a href="http://localhost/mediatheque" target="_blank" class="project-link"><i
+                                    class="fas fa-external-link-alt"></i> Voir le projet</a>
+                        </div>
                     </div>
 
-                    <!-- Projet 10: Car Rental -->
-                    <div class="project-card" data-category="web">
+                    <!-- Projet: Car Rental -->
+                    <div class="project-card reveal-item" data-category="web">
                         <div class="project-header">
                             <i class="fas fa-key"></i>
+                            <span class="project-type-badge">Web</span>
                         </div>
-                        <h3>Car Rental</h3>
-                        <p>Plateforme de location de voitures en ligne</p>
-                        <span class="project-date">2025</span>
+                        <div class="project-body">
+                            <h3>Car Rental</h3>
+                            <p>Plateforme de location de voitures en ligne avec catalogue, réservation en ligne et
+                                interface de gestion administrative.</p>
+                            <div class="project-tech">
+                                <span class="p-tech">PHP</span>
+                                <span class="p-tech">MySQL</span>
+                                <span class="p-tech">JavaScript</span>
+                            </div>
+                        </div>
+                        <div class="project-footer">
+                            <span class="project-date"><i class="fas fa-calendar"></i> 2025</span>
+                            <a href="http://localhost/Ecom2" target="_blank" class="project-link"><i
+                                    class="fas fa-external-link-alt"></i> Voir le projet</a>
+                        </div>
                     </div>
+
+                    <!-- Projet: Jeu Allumette -->
+                    <div class="project-card reveal-item" data-category="app">
+                        <div class="project-header">
+                            <i class="fas fa-fire"></i>
+                            <span class="project-type-badge">Application</span>
+                        </div>
+                        <div class="project-body">
+                            <h3>Jeu des Allumettes</h3>
+                            <p>Jeu de stratégie des allumettes développé en Python. Implémentation de la logique de jeu,
+                                gestion des tours, IA adverse et interface en ligne de commande.</p>
+                            <div class="project-tech">
+                                <span class="p-tech">Python</span>
+                                <span class="p-tech">Algorithmique</span>
+                                <span class="p-tech">IA basique</span>
+                            </div>
+                        </div>
+                        <div class="project-footer">
+                            <span class="project-date"><i class="fas fa-calendar"></i> 2025</span>
+                            <button class="project-demo-btn" onclick="openProjectModal('jeu-allumettes')"><i
+                                    class="fas fa-play-circle"></i> Voir la démo</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ═══════════════════════════════════════════════════
+                 SECTION STAGES — MNC Location
+            ═══════════════════════════════════════════════════ -->
+            <section id="stage" class="section">
+                <h2>Mes Stages</h2>
+                <p class="stage-intro">Deux stages en entreprise réalisés chez <strong>MNC Location</strong>, société de
+                    location de véhicules, au cours de mes deux années de BTS SIO SLAM.</p>
+
+
+
+                <div class="stage-cards">
+
+
+                    <!-- Stage 1ère année -->
+                    <div class="stage-card stage-card--1">
+                        <div class="stage-card__ribbon">1<sup>ère</sup> année</div>
+                        <div class="stage-card__header">
+                            <div class="stage-card__icon-wrap">
+                                <i class="fas fa-globe"></i>
+                            </div>
+                            <div>
+                                <h3 class="stage-card__title">Développement Site Vitrine</h3>
+                                <span class="stage-card__company"><i class="fas fa-building"></i> MNC Location —
+                                    Paris</span>
+                            </div>
+                        </div>
+                        <div class="stage-card__meta">
+                            <span class="stage-meta-badge"><i class="fas fa-calendar-alt"></i> Mars – Mai 2025</span>
+                            <span class="stage-meta-badge"><i class="fas fa-clock"></i> ~10 semaines</span>
+                        </div>
+                        <p class="stage-card__desc">
+                            Conception et développement complet d'un <strong>site vitrine</strong> pour la société MNC
+                            Location, spécialisée dans la location de véhicules. Le site présente l'ensemble de la
+                            flotte, les tarifs et les coordonnées de l'entreprise.<br><br>
+                        </p>
+                        <div class="stage-card__missions">
+                            <p class="stage-missions-title"><i class="fas fa-tasks"></i> Missions réalisées</p>
+                            <ul class="stage-missions-list">
+                                <li><i class="fas fa-check-circle"></i> Analyse des besoins et maquettage Figma</li>
+                                <li><i class="fas fa-check-circle"></i> Intégration HTML5 / CSS3 responsive</li>
+                                <li><i class="fas fa-check-circle"></i> Développement des fonctionnalités JavaScript
+                                    (carrousel, formulaire de contact)</li>
+                                <li><i class="fas fa-check-circle"></i> Développement backend PHP (formulaire de
+                                    contact, gestion des données)</li>
+                                <li><i class="fas fa-check-circle"></i> Mise en production et tests cross-navigateurs
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="stage-card__tech">
+                            <span class="tech-pill tech-html">HTML5</span>
+                            <span class="tech-pill tech-css">CSS3</span>
+                            <span class="tech-pill tech-js">JavaScript</span>
+                            <span class="tech-pill tech-php">PHP</span>
+                            <span class="tech-pill tech-figma">Figma</span>
+                        </div>
+                        <div class="stage-card__fiche" style="margin:1.2rem 0 0.7rem 0;text-align:center;">
+                            <a href="stage1.jpeg" target="_blank" class="btn-outline">
+                                <i class="fas fa-file-pdf"></i> Fiche de stage — MNC Location
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Stage 2ème année -->
+                    <div class="stage-card stage-card--2">
+                        <div class="stage-card__ribbon stage-card__ribbon--2">2<sup>ème</sup> année</div>
+                        <div class="stage-card__header">
+                            <div class="stage-card__icon-wrap stage-card__icon-wrap--2">
+                                <i class="fas fa-car"></i>
+                            </div>
+                            <div>
+                                <h3 class="stage-card__title">Outil de Gestion de Parc Auto</h3>
+                                <span class="stage-card__company"><i class="fas fa-building"></i> MNC Location —
+                                    Paris</span>
+                            </div>
+                        </div>
+                        <div class="stage-card__meta">
+                            <span class="stage-meta-badge"><i class="fas fa-calendar-alt"></i> Décembre 2025 – Février
+                                2026</span>
+                            <span class="stage-meta-badge"><i class="fas fa-clock"></i> ~10 semaines</span>
+                        </div>
+                        <p class="stage-card__desc">
+                            Développement d'une <strong>application desktop de gestion de flotte automobile</strong> en
+                            C# WPF, permettant de gérer les véhicules, les utilisateurs, les locations, le suivi
+                            kilométrique et les statistiques.
+                        </p>
+                        <div class="stage-card__missions">
+                            <p class="stage-missions-title"><i class="fas fa-tasks"></i> Missions réalisées</p>
+                            <ul class="stage-missions-list">
+                                <li><i class="fas fa-check-circle"></i> Analyse des besoins et modélisation UML (use
+                                    case, MCD)</li>
+                                <li><i class="fas fa-check-circle"></i> Conception de la base de données MySQL</li>
+                                <li><i class="fas fa-check-circle"></i> Développement de l'application C# WPF
+                                    (architecture MVVM)</li>
+                                <li><i class="fas fa-check-circle"></i> Authentification, gestion des rôles (Admin /
+                                    Utilisateur)</li>
+                                <li><i class="fas fa-check-circle"></i> Suivi kilométrique, alertes, export PDF des
+                                    interventions</li>
+                            </ul>
+                        </div>
+                        <div class="stage-card__tech">
+                            <span class="tech-pill tech-csharp">C#</span>
+                            <span class="tech-pill tech-wpf">WPF</span>
+                            <span class="tech-pill tech-mysql">MySQL</span>
+                            <span class="tech-pill tech-net">.NET 8</span>
+                            <span class="tech-pill tech-vs">Visual Studio</span>
+                        </div>
+                        <div class="stage-card__fiche" style="margin:1.2rem 0 0.7rem 0;text-align:center;">
+                            <a href="stage2.jpeg" target="_blank" class="btn-outline">
+                                <i class="fas fa-file-pdf"></i> Fiche de stage — MNC Location
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ═══════════════════════════════════════════════════
+                 SECTION TABLEAU DE SYNTHÈSE — BTS SIO SLAM
+             ═══════════════════════════════════════════════════ -->
+            <section id="synthese" class="section">
+                <h2>Tableau de Synthèse</h2>
+                <p class="synthese-intro">Récapitulatif de l'ensemble des <strong>compétences du référentiel BTS SIO
+                        SLAM</strong> mobilisées à travers mes projets scolaires et mes stages en entreprise.</p>
+
+
+                <div class="stage-documents" style="margin-bottom: 1.5rem;">
+                    <h3><i class="fas fa-file-alt"></i> Documents officiels des projets</h3>
+                    <p class="stage-documents-text">Retrouvez les fiches de présentation officielles de mes deux projets
+                        réalisés chez MNC Location : un <strong>site ecommerce IB Tech</strong> en première année et une
+                        <strong>application de gestion de parc automobile</strong> en deuxième année.
+                    </p>
+                    <div class="stage-documents-actions">
+                        <a href="SLAM-Fiche-presentation-situation%20projetleger.docx.pdf" target="_blank"
+                            class="btn-secondary">
+                            <i class="fas fa-globe"></i> IB Tech, site ecommerce
+                        </a>
+                        <a href="SLAM-Fiche-presentation-situation%20projetlourd.pdf" target="_blank"
+                            class="btn-primary">
+                            <i class="fas fa-desktop"></i> Fleet Manager — Application C#
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Lien document officiel -->
+                <div class="synthese-official-banner">
+                    <div class="synthese-official-left">
+                        <div class="synthese-official-icon"><i class="fas fa-file-pdf"></i></div>
+                        <div>
+                            <span class="synthese-official-title">Tableau de Synthèse Officiel</span>
+                            <span class="synthese-official-sub">Document E4 — BTS SIO SLAM 2025-2026 · Signé &amp;
+                                validé</span>
+                        </div>
+                    </div>
+                    <div class="synthese-official-actions">
+                        <a href="Tableau%20de%20synthese.xlsx%20-%20Tableau%20de%20synth%C3%A8se%20%C3%89preuve%20E4%20(1).pdf"
+                            target="_blank" class="synthese-official-btn synthese-official-btn--outline">
+                            <i class="fas fa-eye"></i> Consulter
+                        </a>
+                        <a href="Tableau%20de%20synthese.xlsx%20-%20Tableau%20de%20synth%C3%A8se%20%C3%89preuve%20E4%20(1).pdf"
+                            download class="synthese-official-btn synthese-official-btn--primary">
+                            <i class="fas fa-download"></i> Télécharger le PDF
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Légende -->
+                <div class="synthese-legend">
+                    <span class="legend-item"><span class="synth-pill synth-pill--full">Acquis</span> Compétence
+                        maîtrisée</span>
+                    <span class="legend-item"><span class="synth-pill synth-pill--partial">En cours</span> En cours
+                        d'acquisition</span>
+                    <span class="legend-item"><span class="synth-badge synth-badge--stage1">Stage 1A</span> Stage 1ère
+                        année</span>
+                    <span class="legend-item"><span class="synth-badge synth-badge--stage2">Stage 2A</span> Stage 2ème
+                        année</span>
+                </div>
+
+                <!-- Tableau -->
+                <div class="synthese-wrapper">
+                    <table class="synthese-table">
+                        <thead>
+                            <tr>
+                                <th class="col-competence">Compétence du référentiel</th>
+                                <th class="col-project">Projets associés</th>
+                                <th class="col-stage">Stage</th>
+                                <th class="col-niveau">Niveau</th>
+                                <th class="col-lien">Lien</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            <!-- BLOC B1 -->
+                            <tr class="synthese-bloc-header synthese-bloc-b1">
+                                <td colspan="5"><i class="fas fa-server"></i> <strong>B1</strong> — Support et mise à
+                                    disposition de services informatiques</td>
+                            </tr>
+                            <tr>
+                                <td><i class="fas fa-hdd synth-row-icon"></i> Gérer le patrimoine informatique</td>
+                                <td><span class="synth-badge synth-badge--app">Parc Auto</span></td>
+                                <td><span class="synth-badge synth-badge--stage2">Stage 2A</span></td>
+                                <td><span class="synth-pill synth-pill--full">Acquis</span></td>
+                                <td><a href="#stage" class="synth-link"><i class="fas fa-arrow-right"></i></a></td>
+                            </tr>
+                            <tr>
+                                <td><i class="fas fa-headset synth-row-icon"></i> Répondre aux incidents et aux demandes
+                                    d'assistance</td>
+                                <td><span class="synth-badge synth-badge--app">Parc Auto</span></td>
+                                <td><span class="synth-badge synth-badge--stage1">Stage 1A</span> <span
+                                        class="synth-badge synth-badge--stage2">Stage 2A</span></td>
+                                <td><span class="synth-pill synth-pill--full">Acquis</span></td>
+                                <td><a href="#stage" class="synth-link"><i class="fas fa-arrow-right"></i></a></td>
+                            </tr>
+                            <tr>
+                                <td><i class="fas fa-cloud-upload-alt synth-row-icon"></i> Mettre à disposition des
+                                    utilisateurs un service informatique</td>
+                                <td><span class="synth-badge synth-badge--web">Site Vitrine</span> <span
+                                        class="synth-badge synth-badge--web">E-commerce</span></td>
+                                <td><span class="synth-badge synth-badge--stage1">Stage 1A</span></td>
+                                <td><span class="synth-pill synth-pill--full">Acquis</span></td>
+                                <td><a href="#stage" class="synth-link"><i class="fas fa-arrow-right"></i></a></td>
+                            </tr>
+                            <tr>
+                                <td><i class="fas fa-tasks synth-row-icon"></i> Travailler en mode projet</td>
+                                <td><span class="synth-badge synth-badge--app">Parc Auto</span> <span
+                                        class="synth-badge synth-badge--web">Médiathèque</span></td>
+                                <td><span class="synth-badge synth-badge--stage1">Stage 1A</span> <span
+                                        class="synth-badge synth-badge--stage2">Stage 2A</span></td>
+                                <td><span class="synth-pill synth-pill--full">Acquis</span></td>
+                                <td><a href="#projects" class="synth-link"><i class="fas fa-arrow-right"></i></a></td>
+                            </tr>
+
+                            <!-- BLOC B2 -->
+                            <tr class="synthese-bloc-header synthese-bloc-b2">
+                                <td colspan="5"><i class="fas fa-code"></i> <strong>B2</strong> — Conception et
+                                    développement d'applications</td>
+                            </tr>
+                            <tr>
+                                <td><i class="fas fa-laptop-code synth-row-icon"></i> Concevoir et développer une
+                                    solution applicative</td>
+                                <td><span class="synth-badge synth-badge--app">Parc Auto</span> <span
+                                        class="synth-badge synth-badge--web">E-commerce</span> <span
+                                        class="synth-badge synth-badge--web">Blog Smarty</span> <span
+                                        class="synth-badge synth-badge--game">Allumettes</span></td>
+                                <td><span class="synth-badge synth-badge--stage1">Stage 1A</span> <span
+                                        class="synth-badge synth-badge--stage2">Stage 2A</span></td>
+                                <td><span class="synth-pill synth-pill--full">Acquis</span></td>
+                                <td><a href="#projects" class="synth-link"><i class="fas fa-arrow-right"></i></a></td>
+                            </tr>
+                            <tr>
+                                <td><i class="fas fa-tools synth-row-icon"></i> Assurer la maintenance corrective ou
+                                    évolutive d'une solution applicative</td>
+                                <td><span class="synth-badge synth-badge--app">Parc Auto</span> <span
+                                        class="synth-badge synth-badge--web">Car Rental</span></td>
+                                <td><span class="synth-badge synth-badge--stage2">Stage 2A</span></td>
+                                <td><span class="synth-pill synth-pill--partial">En cours</span></td>
+                                <td><a href="#projects" class="synth-link"><i class="fas fa-arrow-right"></i></a></td>
+                            </tr>
+                            <tr>
+                                <td><i class="fas fa-database synth-row-icon"></i> Gérer les données</td>
+                                <td><span class="synth-badge synth-badge--app">Parc Auto</span> <span
+                                        class="synth-badge synth-badge--web">Médiathèque</span> <span
+                                        class="synth-badge synth-badge--web">Blog Smarty</span></td>
+                                <td><span class="synth-badge synth-badge--stage1">Stage 1A</span> <span
+                                        class="synth-badge synth-badge--stage2">Stage 2A</span></td>
+                                <td><span class="synth-pill synth-pill--full">Acquis</span></td>
+                                <td><a href="#projects" class="synth-link"><i class="fas fa-arrow-right"></i></a></td>
+                            </tr>
+                            <tr>
+                                <td><i class="fas fa-globe synth-row-icon"></i> Développer la présence en ligne de
+                                    l'organisation</td>
+                                <td><span class="synth-badge synth-badge--web">Site Vitrine</span> <span
+                                        class="synth-badge synth-badge--web">E-commerce</span> <span
+                                        class="synth-badge synth-badge--web">Car Rental</span></td>
+                                <td><span class="synth-badge synth-badge--stage1">Stage 1A</span></td>
+                                <td><span class="synth-pill synth-pill--full">Acquis</span></td>
+                                <td><a href="#stage" class="synth-link"><i class="fas fa-arrow-right"></i></a></td>
+                            </tr>
+
+                            <!-- BLOC B3 -->
+                            <tr class="synthese-bloc-header synthese-bloc-b3">
+                                <td colspan="5"><i class="fas fa-shield-alt"></i> <strong>B3</strong> — Cybersécurité
+                                    des services informatiques</td>
+                            </tr>
+                            <tr>
+                                <td><i class="fas fa-lock synth-row-icon"></i> Protéger les données à caractère
+                                    personnel</td>
+                                <td><span class="synth-badge synth-badge--web">E-commerce</span> <span
+                                        class="synth-badge synth-badge--web">Blog Smarty</span></td>
+                                <td><span class="synth-badge synth-badge--stage1">Stage 1A</span> <span
+                                        class="synth-badge synth-badge--stage2">Stage 2A</span></td>
+                                <td><span class="synth-pill synth-pill--partial">En cours</span></td>
+                                <td><a href="#projects" class="synth-link"><i class="fas fa-arrow-right"></i></a></td>
+                            </tr>
+                            <tr>
+                                <td><i class="fas fa-user-shield synth-row-icon"></i> Sécuriser les échanges et les
+                                    données</td>
+                                <td><span class="synth-badge synth-badge--app">Parc Auto</span> <span
+                                        class="synth-badge synth-badge--web">Blog Smarty</span></td>
+                                <td><span class="synth-badge synth-badge--stage1">Stage 1A</span> <span
+                                        class="synth-badge synth-badge--stage2">Stage 2A</span></td>
+                                <td><span class="synth-pill synth-pill--partial">En cours</span></td>
+                                <td><a href="#projects" class="synth-link"><i class="fas fa-arrow-right"></i></a></td>
+                            </tr>
+                            <tr>
+                                <td><i class="fas fa-bug synth-row-icon"></i> Assurer la cybersécurité d'une solution
+                                    applicative</td>
+                                <td><span class="synth-badge synth-badge--web">E-commerce</span> <span
+                                        class="synth-badge synth-badge--app">Filtre Mail</span></td>
+                                <td><span class="synth-badge synth-badge--stage2">Stage 2A</span></td>
+                                <td><span class="synth-pill synth-pill--partial">En cours</span></td>
+                                <td><a href="#projects" class="synth-link"><i class="fas fa-arrow-right"></i></a></td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="synthese-note">
+                    <i class="fas fa-info-circle"></i>
+                    Tableau conforme au référentiel BTS SIO option SLAM — réalisé dans le cadre de l'épreuve E5
+                    (2024-2026).
                 </div>
             </section>
 
@@ -677,52 +1883,89 @@
                 <div class="hero">
                     <div class="glow-blob"></div>
                     <div class="hero-label">Veille Technologique · BTS SIO SLAM</div>
-                    <h1>Frameworks<br/><span>Modernes</span></h1>
+                    <h1>Frameworks Web<br /><span>Modernes</span></h1>
                     <p class="hero-sub">
-                        Une exploration des outils qui définissent le développement web d'aujourd'hui —
-                        de React à Next.js, en passant par Node.js et l'écosystème JavaScript full-stack.
+                        Analyse de l'écosystème JavaScript moderne — React, Vue, Node.js, Next.js et TypeScript. Des
+                        outils qui structurent le marché du travail aujourd'hui.
                     </p>
                 </div>
 
                 <!-- TEXTE DE PRÉSENTATION -->
                 <section>
-                    <p class="section-title">Présentation</p>
+                    <p class="section-title">Contexte</p>
                     <div class="text-block">
-                        <h2>Pourquoi s'intéresser aux frameworks modernes ?</h2>
+                        <h2>Pourquoi surveiller les frameworks modernes ?</h2>
                         <p>
-                            Le développement web est l'un des secteurs informatiques les plus dynamiques qui soit. En l'espace de quelques années,
-                            la manière de concevoir, de construire et de déployer des applications a radicalement évolué. Au cœur de cette transformation,
-                            on trouve les <strong>frameworks modernes</strong> — ces boîtes à outils qui permettent aux développeurs de créer des applications
-                            performantes, maintenables et scalables.
+                            Le développement web évolue à une vitesse sans précédent. Les <strong>frameworks JavaScript
+                                modernes</strong> — React, Vue, Node.js, Next.js — structurent désormais la
+                            quasi-totalité des projets professionnels. En tant que futur développeur SLAM, maîtriser ces
+                            outils et comprendre leurs forces, faiblesses et contextes d'usage est <strong>essentiel
+                                pour le marché du travail</strong>.
                         </p>
                         <p>
-                            En tant que futur développeur SLAM, comprendre et maîtriser ces outils n'est pas optionnel : c'est le socle du métier.
-                            Le marché ne recherche plus simplement quelqu'un qui "sait coder", mais quelqu'un capable de <strong>choisir le bon outil
-                            selon le contexte</strong>, de comprendre l'écosystème dans sa globalité, et de monter en compétence rapidement sur
-                            de nouvelles technologies.
+                            Ma veille couvre trois grandes familles : les <strong>frameworks front-end</strong> (React,
+                            Vue), les <strong>solutions back-end JS</strong> (Node.js, Express) et les
+                            <strong>méta-frameworks full-stack</strong> (Next.js, Nuxt.js), complétés par l'analyse de
+                            TypeScript devenu incontournable en entreprise.
                         </p>
-                        <p>
-                            Cette veille m'a permis d'identifier trois grandes familles d'outils qui structurent aujourd'hui le développement web :
-                            les <strong>frameworks front-end</strong> (React, Vue, Angular), les <strong>solutions back-end JavaScript</strong> (Node.js, Express)
-                            et les <strong>méta-frameworks</strong> qui unifient les deux mondes (Next.js, Nuxt.js). Ensemble, ils forment une stack
-                            cohérente et très demandée sur le marché du travail.
+                        <p style="margin-top:24px;">
+                            <a href="veille.html" class="veille-cta-btn">
+                                <i class="fas fa-book-open"></i>
+                                Lire la veille complète
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
                         </p>
                     </div>
                 </section>
 
-                <!-- CARDS TECHNOLOGIES -->
+                <!-- RSS TICKER -->
+                <div class="rss-ticker-wrapper" id="rss-ticker-wrapper">
+                    <div class="rss-ticker-header">
+                        <div class="rss-ticker-label">
+                            <span class="rss-live-dot"></span>
+                            Dernières actualités
+                        </div>
+                        <div class="rss-ticker-meta">
+                            <i class="fas fa-rss"></i>
+                            Flux Google Alerts — Frameworks Modernes
+                        </div>
+                    </div>
+                    <div class="rss-ticker-track" id="rss-track">
+                        <div class="rss-ticker-badge">
+                            <i class="fas fa-bolt"></i> ACTU
+                        </div>
+                        <div class="rss-loading" id="rss-loading">
+                            <div class="rss-spinner"></div>
+                            Chargement des actualités…
+                        </div>
+                        <div class="rss-ticker-inner" id="rss-inner" style="display:none;"></div>
+                    </div>
+                </div>
+
+                <!-- CARDS TECHNOLOGIES ENRICHIES -->
                 <section>
                     <p class="section-title">Technologies explorées</p>
                     <div class="cards-grid">
 
                         <div class="card">
                             <span class="card-tag tag-react">Front-end</span>
-                            <h3>React, Vue & Angular</h3>
+                            <h3>React & Vue.js</h3>
                             <p>
-                                Trois philosophies, un même objectif : créer des interfaces réactives et maintenables.
-                                React domine le marché avec 40 % des offres d'emploi front-end en France.
-                                Vue séduit par sa courbe d'apprentissage douce, Angular par sa rigueur d'entreprise.
+                                Deux philosophies pour créer des interfaces réactives. React domine avec <strong>40 %
+                                    des offres front-end</strong> en France. Vue séduit par sa courbe d'apprentissage
+                                douce et sa flexibilité pour les petites équipes.
                             </p>
+                            <div class="veille-meter">
+                                <div class="veille-meter-header">
+                                    <span>Adoption marché 2024</span>
+                                    <span class="veille-meter-pct" style="color:#61dafb;">83%</span>
+                                </div>
+                                <div class="veille-meter-track">
+                                    <div class="veille-meter-fill"
+                                        style="background:linear-gradient(90deg,#61dafb,#3b9dbf);" data-width="83">
+                                    </div>
+                                </div>
+                            </div>
                             <div class="card-footer">
                                 <span class="pill">Composants</span>
                                 <span class="pill">SPA</span>
@@ -735,10 +1978,21 @@
                             <span class="card-tag tag-node">Back-end</span>
                             <h3>Node.js & Express</h3>
                             <p>
-                                JavaScript conquiert le back-end. Node.js, grâce à son architecture non bloquante,
-                                excelle dans les applications temps réel. Express structure et simplifie la création
-                                d'API REST, pilier de toute architecture moderne.
+                                JavaScript côté serveur. Node.js avec son architecture <strong>non-bloquante</strong>
+                                excelle dans les APIs et apps temps réel. Express structure la création d'API REST,
+                                pilier de toute architecture web moderne.
                             </p>
+                            <div class="veille-meter">
+                                <div class="veille-meter-header">
+                                    <span>Utilisation globale 2024</span>
+                                    <span class="veille-meter-pct" style="color:#68a063;">61%</span>
+                                </div>
+                                <div class="veille-meter-track">
+                                    <div class="veille-meter-fill"
+                                        style="background:linear-gradient(90deg,#68a063,#3c7a39);" data-width="61">
+                                    </div>
+                                </div>
+                            </div>
                             <div class="card-footer">
                                 <span class="pill">API REST</span>
                                 <span class="pill">Event-driven</span>
@@ -748,21 +2002,42 @@
                         </div>
 
                         <div class="card">
-                            <span class="card-tag tag-next">Méta-frameworks</span>
-                            <h3>Next.js & Nuxt.js</h3>
+                            <span class="card-tag tag-next">Méta-framework</span>
+                            <h3>Next.js & TypeScript</h3>
                             <p>
-                                L'état de l'art du web moderne. Ces méta-frameworks introduisent le SSR, la génération
-                                statique et le rendu hybride — combinant performance, SEO optimal et expérience développeur
-                                exceptionnelle. Utilisés par TikTok, Twitch, et des milliers de startups.
+                                L'état de l'art du web : SSR, SSG, rendu hybride et React Server Components. TypeScript
+                                s'impose comme standard — <strong>78 % des projets</strong> professionnels l'adoptent en
+                                2024. Utilisés par TikTok, Twitch, Notion.
                             </p>
+                            <div class="veille-meter">
+                                <div class="veille-meter-header">
+                                    <span>Satisfaction développeurs 2024</span>
+                                    <span class="veille-meter-pct" style="color:var(--accent-color);">74%</span>
+                                </div>
+                                <div class="veille-meter-track">
+                                    <div class="veille-meter-fill"
+                                        style="background:linear-gradient(90deg,var(--accent-color),#38bdf8);"
+                                        data-width="74"></div>
+                                </div>
+                            </div>
                             <div class="card-footer">
                                 <span class="pill">SSR</span>
                                 <span class="pill">SSG</span>
                                 <span class="pill">SEO</span>
-                                <span class="pill">Rendu hybride</span>
+                                <span class="pill">RSC</span>
+                                <span class="pill">TypeScript</span>
                             </div>
                         </div>
 
+                    </div>
+
+                    <!-- CTA page complète -->
+                    <div style="text-align:center;margin-top:40px;">
+                        <a href="veille.html" class="veille-cta-btn">
+                            <i class="fas fa-external-link-alt"></i>
+                            Voir le tableau comparatif, la chronologie et la synthèse complète
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
                     </div>
                 </section>
 
@@ -858,38 +2133,464 @@
                         card.style.animationDelay = `${i * 0.12}s`;
                         observer.observe(card);
                     });
+
+                    // Barres de progression veille
+                    const meterObs = new IntersectionObserver((entries) => {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting) {
+                                const fill = entry.target;
+                                fill.style.width = fill.dataset.width + '%';
+                                meterObs.unobserve(fill);
+                            }
+                        });
+                    }, { threshold: 0.4 });
+
+                    document.querySelectorAll('.veille-meter-fill').forEach(el => meterObs.observe(el));
                 </script>
             </section>
 
+            <!-- Section Apprentissage -->
+            <section id="learning" class="section reveal-section">
+                <h2>En cours d'apprentissage</h2>
+                <p class="learning-intro">Ma veille technologique active — les outils et frameworks que j'explore
+                    actuellement pour élargir mes compétences.</p>
+                <div class="learning-grid">
+
+                    <div class="learning-card reveal-item">
+                        <div class="learning-badge learning-badge--inprogress">En cours</div>
+                        <div class="learning-icon" style="color:#61dafb;"><i class="fab fa-react"></i></div>
+                        <h3>React.js / Next.js</h3>
+                        <p>Développement de composants, hooks, Server Components et routing App Router de Next.js 14+.
+                        </p>
+                        <div class="learning-bar-track">
+                            <div class="learning-bar-fill" data-width="55"></div>
+                        </div>
+                        <span class="learning-pct">55% acquis</span>
+                    </div>
+
+                    <div class="learning-card reveal-item">
+                        <div class="learning-badge learning-badge--explore">Exploration</div>
+                        <div class="learning-icon" style="color:#3178c6;"><i class="fas fa-code"></i></div>
+                        <h3>TypeScript</h3>
+                        <p>Typage statique, interfaces, génériques et intégration dans des projets JavaScript existants.
+                        </p>
+                        <div class="learning-bar-track">
+                            <div class="learning-bar-fill" data-width="45"></div>
+                        </div>
+                        <span class="learning-pct">45% acquis</span>
+                    </div>
+
+                    <div class="learning-card reveal-item">
+                        <div class="learning-badge learning-badge--beginner">Débutant</div>
+                        <div class="learning-icon" style="color:#2496ed;"><i class="fab fa-docker"></i></div>
+                        <h3>Docker</h3>
+                        <p>Conteneurisation d'applications, création d'images et configuration de conteneurs de
+                            développement.</p>
+                        <div class="learning-bar-track">
+                            <div class="learning-bar-fill" data-width="30"></div>
+                        </div>
+                        <span class="learning-pct">30% acquis</span>
+                    </div>
+
+                    <div class="learning-card reveal-item">
+                        <div class="learning-badge learning-badge--inprogress">En cours</div>
+                        <div class="learning-icon" style="color:#ff2d20;"><i class="fab fa-laravel"></i></div>
+                        <h3>Laravel</h3>
+                        <p>Framework PHP moderne : routing, Eloquent ORM, Blade templates et création d'API REST
+                            robustes.</p>
+                        <div class="learning-bar-track">
+                            <div class="learning-bar-fill" data-width="40"></div>
+                        </div>
+                        <span class="learning-pct">40% acquis</span>
+                    </div>
+
+                </div>
+            </section>
+
             <!-- Section Contact -->
-            <section id="contact" class="section">
+            <section id="contact" class="section reveal-section">
                 <h2>Contact</h2>
+                <p class="contact-intro">Une question, une opportunité de collaboration, ou tout simplement envie
+                    d'échanger ? N'hésitez pas à me contacter !</p>
                 <div class="contact-container">
-                    <div class="contact-info">
+                    <div class="contact-info reveal-item">
                         <h3>Mes coordonnées</h3>
-                        <p><i class="fas fa-envelope"></i> ibnc75@gmail.com</p>
-                        <p><i class="fas fa-phone"></i> +33 6 12 34 56 78</p>
-                        <p><i class="fas fa-map-marker-alt"></i> Paris, France</p>
+                        <a href="mailto:ibnc75@gmail.com" class="contact-info-item">
+                            <span class="contact-info-icon"><i class="fas fa-envelope"></i></span>
+                            <span>ibnc75@gmail.com</span>
+                        </a>
+                        <div class="contact-info-item">
+                            <span class="contact-info-icon"><i class="fas fa-map-marker-alt"></i></span>
+                            <span>Paris Île-de-France, France</span>
+                        </div>
+                        <div class="contact-info-item">
+                            <span class="contact-info-icon"><i class="fas fa-graduation-cap"></i></span>
+                            <span>BTS SIO SLAM — INSTA Paris</span>
+                        </div>
+                        <div class="contact-info-item">
+                            <span class="contact-info-icon"><i class="fas fa-circle"
+                                    style="color:#22c55e;font-size:0.6rem;"></i></span>
+                            <span>Disponible pour alternance / stage</span>
+                        </div>
                         <div class="contact-social">
-                            <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
-                            <a href="https://linkedin.com/in/ismael-b" target="_blank"><i class="fab fa-linkedin"></i></a>
+                            <a href="https://github.com/ismael-93" target="_blank" title="GitHub"><i
+                                    class="fab fa-github"></i></a>
+                            <a href="https://linkedin.com/in/ismael-b" target="_blank" title="LinkedIn"><i
+                                    class="fab fa-linkedin"></i></a>
+                            <a href="mailto:ibnc75@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+                            <a href="assets/img/candidature bts.pdf" target="_blank" title="CV"><i
+                                    class="fas fa-file-pdf"></i></a>
                         </div>
                     </div>
-                    <form class="contact-form" action="https://formsubmit.co/ibnc75@gmail.com" method="POST">
-                        <input type="text" name="name" placeholder="Nom" required>
-                        <input type="email" name="email" placeholder="Email" required>
-                        <textarea name="message" placeholder="Message" required></textarea>
+                    <form class="contact-form reveal-item" id="contactFormMain"
+                        action="https://formsubmit.co/ibnc75@gmail.com" method="POST">
+                        <div class="form-group">
+                            <label for="contact-name">Votre nom</label>
+                            <input type="text" id="contact-name" name="name" placeholder="Ismael Ben Chikh" required
+                                autocomplete="name">
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-email">Votre email</label>
+                            <input type="email" id="contact-email" name="email" placeholder="exemple@email.com" required
+                                autocomplete="email">
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-subject">Sujet</label>
+                            <input type="text" id="contact-subject" name="subject"
+                                placeholder="Demande de stage / Alternance / Collaboration">
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-message">Message</label>
+                            <textarea id="contact-message" name="message" rows="5"
+                                placeholder="Bonjour Ismael, je souhaite..." required></textarea>
+                        </div>
                         <input type="hidden" name="_captcha" value="false">
-                        <input type="hidden" name="_next" value="http://127.0.0.1/PortfolioV2/merci.html">
-                        <button type="submit">Envoyer</button>
+                        <input type="hidden" name="_next" value="http://localhost/PortfolioV3/merci.html">
+                        <button type="submit" class="contact-submit-btn" id="contact-submit">
+                            <span class="btn-text"><i class="fas fa-paper-plane"></i> Envoyer le message</span>
+                            <span class="btn-loading" style="display:none"><i class="fas fa-spinner fa-spin"></i>
+                                Envoi...</span>
+                        </button>
                     </form>
                 </div>
             </section>
         </main>
     </div>
 
+    <!-- Toast notification -->
+    <div class="toast" id="toast">
+        <span class="toast-icon"><i class="fas fa-check-circle"></i></span>
+        <span class="toast-msg">Message envoyé avec succès !</span>
+    </div>
+
     <div class="sidebar-overlay"></div>
 
+    <!-- RSS TICKER SCRIPT -->
+    <script>
+        // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+        // 🔧 CONFIGURATION — Flux RSS tech publics
+        // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+        const RSS_FEEDS = [
+            "https://news.ycombinator.com/rss",
+            "https://www.smashingmagazine.com/feed",
+            "https://css-tricks.com/feed",
+        ];
+
+        const RSS_API = "https://api.rss2json.com/v1/api.json?rss_url=";
+        const MAX_ITEMS = 8;
+        let rssPaused = false;
+
+        // Contenu de démonstration si les flux ne chargent pas
+        const DEMO_ITEMS = [
+            { title: "React 19 apporte de nouvelles fonctionnalités pour améliorer les performances", link: "https://react.dev/blog", source: "Tech News" },
+            { title: "Next.js 15 : Le framework qui révolutionne le développement web moderne", link: "https://nextjs.org/blog", source: "Dev.to" },
+            { title: "Node.js continue sa progression avec de nouvelles API prometteuses", link: "https://nodejs.org/en/blog", source: "JavaScript Weekly" },
+            { title: "Vue.js 3.5 introduit de meilleures performances et une DX améliorée", link: "https://vuejs.org/", source: "Vue News" },
+            { title: "Les méta-frameworks dominent le paysage du développement web en 2026", link: "https://stateofjs.com", source: "State of JS" },
+            { title: "TypeScript devient incontournable dans l'écosystème JavaScript", link: "https://www.typescriptlang.org/", source: "Stack Overflow" },
+            { title: "Vite et les build tools modernes accélèrent drastiquement le développement", link: "https://vitejs.dev/", source: "Frontend Focus" },
+            { title: "React Server Components : L'avenir du rendu côté serveur", link: "https://react.dev/blog", source: "React Blog" },
+        ];
+
+        // ─── Chargement des flux ───────────────────────────
+        async function rssLoad() {
+            const inner = document.getElementById("rss-inner");
+            const loading = document.getElementById("rss-loading");
+            const track = document.getElementById("rss-track");
+
+            loading.style.display = "flex";
+            inner.style.display = "none";
+            inner.innerHTML = "";
+
+            let allItems = [];
+
+            try {
+                // On charge tous les flux en parallèle avec un timeout
+                const fetchPromises = RSS_FEEDS.map(url =>
+                    Promise.race([
+                        fetch(RSS_API + encodeURIComponent(url) + "&count=" + MAX_ITEMS)
+                            .then(r => r.json()),
+                        new Promise((_, reject) => setTimeout(() => reject(new Error('Timeout')), 5000))
+                    ])
+                );
+
+                const results = await Promise.allSettled(fetchPromises);
+
+                results.forEach((res) => {
+                    if (res.status === "fulfilled" && res.value.status === "ok") {
+                        const feedName = res.value.feed?.title
+                            ?.replace(/google alerts.*/i, "Google Alerts")
+                            ?.substring(0, 20) || "Actu";
+                        res.value.items.slice(0, MAX_ITEMS).forEach(item => {
+                            allItems.push({
+                                title: item.title.replace(/<[^>]*>/g, "").trim(),
+                                link: item.link,
+                                source: feedName,
+                            });
+                        });
+                    }
+                });
+            } catch (error) {
+                console.log("Erreur lors du chargement des flux RSS:", error);
+            }
+
+            // Si aucun article, utilise le contenu de démo
+            if (allItems.length === 0) {
+                console.log("Utilisation du contenu de démonstration");
+                allItems = DEMO_ITEMS;
+            }
+
+            // Mélange pour varier l'ordre
+            allItems = allItems.sort(() => Math.random() - 0.5);
+
+            // Construit les items (doublés pour le défilement continu)
+            const buildItems = (items) => items.map(item => `
+        <a class="rss-ticker-item" href="${item.link}" target="_blank" rel="noopener" title="${item.title}">
+          <span class="rss-ticker-source">${item.source}</span>
+          <span class="rss-ticker-title">${item.title}</span>
+        </a>
+        <span class="rss-ticker-dot"></span>
+      `).join("");
+
+            // Double le contenu pour le défilement infini
+            inner.innerHTML = buildItems(allItems) + buildItems(allItems);
+
+            loading.style.display = "none";
+            inner.style.display = "flex";
+        }
+
+        // ─── Pause / Play au survol ─────────────────────────────────
+        document.addEventListener('DOMContentLoaded', function () {
+            const inner = document.getElementById("rss-inner");
+            if (inner) {
+                inner.addEventListener('mouseenter', function () {
+                    this.style.animationPlayState = 'paused';
+                });
+                inner.addEventListener('mouseleave', function () {
+                    if (!rssPaused) {
+                        this.style.animationPlayState = 'running';
+                    }
+                });
+            }
+
+            // Charge les flux au démarrage
+            rssLoad();
+        });
+
+        // ─── Auto-refresh toutes les 30 min ──────────────
+        setInterval(rssLoad, 30 * 60 * 1000);
+    </script>
+
     <script src="assets/js/script.js"></script>
+    <script src="assets/js/enhancements.js"></script>
+
+    <!-- ═══════════════════════════════════════
+         MODALES PROJETS APPLICATION
+    ═══════════════════════════════════════ -->
+
+    <!-- Modale : Parc Auto -->
+    <div class="project-modal-overlay" id="modal-parc-auto" role="dialog" aria-modal="true"
+        aria-label="Présentation Parc Auto">
+        <div class="project-modal">
+            <button class="project-modal-close" onclick="closeProjectModal('parc-auto')" aria-label="Fermer"><i
+                    class="fas fa-times"></i></button>
+            <div class="project-modal-header">
+                <div class="project-modal-icon"><i class="fas fa-car"></i></div>
+                <div>
+                    <h2 class="project-modal-title">Parc Auto</h2>
+                    <span class="project-modal-badge">Application Desktop</span>
+                </div>
+            </div>
+            <div class="project-modal-video-wrap">
+                <video id="video-parc-auto" class="project-modal-video" controls preload="metadata" poster="">
+                    <source src="assets/videos/parc-auto.mp4" type="video/mp4">
+                    Votre navigateur ne supporte pas la lecture vidéo.
+                </video>
+                <div class="project-modal-video-placeholder" id="placeholder-parc-auto">
+                    <i class="fas fa-film"></i>
+                    <span>Vidéo de démonstration</span>
+                    <small>Fichier attendu : <code>assets/videos/parc-auto.mp4</code></small>
+                </div>
+            </div>
+            <div class="project-modal-body">
+                <p class="project-modal-desc">Application desktop de gestion de flotte automobile développée en
+                    <strong>C# WPF</strong> avec architecture MVVM. Fonctionnalités : authentification multi-rôles,
+                    gestion des véhicules et utilisateurs, suivi kilométrique, statistiques et export PDF.
+                </p>
+                <div class="project-modal-tech">
+                    <span class="p-tech">C#</span>
+                    <span class="p-tech">WPF</span>
+                    <span class="p-tech">MySQL</span>
+                    <span class="p-tech">.NET 8</span>
+                    <span class="p-tech">MVVM</span>
+                    <span class="p-tech">iTextSharp</span>
+                </div>
+                <div class="project-modal-features">
+                    <div class="modal-feature"><i class="fas fa-check-circle"></i> Authentification multi-rôles (Admin /
+                        Utilisateur)</div>
+                    <div class="modal-feature"><i class="fas fa-check-circle"></i> Gestion complète de la flotte de
+                        véhicules</div>
+                    <div class="modal-feature"><i class="fas fa-check-circle"></i> Suivi kilométrique et historique des
+                        locations</div>
+                    <div class="modal-feature"><i class="fas fa-check-circle"></i> Tableau de bord avec statistiques
+                    </div>
+                    <div class="modal-feature"><i class="fas fa-check-circle"></i> Export de rapports en PDF</div>
+                </div>
+                <a href="https://github.com/ismael-93" target="_blank" class="project-modal-github"><i
+                        class="fab fa-github"></i> Voir le code source</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modale : Jeu des Allumettes -->
+    <div class="project-modal-overlay" id="modal-jeu-allumettes" role="dialog" aria-modal="true"
+        aria-label="Présentation Jeu des Allumettes">
+        <div class="project-modal">
+            <button class="project-modal-close" onclick="closeProjectModal('jeu-allumettes')" aria-label="Fermer"><i
+                    class="fas fa-times"></i></button>
+            <div class="project-modal-header">
+                <div class="project-modal-icon" style="background:linear-gradient(135deg,#f97316,#ef4444)"><i
+                        class="fas fa-fire"></i></div>
+                <div>
+                    <h2 class="project-modal-title">Jeu des Allumettes</h2>
+                    <span class="project-modal-badge">Application Python</span>
+                </div>
+            </div>
+            <div class="project-modal-video-wrap">
+                <video id="video-jeu-allumettes" class="project-modal-video" controls preload="metadata">
+                    <source src="assets/videos/jeu-allumettes.mp4" type="video/mp4">
+                    Votre navigateur ne supporte pas la lecture vidéo.
+                </video>
+                <div class="project-modal-video-placeholder" id="placeholder-jeu-allumettes">
+                    <i class="fas fa-film"></i>
+                    <span>Vidéo de démonstration</span>
+                    <small>Fichier attendu : <code>assets/videos/jeu-allumettes.mp4</code></small>
+                </div>
+            </div>
+            <div class="project-modal-body">
+                <p class="project-modal-desc">Jeu de stratégie des allumettes développé en <strong>Python</strong>. Le
+                    joueur affronte une IA qui utilise la stratégie de Nim pour toujours gagner en mode difficile.
+                    Interface en ligne de commande avec gestion des tours et niveaux de difficulté.</p>
+                <div class="project-modal-tech">
+                    <span class="p-tech">Python</span>
+                    <span class="p-tech">Algorithmique</span>
+                    <span class="p-tech">IA basique</span>
+                    <span class="p-tech">Stratégie Nim</span>
+                </div>
+                <div class="project-modal-features">
+                    <div class="modal-feature"><i class="fas fa-check-circle"></i> Logique de jeu complète (tours,
+                        règles)</div>
+                    <div class="modal-feature"><i class="fas fa-check-circle"></i> IA adverse avec stratégie de Nim
+                    </div>
+                    <div class="modal-feature"><i class="fas fa-check-circle"></i> Mode facile / difficile</div>
+                    <div class="modal-feature"><i class="fas fa-check-circle"></i> Interface CLI interactive</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // ─── Gestion des modales projets ─────────────────────────────
+        function openProjectModal(id) {
+            const overlay = document.getElementById('modal-' + id);
+            if (!overlay) return;
+            overlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+
+            const video = overlay.querySelector('video');
+            const placeholder = overlay.querySelector('.project-modal-video-placeholder');
+            if (!video || !placeholder) return;
+
+            function showVideo() {
+                placeholder.style.display = 'none';
+                video.style.display = 'block';
+            }
+            function showPlaceholder() {
+                placeholder.style.display = 'flex';
+                video.style.display = 'none';
+            }
+
+            // Cas 1 : la vidéo a déjà eu une erreur (preload l'a détectée avant l'ouverture)
+            if (video.error) {
+                showPlaceholder();
+                return;
+            }
+
+            // Cas 2 : aucune source définie
+            if (video.networkState === HTMLMediaElement.NETWORK_NO_SOURCE) {
+                showPlaceholder();
+                return;
+            }
+
+            // Cas 3 : les métadonnées sont déjà chargées → vidéo lisible
+            if (video.readyState >= HTMLMediaElement.HAVE_METADATA) {
+                showVideo();
+                return;
+            }
+
+            // Cas 4 : chargement en cours → on attend les événements
+            showPlaceholder(); // état par défaut pendant le chargement
+            video.addEventListener('loadedmetadata', function () {
+                showVideo();
+            }, { once: true });
+            video.addEventListener('error', function () {
+                showPlaceholder();
+            }, { once: true });
+        }
+
+        function closeProjectModal(id) {
+            const overlay = document.getElementById('modal-' + id);
+            if (!overlay) return;
+            overlay.classList.remove('active');
+            document.body.style.overflow = '';
+            // Pause la vidéo
+            const video = overlay.querySelector('video');
+            if (video) {
+                video.pause();
+                video.currentTime = 0;
+            }
+        }
+
+        // Fermeture en cliquant sur le fond
+        document.querySelectorAll('.project-modal-overlay').forEach(function (overlay) {
+            overlay.addEventListener('click', function (e) {
+                if (e.target === overlay) {
+                    const id = overlay.id.replace('modal-', '');
+                    closeProjectModal(id);
+                }
+            });
+        });
+
+        // Fermeture avec Echap
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') {
+                document.querySelectorAll('.project-modal-overlay.active').forEach(function (overlay) {
+                    const id = overlay.id.replace('modal-', '');
+                    closeProjectModal(id);
+                });
+            }
+        });
+    </script>
 </body>
+
 </html>

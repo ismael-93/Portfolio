@@ -1,3 +1,6 @@
+// Wait for DOM to be fully loaded
+document.addEventListener('DOMContentLoaded', function() {
+    
 // Sidebar toggle functionality
 const sidebarToggle = document.querySelector('.sidebar-toggle');
 const sidebar = document.querySelector('.sidebar');
@@ -13,8 +16,12 @@ function closeMenu() {
     sidebarOverlay.classList.remove('active');
 }
 
-sidebarToggle.addEventListener('click', openMenu);
-sidebarOverlay.addEventListener('click', closeMenu);
+if (sidebarToggle) {
+    sidebarToggle.addEventListener('click', openMenu);
+}
+if (sidebarOverlay) {
+    sidebarOverlay.addEventListener('click', closeMenu);
+}
 
 // Close menu when clicking a nav link
 document.querySelectorAll('.sidebar nav a').forEach(link => {
@@ -30,31 +37,41 @@ window.addEventListener('resize', () => {
 const themeToggle = document.getElementById('theme-toggle');
 const body = document.body;
 
-function applyTheme(isDark) {
-    if (isDark) {
-        body.classList.remove('light-theme');
-    } else {
+if (themeToggle) {
+    // Check URL parameter for theme
+    const urlParams = new URLSearchParams(window.location.search);
+    const urlTheme = urlParams.get('theme');
+    
+    // Restore theme from URL or localStorage
+    const savedTheme = urlTheme || localStorage.getItem('theme');
+    
+    if (savedTheme === 'light') {
         body.classList.add('light-theme');
+        themeToggle.checked = true;
+        localStorage.setItem('theme', 'light');
+    } else if (savedTheme === 'dark') {
+        body.classList.remove('light-theme');
+        themeToggle.checked = false;
+        localStorage.setItem('theme', 'dark');
     }
-    themeToggle.checked = !isDark;
+
+    // Add theme toggle handler
+    themeToggle.addEventListener('change', () => {
+        if (themeToggle.checked) {
+            // Switch to light theme
+            body.classList.add('light-theme');
+            localStorage.setItem('theme', 'light');
+            console.log('Switched to light theme');
+        } else {
+            // Switch to dark theme
+            body.classList.remove('light-theme');
+            localStorage.setItem('theme', 'dark');
+            console.log('Switched to dark theme');
+        }
+    });
+} else {
+    console.error('Theme toggle button not found!');
 }
-
-// Restore theme from localStorage
-try {
-    const saved = localStorage.getItem('dark-theme');
-    if (saved !== null) {
-        applyTheme(saved === '1');
-    }
-} catch (e) { }
-
-// Add theme toggle handler
-themeToggle.addEventListener('change', () => {
-    const isDark = !body.classList.contains('light-theme');
-    applyTheme(isDark);
-    try {
-        localStorage.setItem('dark-theme', isDark ? '1' : '0');
-    } catch (e) { }
-});
 
 // Active link on scroll
 const sections = document.querySelectorAll('section[id]');
@@ -83,7 +100,10 @@ window.addEventListener('scroll', scrollActive);
 scrollActive();
 
 // Update current year
-document.getElementById('current-year').textContent = new Date().getFullYear();
+const currentYearEl = document.getElementById('current-year');
+if (currentYearEl) {
+    currentYearEl.textContent = new Date().getFullYear();
+}
 
 // Project filtering
 const filterButtons = document.querySelectorAll('.filter-btn');
@@ -122,22 +142,9 @@ if (contactForm) {
     });
 }
 
-// Typing effect for homepage name animation
-document.addEventListener('DOMContentLoaded', function() {
-    const typedTextEl = document.querySelector('.typed-text');
-    if (!typedTextEl) return;
-    
-    const name = 'Ismael Ben Chikh';
-    let charIndex = 0;
-    
-    function typeChar() {
-        if (charIndex < name.length) {
-            typedTextEl.textContent += name.charAt(charIndex);
-            charIndex++;
-            setTimeout(typeChar, 100);
-        }
-    }
-    
-    // Start typing immediately 
-    typeChar();
+// Typing effect — géré par enhancements.js (multi-phrases rotatives)
+// L'ancien effet simple a été désactivé pour éviter les conflits.
+
+
+// End of DOMContentLoaded
 });
