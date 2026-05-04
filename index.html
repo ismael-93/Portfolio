@@ -27,6 +27,7 @@
         href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=Inter:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/mobile.css">
     <link rel="alternate" type="application/rss+xml" title="Ismael Ben Chikh - Portfolio RSS Feed" href="rss.xml">
 
     <style>
@@ -740,6 +741,195 @@
             }
         }
     </style>
+
+    <style>
+        /* ═══════════════════════════════════════
+           GALERIE IMAGES MODALE PROJET
+        ═══════════════════════════════════════ */
+        .modal-media-tabs {
+            display: flex;
+            margin: 16px 28px 0;
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .modal-media-tab {
+            flex: 1;
+            padding: 9px 0;
+            background: rgba(255, 255, 255, 0.02);
+            color: var(--text-muted);
+            border: none;
+            border-right: 1px solid var(--border-color);
+            cursor: pointer;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.82rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            transition: all 0.2s;
+        }
+
+        .modal-media-tab:last-child {
+            border-right: none;
+        }
+
+        .modal-media-tab.active {
+            background: rgba(var(--accent-color-rgb), 0.1);
+            color: var(--accent-color);
+        }
+
+        .modal-media-panel {
+            display: none;
+        }
+
+        .modal-media-panel.active {
+            display: block;
+        }
+
+        /* Galerie */
+        .modal-gallery-wrap {
+            margin: 12px 28px 0;
+            border-radius: 12px;
+            overflow: hidden;
+            background: #0a0a0f;
+            aspect-ratio: 16/9;
+            position: relative;
+        }
+
+        .modal-gallery-img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+        }
+
+        .modal-gallery-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.55);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #fff;
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            transition: background 0.2s;
+            z-index: 2;
+        }
+
+        .modal-gallery-nav:hover {
+            background: rgba(var(--accent-color-rgb), 0.6);
+        }
+
+        .modal-gallery-nav.prev {
+            left: 10px;
+        }
+
+        .modal-gallery-nav.next {
+            right: 10px;
+        }
+
+        .modal-gallery-dots {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 6px;
+            z-index: 2;
+        }
+
+        .modal-gallery-dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            cursor: pointer;
+            transition: background 0.2s, transform 0.2s;
+        }
+
+        .modal-gallery-dot.active {
+            background: var(--accent-color);
+            transform: scale(1.3);
+        }
+
+        .modal-gallery-counter {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(0, 0, 0, 0.55);
+            color: rgba(255, 255, 255, 0.75);
+            font-size: 11px;
+            padding: 3px 8px;
+            border-radius: 100px;
+            z-index: 2;
+            font-family: 'DM Sans', sans-serif;
+        }
+
+        .modal-gallery-placeholder {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: rgba(var(--accent-color-rgb), 0.04);
+            border: 2px dashed rgba(var(--accent-color-rgb), 0.2);
+            border-radius: 12px;
+        }
+
+        .modal-gallery-placeholder i {
+            font-size: 38px;
+            color: rgba(var(--accent-color-rgb), 0.35);
+        }
+
+        .modal-gallery-placeholder span {
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--text-color);
+        }
+
+        .modal-gallery-placeholder small {
+            font-size: 0.73rem;
+            color: var(--text-muted);
+        }
+
+        .modal-gallery-placeholder code {
+            background: rgba(255, 255, 255, 0.06);
+            padding: 2px 8px;
+            border-radius: 6px;
+            font-family: monospace;
+            font-size: 0.76rem;
+            color: var(--accent-color);
+        }
+
+        .project-modal-video-wrap--tab {
+            margin: 12px 28px 0;
+        }
+
+        @media (max-width: 600px) {
+            .modal-media-tabs {
+                margin: 12px 20px 0;
+            }
+
+            .modal-gallery-wrap {
+                margin: 10px 20px 0;
+            }
+
+            .project-modal-video-wrap--tab {
+                margin: 10px 20px 0;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -860,7 +1050,7 @@
                     <!-- Stats animées -->
                     <div class="hero-stats animate-fadeInUp">
                         <div class="hero-stat">
-                            <span class="hero-stat-number" data-target="9">0</span>
+                            <span class="hero-stat-number" data-target="10">0</span>
                             <span class="hero-stat-label">Projets réalisés</span>
                         </div>
                         <div class="hero-stat">
@@ -1062,7 +1252,7 @@
                                 <span class="bts-option-stat-lbl">Stages en entreprise</span>
                             </div>
                             <div class="bts-option-stat">
-                                <span class="bts-option-stat-num">E4</span>
+                                <span class="bts-option-stat-num">E5</span>
                                 <span class="bts-option-stat-lbl">Épreuve professionnelle</span>
                             </div>
                         </div>
@@ -1355,8 +1545,8 @@
                         </div>
                         <div class="project-footer">
                             <span class="project-date"><i class="fas fa-calendar"></i> 2024</span>
-                            <a href="http://localhost/FLOPPY" target="_blank" class="project-link"><i
-                                    class="fas fa-external-link-alt"></i> Voir le projet</a>
+                            <button class="project-demo-btn" onclick="openProjectModal('flappy-bird')"><i
+                                    class="fas fa-play-circle"></i> Voir la démo</button>
                         </div>
                     </div>
 
@@ -1378,6 +1568,8 @@
                         </div>
                         <div class="project-footer">
                             <span class="project-date"><i class="fas fa-calendar"></i> 2025</span>
+                            <button class="project-demo-btn" onclick="openProjectModal('filtre-mail')"><i
+                                    class="fas fa-play-circle"></i> Voir la démo</button>
                         </div>
                     </div>
 
@@ -1388,7 +1580,7 @@
                             <span class="project-type-badge">Application</span>
                         </div>
                         <div class="project-body">
-                            <h3>Parc Auto</h3>
+                            <h3>MNC Location</h3>
                             <p>Application desktop de gestion de flotte automobile en C# WPF avec authentification,
                                 suivi kilométrique et export PDF.</p>
                             <div class="project-tech">
@@ -1425,8 +1617,8 @@
                         </div>
                         <div class="project-footer">
                             <span class="project-date"><i class="fas fa-calendar"></i> 2025-2026</span>
-                            <a href="http://localhost/ecom2026/public" target="_blank" class="project-link"><i
-                                    class="fas fa-external-link-alt"></i> Voir le projet</a>
+                            <a href="https://github.com/ismael-93/ibTech" target="_blank" class="project-link"><i class="fab fa-github"></i> Code</a>
+                            <button class="project-demo-btn" onclick="openProjectModal('ib-tech')" style="flex-shrink:0;align-self:center;"><i class="fas fa-play-circle"></i> Voir la démo</button>
                         </div>
                     </div>
 
@@ -1448,8 +1640,8 @@
                         </div>
                         <div class="project-footer">
                             <span class="project-date"><i class="fas fa-calendar"></i> 2025</span>
-                            <a href="http://localhost/Tetris" target="_blank" class="project-link"><i
-                                    class="fas fa-external-link-alt"></i> Voir le projet</a>
+                            <button class="project-demo-btn" onclick="openProjectModal('tetris')"><i
+                                    class="fas fa-play-circle"></i> Voir la démo</button>
                         </div>
                     </div>
 
@@ -1471,8 +1663,34 @@
                         </div>
                         <div class="project-footer">
                             <span class="project-date"><i class="fas fa-calendar"></i> 2025</span>
-                            <a href="http://localhost/blog" target="_blank" class="project-link"><i
-                                    class="fas fa-external-link-alt"></i> Voir le projet</a>
+                            <button class="project-demo-btn" onclick="openProjectModal('blog-smarty')"><i
+                                    class="fas fa-play-circle"></i> Voir la démo</button>
+                        </div>
+                    </div>
+
+                    <!-- Projet: Fleet Manager -->
+                    <div class="project-card reveal-item" data-category="app">
+                        <div class="project-header">
+                            <i class="fas fa-car"></i>
+                            <span class="project-type-badge">Application</span>
+                        </div>
+                        <div class="project-body">
+                            <h3>Fleet Manager</h3>
+                            <p>Application desktop de gestion de flotte automobile en C# WPF avec authentification,
+                                suivi kilométrique et export PDF.</p>
+                            <div class="project-tech">
+                                <span class="p-tech">C#</span>
+                                <span class="p-tech">WPF</span>
+                                <span class="p-tech">MySQL</span>
+                                <span class="p-tech">.NET 8</span>
+                            </div>
+                        </div>
+                        <div class="project-footer">
+                            <span class="project-date"><i class="fas fa-calendar"></i> 2025</span>
+                            <a href="https://github.com/ismael-93" target="_blank" class="project-link"><i
+                                    class="fab fa-github"></i> Code</a>
+                            <button class="project-demo-btn" onclick="openProjectModal('fleet-manager')"><i
+                                    class="fas fa-play-circle"></i> Voir la démo</button>
                         </div>
                     </div>
 
@@ -1494,19 +1712,20 @@
                         </div>
                         <div class="project-footer">
                             <span class="project-date"><i class="fas fa-calendar"></i> 2025</span>
-                            <a href="http://localhost/mediatheque" target="_blank" class="project-link"><i
-                                    class="fas fa-external-link-alt"></i> Voir le projet</a>
+                            <button class="project-demo-btn" onclick="openProjectModal('mediatheque')"><i
+                                    class="fas fa-play-circle"></i> Voir la démo</button>
                         </div>
                     </div>
 
-                    <!-- Projet: Car Rental -->
+                    
+
                     <div class="project-card reveal-item" data-category="web">
                         <div class="project-header">
                             <i class="fas fa-key"></i>
                             <span class="project-type-badge">Web</span>
                         </div>
                         <div class="project-body">
-                            <h3>Car Rental</h3>
+                            <h3>MNC Location</h3>
                             <p>Plateforme de location de voitures en ligne avec catalogue, réservation en ligne et
                                 interface de gestion administrative.</p>
                             <div class="project-tech">
@@ -1517,8 +1736,8 @@
                         </div>
                         <div class="project-footer">
                             <span class="project-date"><i class="fas fa-calendar"></i> 2025</span>
-                            <a href="http://localhost/Ecom2" target="_blank" class="project-link"><i
-                                    class="fas fa-external-link-alt"></i> Voir le projet</a>
+                            <button class="project-demo-btn" onclick="openProjectModal('car-rental')"><i
+                                    class="fas fa-play-circle"></i> Voir la démo</button>
                         </div>
                     </div>
 
@@ -1538,6 +1757,7 @@
                                 <span class="p-tech">IA basique</span>
                             </div>
                         </div>
+                        
                         <div class="project-footer">
                             <span class="project-date"><i class="fas fa-calendar"></i> 2025</span>
                             <button class="project-demo-btn" onclick="openProjectModal('jeu-allumettes')"><i
@@ -1588,7 +1808,7 @@
                                 <li><i class="fas fa-check-circle"></i> Analyse des besoins et maquettage Figma</li>
                                 <li><i class="fas fa-check-circle"></i> Intégration HTML5 / CSS3 responsive</li>
                                 <li><i class="fas fa-check-circle"></i> Développement des fonctionnalités JavaScript
-                                    (carrousel, formulaire de contact)</li>
+                                    (carrousel)</li>
                                 <li><i class="fas fa-check-circle"></i> Développement backend PHP (formulaire de
                                     contact, gestion des données)</li>
                                 <li><i class="fas fa-check-circle"></i> Mise en production et tests cross-navigateurs
@@ -1697,181 +1917,24 @@
                         <div class="synthese-official-icon"><i class="fas fa-file-pdf"></i></div>
                         <div>
                             <span class="synthese-official-title">Tableau de Synthèse Officiel</span>
-                            <span class="synthese-official-sub">Document E4 — BTS SIO SLAM 2025-2026 · Signé &amp;
+                            <span class="synthese-official-sub">Document E5 — BTS SIO SLAM 2025-2026 · Signé &amp;
                                 validé</span>
                         </div>
                     </div>
                     <div class="synthese-official-actions">
-                        <a href="Tableau%20de%20synthese.xlsx%20-%20Tableau%20de%20synth%C3%A8se%20%C3%89preuve%20E4%20(1).pdf"
+                        <a href="Tableau de synthesee.xlsx.pdf"
                             target="_blank" class="synthese-official-btn synthese-official-btn--outline">
                             <i class="fas fa-eye"></i> Consulter
                         </a>
-                        <a href="Tableau%20de%20synthese.xlsx%20-%20Tableau%20de%20synth%C3%A8se%20%C3%89preuve%20E4%20(1).pdf"
+                        <a href="Tableau de synthesee.xlsx.pdf"
                             download class="synthese-official-btn synthese-official-btn--primary">
                             <i class="fas fa-download"></i> Télécharger le PDF
                         </a>
                     </div>
                 </div>
 
-                <!-- Légende -->
-                <div class="synthese-legend">
-                    <span class="legend-item"><span class="synth-pill synth-pill--full">Acquis</span> Compétence
-                        maîtrisée</span>
-                    <span class="legend-item"><span class="synth-pill synth-pill--partial">En cours</span> En cours
-                        d'acquisition</span>
-                    <span class="legend-item"><span class="synth-badge synth-badge--stage1">Stage 1A</span> Stage 1ère
-                        année</span>
-                    <span class="legend-item"><span class="synth-badge synth-badge--stage2">Stage 2A</span> Stage 2ème
-                        année</span>
-                </div>
-
-                <!-- Tableau -->
-                <div class="synthese-wrapper">
-                    <table class="synthese-table">
-                        <thead>
-                            <tr>
-                                <th class="col-competence">Compétence du référentiel</th>
-                                <th class="col-project">Projets associés</th>
-                                <th class="col-stage">Stage</th>
-                                <th class="col-niveau">Niveau</th>
-                                <th class="col-lien">Lien</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-
-                            <!-- BLOC B1 -->
-                            <tr class="synthese-bloc-header synthese-bloc-b1">
-                                <td colspan="5"><i class="fas fa-server"></i> <strong>B1</strong> — Support et mise à
-                                    disposition de services informatiques</td>
-                            </tr>
-                            <tr>
-                                <td><i class="fas fa-hdd synth-row-icon"></i> Gérer le patrimoine informatique</td>
-                                <td><span class="synth-badge synth-badge--app">Parc Auto</span></td>
-                                <td><span class="synth-badge synth-badge--stage2">Stage 2A</span></td>
-                                <td><span class="synth-pill synth-pill--full">Acquis</span></td>
-                                <td><a href="#stage" class="synth-link"><i class="fas fa-arrow-right"></i></a></td>
-                            </tr>
-                            <tr>
-                                <td><i class="fas fa-headset synth-row-icon"></i> Répondre aux incidents et aux demandes
-                                    d'assistance</td>
-                                <td><span class="synth-badge synth-badge--app">Parc Auto</span></td>
-                                <td><span class="synth-badge synth-badge--stage1">Stage 1A</span> <span
-                                        class="synth-badge synth-badge--stage2">Stage 2A</span></td>
-                                <td><span class="synth-pill synth-pill--full">Acquis</span></td>
-                                <td><a href="#stage" class="synth-link"><i class="fas fa-arrow-right"></i></a></td>
-                            </tr>
-                            <tr>
-                                <td><i class="fas fa-cloud-upload-alt synth-row-icon"></i> Mettre à disposition des
-                                    utilisateurs un service informatique</td>
-                                <td><span class="synth-badge synth-badge--web">Site Vitrine</span> <span
-                                        class="synth-badge synth-badge--web">E-commerce</span></td>
-                                <td><span class="synth-badge synth-badge--stage1">Stage 1A</span></td>
-                                <td><span class="synth-pill synth-pill--full">Acquis</span></td>
-                                <td><a href="#stage" class="synth-link"><i class="fas fa-arrow-right"></i></a></td>
-                            </tr>
-                            <tr>
-                                <td><i class="fas fa-tasks synth-row-icon"></i> Travailler en mode projet</td>
-                                <td><span class="synth-badge synth-badge--app">Parc Auto</span> <span
-                                        class="synth-badge synth-badge--web">Médiathèque</span></td>
-                                <td><span class="synth-badge synth-badge--stage1">Stage 1A</span> <span
-                                        class="synth-badge synth-badge--stage2">Stage 2A</span></td>
-                                <td><span class="synth-pill synth-pill--full">Acquis</span></td>
-                                <td><a href="#projects" class="synth-link"><i class="fas fa-arrow-right"></i></a></td>
-                            </tr>
-
-                            <!-- BLOC B2 -->
-                            <tr class="synthese-bloc-header synthese-bloc-b2">
-                                <td colspan="5"><i class="fas fa-code"></i> <strong>B2</strong> — Conception et
-                                    développement d'applications</td>
-                            </tr>
-                            <tr>
-                                <td><i class="fas fa-laptop-code synth-row-icon"></i> Concevoir et développer une
-                                    solution applicative</td>
-                                <td><span class="synth-badge synth-badge--app">Parc Auto</span> <span
-                                        class="synth-badge synth-badge--web">E-commerce</span> <span
-                                        class="synth-badge synth-badge--web">Blog Smarty</span> <span
-                                        class="synth-badge synth-badge--game">Allumettes</span></td>
-                                <td><span class="synth-badge synth-badge--stage1">Stage 1A</span> <span
-                                        class="synth-badge synth-badge--stage2">Stage 2A</span></td>
-                                <td><span class="synth-pill synth-pill--full">Acquis</span></td>
-                                <td><a href="#projects" class="synth-link"><i class="fas fa-arrow-right"></i></a></td>
-                            </tr>
-                            <tr>
-                                <td><i class="fas fa-tools synth-row-icon"></i> Assurer la maintenance corrective ou
-                                    évolutive d'une solution applicative</td>
-                                <td><span class="synth-badge synth-badge--app">Parc Auto</span> <span
-                                        class="synth-badge synth-badge--web">Car Rental</span></td>
-                                <td><span class="synth-badge synth-badge--stage2">Stage 2A</span></td>
-                                <td><span class="synth-pill synth-pill--partial">En cours</span></td>
-                                <td><a href="#projects" class="synth-link"><i class="fas fa-arrow-right"></i></a></td>
-                            </tr>
-                            <tr>
-                                <td><i class="fas fa-database synth-row-icon"></i> Gérer les données</td>
-                                <td><span class="synth-badge synth-badge--app">Parc Auto</span> <span
-                                        class="synth-badge synth-badge--web">Médiathèque</span> <span
-                                        class="synth-badge synth-badge--web">Blog Smarty</span></td>
-                                <td><span class="synth-badge synth-badge--stage1">Stage 1A</span> <span
-                                        class="synth-badge synth-badge--stage2">Stage 2A</span></td>
-                                <td><span class="synth-pill synth-pill--full">Acquis</span></td>
-                                <td><a href="#projects" class="synth-link"><i class="fas fa-arrow-right"></i></a></td>
-                            </tr>
-                            <tr>
-                                <td><i class="fas fa-globe synth-row-icon"></i> Développer la présence en ligne de
-                                    l'organisation</td>
-                                <td><span class="synth-badge synth-badge--web">Site Vitrine</span> <span
-                                        class="synth-badge synth-badge--web">E-commerce</span> <span
-                                        class="synth-badge synth-badge--web">Car Rental</span></td>
-                                <td><span class="synth-badge synth-badge--stage1">Stage 1A</span></td>
-                                <td><span class="synth-pill synth-pill--full">Acquis</span></td>
-                                <td><a href="#stage" class="synth-link"><i class="fas fa-arrow-right"></i></a></td>
-                            </tr>
-
-                            <!-- BLOC B3 -->
-                            <tr class="synthese-bloc-header synthese-bloc-b3">
-                                <td colspan="5"><i class="fas fa-shield-alt"></i> <strong>B3</strong> — Cybersécurité
-                                    des services informatiques</td>
-                            </tr>
-                            <tr>
-                                <td><i class="fas fa-lock synth-row-icon"></i> Protéger les données à caractère
-                                    personnel</td>
-                                <td><span class="synth-badge synth-badge--web">E-commerce</span> <span
-                                        class="synth-badge synth-badge--web">Blog Smarty</span></td>
-                                <td><span class="synth-badge synth-badge--stage1">Stage 1A</span> <span
-                                        class="synth-badge synth-badge--stage2">Stage 2A</span></td>
-                                <td><span class="synth-pill synth-pill--partial">En cours</span></td>
-                                <td><a href="#projects" class="synth-link"><i class="fas fa-arrow-right"></i></a></td>
-                            </tr>
-                            <tr>
-                                <td><i class="fas fa-user-shield synth-row-icon"></i> Sécuriser les échanges et les
-                                    données</td>
-                                <td><span class="synth-badge synth-badge--app">Parc Auto</span> <span
-                                        class="synth-badge synth-badge--web">Blog Smarty</span></td>
-                                <td><span class="synth-badge synth-badge--stage1">Stage 1A</span> <span
-                                        class="synth-badge synth-badge--stage2">Stage 2A</span></td>
-                                <td><span class="synth-pill synth-pill--partial">En cours</span></td>
-                                <td><a href="#projects" class="synth-link"><i class="fas fa-arrow-right"></i></a></td>
-                            </tr>
-                            <tr>
-                                <td><i class="fas fa-bug synth-row-icon"></i> Assurer la cybersécurité d'une solution
-                                    applicative</td>
-                                <td><span class="synth-badge synth-badge--web">E-commerce</span> <span
-                                        class="synth-badge synth-badge--app">Filtre Mail</span></td>
-                                <td><span class="synth-badge synth-badge--stage2">Stage 2A</span></td>
-                                <td><span class="synth-pill synth-pill--partial">En cours</span></td>
-                                <td><a href="#projects" class="synth-link"><i class="fas fa-arrow-right"></i></a></td>
-                            </tr>
-
-                        </tbody>
-                    </table>
-                </div>
-
-                <div class="synthese-note">
-                    <i class="fas fa-info-circle"></i>
-                    Tableau conforme au référentiel BTS SIO option SLAM — réalisé dans le cadre de l'épreuve E5
-                    (2024-2026).
-                </div>
-            </section>
-
+                
+               
             <!-- Section Veille Technologique -->
             <section id="veille" class="section veille-section">
                 <!-- HERO -->
@@ -2202,7 +2265,7 @@
                                 placeholder="Bonjour Ismael, je souhaite..." required></textarea>
                         </div>
                         <input type="hidden" name="_captcha" value="false">
-                        <input type="hidden" name="_next" value="http://localhost/PortfolioV3/merci.html">
+                        <input type="hidden" name="_next" value="merci.html">
                         <button type="submit" class="contact-submit-btn" id="contact-submit">
                             <span class="btn-text"><i class="fas fa-paper-plane"></i> Envoyer le message</span>
                             <span class="btn-loading" style="display:none"><i class="fas fa-spinner fa-spin"></i>
@@ -2345,6 +2408,383 @@
          MODALES PROJETS APPLICATION
     ═══════════════════════════════════════ -->
 
+    <!-- ═══════════════════════════════════════════════════
+         MODALES PROJETS WEB / JEU (avec galerie images + vidéo)
+    ═══════════════════════════════════════════════════ -->
+
+    <!-- Helper: structure modale avec onglets Images / Vidéo -->
+    <!-- Pour chaque projet : placer images dans assets/img/projects/[id]-1.jpg etc. -->
+    <!--                      et vidéo dans assets/videos/[id].mp4                  -->
+
+    <!-- Modale : Flappy Bird -->
+    <div class="project-modal-overlay" id="modal-flappy-bird" role="dialog" aria-modal="true"
+        aria-label="Présentation Flappy Bird">
+        <div class="project-modal">
+            <button class="project-modal-close" onclick="closeProjectModal('flappy-bird')" aria-label="Fermer"><i
+                    class="fas fa-times"></i></button>
+            <div class="project-modal-header">
+                <div class="project-modal-icon" style="background:linear-gradient(135deg,#f59e0b,#f97316)"><i
+                        class="fas fa-gamepad"></i></div>
+                <div>
+                    <h2 class="project-modal-title">Flappy Bird</h2>
+                    <span class="project-modal-badge">Jeu JavaScript</span>
+                </div>
+            </div>
+
+            <div class="modal-media-panel active" data-panel="video">
+                <div class="project-modal-video-wrap project-modal-video-wrap--tab">
+                    <video id="video-flappy-bird" class="project-modal-video" controls preload="metadata">
+                        <source src="assets/videos/Floppy.mp4" type="video/mp4">
+                    </video>
+                    <div class="project-modal-video-placeholder">
+                        <i class="fas fa-film"></i>
+                        <span>Vidéo de démonstration</span>
+                        <small>Fichier attendu : <code>assets/videos/flappy.mp4</code></small>
+                    </div>
+                </div>
+            </div>
+            <div class="project-modal-body">
+                <p class="project-modal-desc">Jeu <strong>Flappy Bird</strong> recréé en JavaScript vanilla. Mécanique
+                    de saut physique, génération procédurale d'obstacles, système de score et niveaux de difficulté
+                    progressive.</p>
+                <div class="project-modal-tech">
+                    <span class="p-tech">HTML5 Canvas</span>
+                    <span class="p-tech">CSS3</span>
+                    <span class="p-tech">JavaScript</span>
+                </div>
+                <div class="project-modal-features">
+                    <div class="modal-feature"><i class="fas fa-check-circle"></i> Physique de saut réaliste</div>
+                    <div class="modal-feature"><i class="fas fa-check-circle"></i> Génération procédurale d'obstacles
+                    </div>
+                    <div class="modal-feature"><i class="fas fa-check-circle"></i> Système de score et meilleur score
+                    </div>
+                    <div class="modal-feature"><i class="fas fa-check-circle"></i> Difficulté progressive</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modale : IB Tech -->
+    <div class="project-modal-overlay" id="modal-ib-tech" role="dialog" aria-modal="true"
+        aria-label="Présentation IB Tech">
+        <div class="project-modal">
+            <button class="project-modal-close" onclick="closeProjectModal('ib-tech')" aria-label="Fermer"><i
+                    class="fas fa-times"></i></button>
+            <div class="project-modal-header">
+                <div class="project-modal-icon" style="background:linear-gradient(135deg,#6366f1,#8b5cf6)"><i
+                        class="fas fa-shopping-cart"></i></div>
+                <div>
+                    <h2 class="project-modal-title">IB Tech</h2>
+                    <span class="project-modal-badge">E-commerce PHP</span>
+                </div>
+            </div>
+
+            <div class="modal-media-panel active" data-panel="video">
+                <div class="project-modal-video-wrap project-modal-video-wrap--tab" style="aspect-ratio: unset; max-height: 320px; height: 320px;">
+                    <video id="video-ib-tech" class="project-modal-video" controls preload="metadata" style="width:100%;height:100%;object-fit:contain;display:block;">
+                        <source src="assets/videos/IbTech.mp4" type="video/mp4">
+                    </video>
+                    <div class="project-modal-video-placeholder">
+                        <i class="fas fa-film"></i>
+                        <span>Vidéo de démonstration</span>
+                        <small>Fichier attendu : <code>assets/videos/ib-tech.mp4</code></small>
+                    </div>
+                </div>
+            </div>
+            <div class="project-modal-body">
+                <p class="project-modal-desc">Plateforme e-commerce complète <strong>IB Tech</strong> pour la vente de
+                    produits technologiques. Catalogue produits, panier d'achat, gestion des commandes et back-office
+                    administrateur.</p>
+                <div class="project-modal-tech">
+                    <span class="p-tech">PHP</span>
+                    <span class="p-tech">MySQL</span>
+                    <span class="p-tech">JavaScript</span>
+                    <span class="p-tech">Bootstrap</span>
+                </div>
+                <div class="project-modal-features">
+                    <div class="modal-feature"><i class="fas fa-check-circle"></i> Catalogue produits avec filtres</div>
+                    <div class="modal-feature"><i class="fas fa-check-circle"></i> Panier et tunnel de commande</div>
+                    <div class="modal-feature"><i class="fas fa-check-circle"></i> Back-office admin complet</div>
+                    <div class="modal-feature"><i class="fas fa-check-circle"></i> Authentification et profils</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modale : Tetris -->
+    <div class="project-modal-overlay" id="modal-tetris" role="dialog" aria-modal="true"
+        aria-label="Présentation Tetris">
+        <div class="project-modal">
+            <button class="project-modal-close" onclick="closeProjectModal('tetris')" aria-label="Fermer"><i
+                    class="fas fa-times"></i></button>
+            <div class="project-modal-header">
+                <div class="project-modal-icon" style="background:linear-gradient(135deg,#06b6d4,#3b82f6)"><i
+                        class="fas fa-th"></i></div>
+                <div>
+                    <h2 class="project-modal-title">Tetris</h2>
+                    <span class="project-modal-badge">Jeu JavaScript</span>
+                </div>
+            </div>
+
+            <div class="modal-media-panel active" data-panel="video">
+                <div class="project-modal-video-wrap project-modal-video-wrap--tab">
+                    <video id="video-tetris" class="project-modal-video" controls preload="metadata">
+                        <source src="assets/videos/tetris.mp4" type="video/mp4">
+                    </video>
+                    <div class="project-modal-video-placeholder">
+                        <i class="fas fa-film"></i>
+                        <span>Vidéo de démonstration</span>
+                        <small>Fichier attendu : <code>assets/videos/tetris.mp4</code></small>
+                    </div>
+                </div>
+            </div>
+            <div class="project-modal-body">
+                <p class="project-modal-desc">Jeu <strong>Tetris</strong> classique recréé en JavaScript vanilla avec
+                    rotation des pièces, gestion des lignes complètes, scoring progressif et accélération dynamique.</p>
+                <div class="project-modal-tech">
+                    <span class="p-tech">HTML5 Canvas</span>
+                    <span class="p-tech">CSS3</span>
+                    <span class="p-tech">JavaScript</span>
+                </div>
+                <div class="project-modal-features">
+                    <div class="modal-feature"><i class="fas fa-check-circle"></i> 7 pièces avec rotations correctes
+                    </div>
+                    <div class="modal-feature"><i class="fas fa-check-circle"></i> Suppression de lignes complètes</div>
+                    <div class="modal-feature"><i class="fas fa-check-circle"></i> Score et niveau progressifs</div>
+                    <div class="modal-feature"><i class="fas fa-check-circle"></i> Prévisualisation pièce suivante</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modale : Blog Smarty -->
+    <div class="project-modal-overlay" id="modal-blog-smarty" role="dialog" aria-modal="true"
+        aria-label="Présentation Blog Smarty">
+        <div class="project-modal">
+            <button class="project-modal-close" onclick="closeProjectModal('blog-smarty')" aria-label="Fermer"><i
+                    class="fas fa-times"></i></button>
+            <div class="project-modal-header">
+                <div class="project-modal-icon" style="background:linear-gradient(135deg,#10b981,#059669)"><i
+                        class="fas fa-blog"></i></div>
+                <div>
+                    <h2 class="project-modal-title">Blog Smarty</h2>
+                    <span class="project-modal-badge">Projet Web PHP</span>
+                </div>
+            </div>
+
+            <div class="modal-media-panel active" data-panel="video">
+                <div class="project-modal-video-wrap project-modal-video-wrap--tab">
+                    <video id="video-blog-smarty" class="project-modal-video" controls preload="metadata">
+                        <source src="assets/videos/blog.mp4" type="video/mp4">
+                    </video>
+                    <div class="project-modal-video-placeholder">
+                        <i class="fas fa-film"></i>
+                        <span>Vidéo de démonstration</span>
+                        <small>Fichier attendu : <code>assets/videos/blog-smarty.mp4</code></small>
+                    </div>
+                </div>
+            </div>
+            <div class="project-modal-body">
+                <p class="project-modal-desc">Blog dynamique développé avec le moteur de templates
+                    <strong>Smarty</strong>. Gestion des articles, catégories, commentaires et interface
+                    d'administration complète.
+                </p>
+                <div class="project-modal-tech">
+                    <span class="p-tech">PHP</span>
+                    <span class="p-tech">Smarty</span>
+                    <span class="p-tech">MySQL</span>
+                    <span class="p-tech">CSS3</span>
+                </div>
+                <div class="project-modal-features">
+                    <div class="modal-feature"><i class="fas fa-check-circle"></i> Moteur de template Smarty</div>
+                    <div class="modal-feature"><i class="fas fa-check-circle"></i> Gestion articles et catégories</div>
+                    <div class="modal-feature"><i class="fas fa-check-circle"></i> Système de commentaires</div>
+                    <div class="modal-feature"><i class="fas fa-check-circle"></i> Back-office administrateur</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal Fleet Manager -->
+<div class="project-modal-overlay" id="modal-fleet-manager" role="dialog" aria-modal="true"
+    aria-label="Présentation Fleet Manager">
+    <div class="project-modal">
+        <button class="project-modal-close" onclick="closeProjectModal('fleet-manager')" aria-label="Fermer">
+            <i class="fas fa-times"></i>
+        </button>
+        
+            <div class="project-modal-header">
+                <div class="project-modal-icon"><i class="fas fa-car"></i></div>
+                <div>
+                    <h2 class="project-modal-title">Fleet Manager</h2>
+                    <span class="project-modal-badge">Application Desktop</span>
+                </div>
+            </div>
+            <div class="project-modal-video-wrap">
+                <video id="video-fleet-manager" class="project-modal-video" controls preload="metadata" poster="">
+                    <source src="assets/videos/fleet_manager.mp4" type="video/mp4">
+                    Votre navigateur ne supporte pas la lecture vidéo.
+                </video>
+                <div class="project-modal-video-placeholder" id="placeholder-fleet-manager">
+                    <i class="fas fa-film"></i>
+                    <span>Vidéo de démonstration</span>
+                    <small>Fichier attendu : <code>assets/videos/parc-auto.mp4</code></small>
+                </div>
+            </div>
+            <div class="project-modal-body">
+                <p class="project-modal-desc">Application desktop de gestion de flotte automobile développée en
+                    <strong>C# WPF</strong> avec architecture MVVM. Fonctionnalités : authentification multi-rôles,
+                    gestion des véhicules et utilisateurs, suivi kilométrique, statistiques et export PDF.
+                </p>
+                <div class="project-modal-tech">
+                    <span class="p-tech">C#</span>
+                    <span class="p-tech">WPF</span>
+                    <span class="p-tech">MySQL</span>
+                    <span class="p-tech">.NET 8</span>
+                    <span class="p-tech">MVVM</span>
+                    <span class="p-tech">iTextSharp</span>
+                </div>
+                <div class="project-modal-features">
+                    <div class="modal-feature"><i class="fas fa-check-circle"></i> Authentification multi-rôles (Admin /
+                        Utilisateur)</div>
+                    <div class="modal-feature"><i class="fas fa-check-circle"></i> Gestion complète de la flotte de
+                        véhicules</div>
+                    <div class="modal-feature"><i class="fas fa-check-circle"></i> Suivi kilométrique et historique des
+                        locations</div>
+                    <div class="modal-feature"><i class="fas fa-check-circle"></i> Tableau de bord avec statistiques
+                    </div>
+                    <div class="modal-feature"><i class="fas fa-check-circle"></i> Export de rapports en PDF</div>
+                </div>
+                <a href="https://github.com/ismael-93" target="_blank" class="project-modal-github"><i
+                        class="fab fa-github"></i> Voir le code source</a>
+            </div>
+    </div>
+</div>
+
+    <!-- Modale : Médiathèque -->
+    <div class="project-modal-overlay" id="modal-mediatheque" role="dialog" aria-modal="true"
+        aria-label="Présentation Médiathèque">
+        <div class="project-modal">
+            <button class="project-modal-close" onclick="closeProjectModal('mediatheque')" aria-label="Fermer"><i
+                    class="fas fa-times"></i></button>
+            <div class="project-modal-header">
+                <div class="project-modal-icon" style="background:linear-gradient(135deg,#ec4899,#8b5cf6)"><i
+                        class="fas fa-photo-video"></i></div>
+                <div>
+                    <h2 class="project-modal-title">Médiathèque</h2>
+                    <span class="project-modal-badge">Projet Web PHP</span>
+                </div>
+            </div>
+
+            <div class="modal-media-panel active" data-panel="video">
+                <div class="project-modal-video-wrap project-modal-video-wrap--tab">
+                    <video id="video-mediatheque" class="project-modal-video" controls preload="metadata">
+                        <source src="assets/videos/mediatheque-admin.mp4" type="video/mp4">
+                    </video>
+                    <div class="project-modal-video-placeholder">
+                        <i class="fas fa-film"></i>
+                        <span>Vidéo de démonstration</span>
+                        <small>Fichier attendu : <code>assets/videos/mediatheque.mp4</code></small>
+                    </div>
+                </div>
+            </div>
+            <div class="project-modal-body">
+                <p class="project-modal-desc">Plateforme de gestion de ressources multimédia (livres, films, musiques)
+                    avec recherche avancée, gestion des emprunts et profils utilisateurs connectés.</p>
+                <div class="project-modal-tech">
+                    <span class="p-tech">PHP</span>
+                    <span class="p-tech">MySQL</span>
+                    <span class="p-tech">Bootstrap</span>
+                    <span class="p-tech">JavaScript</span>
+                </div>
+                <div class="project-modal-features">
+                    <div class="modal-feature"><i class="fas fa-check-circle"></i> Catalogue livres / films / musiques
+                    </div>
+                    <div class="modal-feature"><i class="fas fa-check-circle"></i> Recherche et filtres avancés</div>
+                    <div class="modal-feature"><i class="fas fa-check-circle"></i> Gestion des emprunts</div>
+                    <div class="modal-feature"><i class="fas fa-check-circle"></i> Profils utilisateurs</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modale : Car Rental -->
+    <div class="project-modal-overlay" id="modal-car-rental" role="dialog" aria-modal="true"
+        aria-label="Présentation MNC Location">
+        <div class="project-modal">
+            <button class="project-modal-close" onclick="closeProjectModal('car-rental')" aria-label="Fermer"><i
+                    class="fas fa-times"></i></button>
+            <div class="project-modal-header">
+                <div class="project-modal-icon" style="background:linear-gradient(135deg,#0ea5e9,#06b6d4)"><i
+                        class="fas fa-key"></i></div>
+                <div>
+                    <h2 class="project-modal-title">MNC Location</h2>
+                    <span class="project-modal-badge">Projet Web PHP</span>
+                </div>
+            </div>
+
+            <div class="modal-media-panel active" data-panel="video">
+                <div class="project-modal-video-wrap project-modal-video-wrap--tab">
+                    <video id="video-car-rental" class="project-modal-video" controls preload="metadata">
+                        <source src="assets/videos/mnc_location.mp4" type="video/mp4">
+                    </video>
+                    <div class="project-modal-video-placeholder">
+                        <i class="fas fa-film"></i>
+                        <span>Vidéo de démonstration</span>
+                        <small>Fichier attendu : <code>assets/videos/car-rental.mp4</code></small>
+                    </div>
+                </div>
+            </div>
+            <div class="project-modal-body">
+                <p class="project-modal-desc">Plateforme de <strong>location de voitures</strong> en ligne avec
+                    catalogue véhicules, système de réservation, gestion des disponibilités et interface
+                    d'administration.</p>
+                <div class="project-modal-tech">
+                    <span class="p-tech">PHP</span>
+                    <span class="p-tech">MySQL</span>
+                    <span class="p-tech">JavaScript</span>
+                    <span class="p-tech">CSS3</span>
+                </div>
+                <div class="project-modal-features">
+                    <div class="modal-feature"><i class="fas fa-check-circle"></i> Catalogue véhicules avec photos</div>
+                    <div class="modal-feature"><i class="fas fa-check-circle"></i> Réservation en ligne</div>
+                    <div class="modal-feature"><i class="fas fa-check-circle"></i> Gestion des disponibilités</div>
+                    <div class="modal-feature"><i class="fas fa-check-circle"></i> Panel administrateur</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modale : Filtre Mail -->
+    <div class="project-modal-overlay" id="modal-filtre-mail" role="dialog" aria-modal="true"
+        aria-label="Présentation Filtre Mail">
+        <div class="project-modal">
+            <button class="project-modal-close" onclick="closeProjectModal('filtre-mail')" aria-label="Fermer"><i
+                    class="fas fa-times"></i></button>
+            <div class="project-modal-header">
+                <div class="project-modal-icon" style="background:linear-gradient(135deg,#6366f1,#8b5cf6)">
+                    <i class="fas fa-envelope-open"></i>
+                </div>
+                <div>
+                    <h2 class="project-modal-title">Filtre Mail</h2>
+                    <span class="project-modal-badge">Automatisation Make</span>
+                </div>
+            </div>
+            <div class="project-modal-video-wrap">
+                <img src="assets/img/mail-make.png" alt="Aperçu Filtre Mail"
+                    style="width:100%;height:100%;object-fit:contain;display:block;">
+            </div>
+            <div class="project-modal-body">
+                <p class="project-modal-desc">Système de filtrage automatique d'emails avec règles personnalisées
+                    grâce à l'automatisation Make (Integromat).</p>
+                <div class="project-modal-tech">
+                    <span class="p-tech">Make</span>
+                    <span class="p-tech">API</span>
+                    <span class="p-tech">Automation</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Modale : Parc Auto -->
     <div class="project-modal-overlay" id="modal-parc-auto" role="dialog" aria-modal="true"
         aria-label="Présentation Parc Auto">
@@ -2354,13 +2794,13 @@
             <div class="project-modal-header">
                 <div class="project-modal-icon"><i class="fas fa-car"></i></div>
                 <div>
-                    <h2 class="project-modal-title">Parc Auto</h2>
+                    <h2 class="project-modal-title">MNC Location</h2>
                     <span class="project-modal-badge">Application Desktop</span>
                 </div>
             </div>
             <div class="project-modal-video-wrap">
                 <video id="video-parc-auto" class="project-modal-video" controls preload="metadata" poster="">
-                    <source src="assets/videos/parc-auto.mp4" type="video/mp4">
+                    <source src="assets/videos/Flotte_auto.mp4" type="video/mp4">
                     Votre navigateur ne supporte pas la lecture vidéo.
                 </video>
                 <div class="project-modal-video-placeholder" id="placeholder-parc-auto">
@@ -2445,8 +2885,90 @@
             </div>
         </div>
     </div>
-
+  
     <script>
+        // ─── Galerie d'images dans les modales ─────────────────────────
+        function initModalGallery(overlay) {
+            var imgs = Array.from(overlay.querySelectorAll('.modal-gallery-img'));
+            var dots = Array.from(overlay.querySelectorAll('.modal-gallery-dot'));
+            var counter = overlay.querySelector('.modal-gallery-counter');
+            var placeholder = overlay.querySelector('.modal-gallery-placeholder');
+            var prevBtn = overlay.querySelector('.modal-gallery-nav.prev');
+            var nextBtn = overlay.querySelector('.modal-gallery-nav.next');
+            if (!imgs.length) return;
+            var current = 0;
+            var validImgs = [];
+            function goTo(idx) {
+                if (!validImgs.length) return;
+                idx = (idx + validImgs.length) % validImgs.length;
+                current = idx;
+                imgs.forEach(function (img) { img.style.display = 'none'; });
+                validImgs[idx].style.display = 'block';
+                dots.forEach(function (d, i) { d.classList.toggle('active', i === idx); });
+                if (counter) counter.textContent = (idx + 1) + ' / ' + validImgs.length;
+            }
+            var settled = 0;
+            imgs.forEach(function (img) {
+                img.style.display = 'none';
+                function check() {
+                    settled++;
+                    if (img.naturalWidth > 0) validImgs.push(img);
+                    if (settled === imgs.length) {
+                        if (validImgs.length === 0) {
+                            if (placeholder) placeholder.style.display = 'flex';
+                            if (prevBtn) prevBtn.style.display = 'none';
+                            if (nextBtn) nextBtn.style.display = 'none';
+                            if (counter) counter.style.display = 'none';
+                            dots.forEach(function (d) { d.style.display = 'none'; });
+                        } else {
+                            if (placeholder) placeholder.style.display = 'none';
+                            dots.forEach(function (d, i) { d.style.display = i < validImgs.length ? 'inline-block' : 'none'; });
+                            if (validImgs.length <= 1) {
+                                if (prevBtn) prevBtn.style.display = 'none';
+                                if (nextBtn) nextBtn.style.display = 'none';
+                            }
+                            goTo(0);
+                        }
+                    }
+                }
+                if (img.complete) { check(); } else { img.addEventListener('load', check); img.addEventListener('error', check); }
+            });
+            if (prevBtn) prevBtn.addEventListener('click', function () { goTo(current - 1); });
+            if (nextBtn) nextBtn.addEventListener('click', function () { goTo(current + 1); });
+            dots.forEach(function (d, i) { d.addEventListener('click', function () { goTo(i); }); });
+        }
+
+        // ─── Onglets Images / Vidéo ────────────────────────────────────
+        function initModalTabs(overlay) {
+            var tabs = overlay.querySelectorAll('.modal-media-tab');
+            var panels = overlay.querySelectorAll('.modal-media-panel');
+            tabs.forEach(function (tab) {
+                tab.addEventListener('click', function () {
+                    var target = tab.getAttribute('data-tab');
+                    tabs.forEach(function (t) { t.classList.remove('active'); });
+                    panels.forEach(function (p) { p.classList.remove('active'); });
+                    tab.classList.add('active');
+                    var panel = overlay.querySelector('.modal-media-panel[data-panel="' + target + '"]');
+                    if (panel) panel.classList.add('active');
+                    if (target !== 'video') { var vid = overlay.querySelector('video'); if (vid) vid.pause(); }
+                });
+            });
+        }
+
+        // ─── Gestion vidéo ─────────────────────────────────────────────
+        function initModalVideo(overlay) {
+            var video = overlay.querySelector('video');
+            var placeholder = overlay.querySelector('.project-modal-video-placeholder');
+            if (!video || !placeholder) return;
+            function showVideo() { placeholder.style.display = 'none'; video.style.display = 'block'; }
+            function showPH() { placeholder.style.display = 'flex'; video.style.display = 'none'; }
+            if (video.error || video.networkState === HTMLMediaElement.NETWORK_NO_SOURCE) { showPH(); return; }
+            if (video.readyState >= HTMLMediaElement.HAVE_METADATA) { showVideo(); return; }
+            showPH();
+            video.addEventListener('loadedmetadata', function () { showVideo(); }, { once: true });
+            video.addEventListener('error', function () { showPH(); }, { once: true });
+        }
+
         // ─── Gestion des modales projets ─────────────────────────────
         function openProjectModal(id) {
             const overlay = document.getElementById('modal-' + id);
@@ -2454,45 +2976,16 @@
             overlay.classList.add('active');
             document.body.style.overflow = 'hidden';
 
-            const video = overlay.querySelector('video');
-            const placeholder = overlay.querySelector('.project-modal-video-placeholder');
-            if (!video || !placeholder) return;
+            // Reset onglets sur "Images" (ou premier onglet) à chaque ouverture
+            var tabs = overlay.querySelectorAll('.modal-media-tab');
+            var panels = overlay.querySelectorAll('.modal-media-panel');
+            tabs.forEach(function (t, i) { t.classList.toggle('active', i === 0); });
+            panels.forEach(function (p, i) { p.classList.toggle('active', i === 0); });
 
-            function showVideo() {
-                placeholder.style.display = 'none';
-                video.style.display = 'block';
-            }
-            function showPlaceholder() {
-                placeholder.style.display = 'flex';
-                video.style.display = 'none';
-            }
-
-            // Cas 1 : la vidéo a déjà eu une erreur (preload l'a détectée avant l'ouverture)
-            if (video.error) {
-                showPlaceholder();
-                return;
-            }
-
-            // Cas 2 : aucune source définie
-            if (video.networkState === HTMLMediaElement.NETWORK_NO_SOURCE) {
-                showPlaceholder();
-                return;
-            }
-
-            // Cas 3 : les métadonnées sont déjà chargées → vidéo lisible
-            if (video.readyState >= HTMLMediaElement.HAVE_METADATA) {
-                showVideo();
-                return;
-            }
-
-            // Cas 4 : chargement en cours → on attend les événements
-            showPlaceholder(); // état par défaut pendant le chargement
-            video.addEventListener('loadedmetadata', function () {
-                showVideo();
-            }, { once: true });
-            video.addEventListener('error', function () {
-                showPlaceholder();
-            }, { once: true });
+            // Initialiser les composants média
+            initModalTabs(overlay);
+            initModalGallery(overlay);
+            initModalVideo(overlay);
         }
 
         function closeProjectModal(id) {
