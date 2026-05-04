@@ -2,70 +2,70 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 <channel>
   <title>Ismael Ben Chikh - Portfolio</title>
-  <link>http://localhost/PortfolioV2/</link>
+  <link>http://localhost/PortfolioV3/</link>
   <description>Portfolio de Ismael Ben Chikh, Étudiant en BTS SIO SLAM - Développement web et applications</description>
   <language>fr-FR</language>
-  <lastBuildDate>Sun, 23 Feb 2026 12:00:00 +0100</lastBuildDate>
-  <atom:link href="http://localhost/PortfolioV2/rss.xml" rel="self" type="application/rss+xml" />
+  <lastBuildDate>Sat, 02 May 2026 22:00:00 +0200</lastBuildDate>
+  <atom:link href="http://localhost/PortfolioV3/rss.xml" rel="self" type="application/rss+xml" />
   
   <!-- Veille Technologique - Frameworks Modernes -->
   <item>
     <title>Veille Technologique : Frameworks Modernes</title>
-    <link>http://localhost/PortfolioV2/index.html#veille</link>
+    <link>http://localhost/PortfolioV3/veille.html</link>
     <description>Une exploration des outils qui définissent le développement web d'aujourd'hui — de React à Next.js, en passant par Node.js et l'écosystème JavaScript full-stack.</description>
     <category>Veille Technologique</category>
-    <pubDate>Sun, 23 Feb 2026 10:00:00 +0100</pubDate>
-    <guid>http://localhost/PortfolioV2/index.html#veille</guid>
+    <pubDate>Sat, 02 May 2026 10:00:00 +0200</pubDate>
+    <guid>http://localhost/PortfolioV3/veille.html</guid>
   </item>
   
   <!-- Projet Car Rental -->
   <item>
     <title>Projet : Car Rental</title>
-    <link>http://localhost/PortfolioV2/index.html#projects</link>
+    <link>http://localhost/PortfolioV3/index.html#projects</link>
     <description>Plateforme de location de voitures en ligne développée en 2025</description>
     <category>Projets</category>
     <pubDate>Mon, 15 Jan 2025 09:00:00 +0100</pubDate>
-    <guid>http://localhost/PortfolioV2/index.html#projects-carrental</guid>
+    <guid>http://localhost/PortfolioV3/index.html#projects-carrental</guid>
   </item>
   
   <!-- Projet E-commerce -->
   <item>
     <title>Projet : Site E-commerce</title>
-    <link>http://localhost/PortfolioV2/index.html#projects</link>
+    <link>http://localhost/PortfolioV3/index.html#projects</link>
     <description>Site de vente en ligne avec panier et système de paiement intégré</description>
     <category>Projets</category>
     <pubDate>Wed, 10 Jan 2025 09:00:00 +0100</pubDate>
-    <guid>http://localhost/PortfolioV2/index.html#projects-ecommerce</guid>
+    <guid>http://localhost/PortfolioV3/index.html#projects-ecommerce</guid>
   </item>
   
   <!-- Projet Application IA -->
   <item>
     <title>Projet : Application IA</title>
-    <link>http://localhost/PortfolioV2/index.html#projects</link>
+    <link>http://localhost/PortfolioV3/index.html#projects</link>
     <description>Intégration d'une API d'intelligence artificielle dans une application web</description>
     <category>Projets</category>
     <pubDate>Fri, 20 Dec 2024 09:00:00 +0100</pubDate>
-    <guid>http://localhost/PortfolioV2/index.html#projects-ia</guid>
+    <guid>http://localhost/PortfolioV3/index.html#projects-ia</guid>
   </item>
   
   <!-- Projet Portfolio -->
   <item>
     <title>Projet : Portfolio Personnel</title>
-    <link>http://localhost/PortfolioV2/index.html#projects</link>
+    <link>http://localhost/PortfolioV3/index.html#projects</link>
     <description>Site web responsive développé avec HTML, CSS et JavaScript - Mon portfolio personnel</description>
     <category>Projets</category>
     <pubDate>Mon, 15 Nov 2024 09:00:00 +0100</pubDate>
-    <guid>http://localhost/PortfolioV2/index.html#projects-portfolio</guid>
+    <guid>http://localhost/PortfolioV3/index.html#projects-portfolio</guid>
   </item>
   
   <!-- Formation BTS SIO -->
   <item>
     <title>Formation : BTS SIO Option SLAM</title>
-    <link>http://localhost/PortfolioV2/index.html#education</link>
+    <link>http://localhost/PortfolioV3/index.html#education</link>
     <description>En cours de formation BTS Services Informatiques aux Organisations, spécialité Solutions Logicielles et Applications Métiers (2023-2025)</description>
     <category>Formation</category>
     <pubDate>Mon, 04 Sep 2023 09:00:00 +0100</pubDate>
-    <guid>http://localhost/PortfolioV2/index.html#education-bts</guid>
+    <guid>http://localhost/PortfolioV3/index.html#education-bts</guid>
   </item>
   
 </channel>

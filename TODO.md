@@ -1,0 +1,5 @@
+- [x] Ajouter une nouvelle carte projet "Fleet Manager" dans la section Mes Projets
+- [x] Lier la carte à la modale `openProjectModal('fleet-manager')`
+- [x] Mettre la description Fleet Manager exactement identique à Parc Auto (modale)
+- [x] Aligner technos et fonctionnalités Fleet Manager sur Parc Auto
+- [ ] Vérifier la cohérence globale dans `index.html`

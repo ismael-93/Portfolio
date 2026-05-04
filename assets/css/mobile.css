@@ -1,0 +1,533 @@
+/* ═══════════════════════════════════════════════════
+   MOBILE.CSS — Responsive complet pour le portfolio
+   Breakpoints : 768px (tablette) | 480px (mobile)
+═══════════════════════════════════════════════════ */
+
+/* ── LAYOUT GÉNÉRAL ── */
+@media (max-width: 768px) {
+
+    /* Container principal : passer en colonne sur mobile */
+    .container {
+        flex-direction: column !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    /* Sidebar : masquée par défaut, slide depuis la gauche */
+    .sidebar {
+        width: 260px !important;
+        transform: translateX(-100%) !important;
+        transition: transform 0.3s ease-in-out !important;
+        z-index: 1200 !important;
+        top: 0 !important;
+        left: 0 !important;
+        bottom: 0 !important;
+        position: fixed !important;
+    }
+
+    .sidebar.open {
+        transform: translateX(0) !important;
+        box-shadow: 8px 0 40px rgba(0,0,0,0.5) !important;
+    }
+
+    /* Bouton hamburger */
+    .sidebar-toggle {
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        top: 12px;
+        left: 12px;
+        z-index: 1300;
+        width: 42px;
+        height: 42px;
+        padding: 0;
+        background: var(--accent-color);
+        color: var(--bg-color);
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        font-size: 1.1rem;
+        box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+    }
+
+    /* Overlay sombre derrière la sidebar */
+    .sidebar-overlay {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(0,0,0,0.55);
+        z-index: 1100;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .sidebar-overlay.active {
+        display: block;
+        opacity: 1;
+    }
+
+    /* Contenu principal : pleine largeur + espace pour le bouton */
+    .content,
+    .main-content {
+        margin-left: 0 !important;
+        width: 100% !important;
+        padding: 60px 0 0 !important;
+    }
+
+    /* Sections */
+    .section {
+        padding: 1.25rem 1rem !important;
+        margin-bottom: 1.5rem !important;
+    }
+
+    .section h2 {
+        font-size: 1.6rem !important;
+        margin-bottom: 1.25rem !important;
+    }
+
+    /* ── HERO / HOME ── */
+    .animation-container {
+        padding: 1.5rem 1rem !important;
+    }
+
+    .hero-title {
+        font-size: 1.9rem !important;
+    }
+
+    .hero-subtitle {
+        font-size: 1.15rem !important;
+    }
+
+    .hero-role {
+        font-size: 0.95rem !important;
+    }
+
+    .hero-ctas {
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 0.75rem !important;
+    }
+
+    .btn-primary,
+    .btn-secondary,
+    .btn-outline {
+        width: 100%;
+        max-width: 280px;
+        justify-content: center;
+    }
+
+    /* Stats hero */
+    .hero-stats {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        gap: 1rem !important;
+    }
+
+    .hero-stat {
+        min-width: 90px;
+        text-align: center;
+    }
+
+    /* ── À PROPOS ── */
+    .about-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.25rem !important;
+    }
+
+    .about-highlights {
+        grid-template-columns: 1fr 1fr !important;
+    }
+
+    /* ── BTS SIO ── */
+    .bts-options-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1rem !important;
+    }
+
+    .bts-option-card {
+        padding: 1.4rem !important;
+    }
+
+    .bts-option-badge {
+        margin-left: 0 !important;
+    }
+
+    .bts-common-banner {
+        flex-direction: column !important;
+        text-align: center !important;
+        gap: 0.75rem !important;
+    }
+
+    /* ── COMPÉTENCES ── */
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 1rem !important;
+    }
+
+    .skills-detailed {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+    }
+
+    .skill-category {
+        padding: 1.25rem !important;
+    }
+
+    /* ── LANGUES & SOFT SKILLS ── */
+    .lang-soft-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1rem !important;
+    }
+
+    .soft-skills-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+
+    .lang-panel,
+    .soft-panel {
+        padding: 1.25rem !important;
+    }
+
+    /* ── OUTILS ── */
+    .tools-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 0.75rem !important;
+    }
+
+    .tool-card {
+        padding: 1.25rem !important;
+    }
+
+    /* ── PROJETS ── */
+    .projects-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.25rem !important;
+    }
+
+    .projects-filter {
+        gap: 0.5rem !important;
+        flex-wrap: wrap !important;
+    }
+
+    .filter-btn {
+        padding: 0.4rem 1rem !important;
+        font-size: 0.85rem !important;
+    }
+
+    /* ── STAGES ── */
+    .stage-cards {
+        grid-template-columns: 1fr !important;
+        gap: 1.25rem !important;
+    }
+
+    .stage-card {
+        padding: 1.5rem 1.25rem 1.25rem !important;
+    }
+
+    /* ── TIMELINE ── */
+    .timeline::before {
+        left: 16px !important;
+    }
+
+    .timeline-item {
+        padding-left: 56px !important;
+        margin-bottom: 1.5rem !important;
+    }
+
+    .timeline-marker {
+        width: 44px !important;
+        height: 44px !important;
+        font-size: 1rem !important;
+    }
+
+    .timeline-content {
+        padding: 1.2rem !important;
+    }
+
+    /* ── TABLEAU DE SYNTHÈSE ── */
+    .synthese-grid,
+    .situations-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1rem !important;
+    }
+
+    /* ── VEILLE SECTION (dans index.html) ── */
+    .veille-section .hero,
+    .veille-section section {
+        padding-left: 16px !important;
+        padding-right: 16px !important;
+    }
+
+    .veille-section .hero {
+        padding-top: 60px !important;
+        padding-bottom: 40px !important;
+    }
+
+    .veille-h1,
+    .veille-section .hero h1 {
+        font-size: clamp(1.8rem, 8vw, 2.5rem) !important;
+    }
+
+    .veille-text-block {
+        padding: 1.25rem !important;
+    }
+
+    .veille-section-title {
+        margin-bottom: 24px !important;
+    }
+
+    .veille-cards-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1rem !important;
+    }
+
+    .veille-card-tech {
+        padding: 20px !important;
+    }
+
+    .veille-sources-grid {
+        grid-template-columns: 1fr !important;
+        gap: 0.75rem !important;
+    }
+
+    .veille-divider {
+        margin: 40px 0 !important;
+    }
+
+    .rss-ticker-wrapper {
+        margin-bottom: 60px !important;
+    }
+
+    /* RSS Ticker : cacher meta sur mobile */
+    .rss-ticker-meta {
+        display: none !important;
+    }
+
+    /* ── SECTION VEILLE DANS INDEX (classes différentes) ── */
+    .cards-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1rem !important;
+    }
+
+    .card {
+        padding: 1.25rem !important;
+    }
+
+    .sources-grid {
+        grid-template-columns: 1fr !important;
+        gap: 0.75rem !important;
+    }
+
+    .source-card {
+        padding: 14px 16px !important;
+    }
+
+    .text-block {
+        padding: 1.25rem !important;
+    }
+
+    /* ── CARTE APPRENTISSAGE ── */
+    .learning-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1rem !important;
+    }
+
+    .learning-card {
+        padding: 1.25rem !important;
+    }
+
+    /* ── CONTACT ── */
+    .contact-container {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+    }
+
+    .contact-info,
+    .contact-form {
+        padding: 1.5rem !important;
+    }
+
+    /* ── MODALES PROJETS ── */
+    .project-modal-overlay {
+        padding: 0 !important;
+        align-items: flex-end !important;
+    }
+
+    .project-modal {
+        border-radius: 20px 20px 0 0 !important;
+        max-height: 92vh !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow-y: auto !important;
+    }
+
+    .modal-gallery-wrap {
+        height: 200px !important;
+    }
+
+    .project-modal-video-wrap {
+        height: 200px !important;
+    }
+
+    .modal-media-tabs {
+        gap: 0.5rem !important;
+        padding: 0 1rem !important;
+    }
+
+    .modal-media-tab {
+        font-size: 0.8rem !important;
+        padding: 0.4rem 0.8rem !important;
+    }
+
+    .project-modal-body {
+        padding: 1rem !important;
+    }
+
+    /* ── PDF VIEWER ── */
+    .pdf-viewer-frame {
+        height: 380px !important;
+    }
+
+    .pdf-viewer-header {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+    }
+
+    .pdf-viewer-actions {
+        width: 100% !important;
+    }
+
+    .pdf-action-btn {
+        flex: 1 !important;
+        justify-content: center !important;
+    }
+
+    /* ── VEILLE CTA BUTTON ── */
+    .veille-cta-btn {
+        width: 100% !important;
+        justify-content: center !important;
+    }
+
+    /* ── SCROLLBAR INVISIBLE ── */
+    ::-webkit-scrollbar {
+        width: 0px;
+    }
+}
+
+/* ── EXTRA PETIT (480px et moins) ── */
+@media (max-width: 480px) {
+
+    .section {
+        padding: 1rem 0.75rem !important;
+    }
+
+    .section h2 {
+        font-size: 1.4rem !important;
+    }
+
+    .hero-title {
+        font-size: 1.65rem !important;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem !important;
+    }
+
+    /* Hero badge */
+    .hero-badge {
+        font-size: 0.7rem !important;
+        padding: 0.3rem 0.7rem !important;
+    }
+
+    /* Compétences : 1 colonne sur petit mobile */
+    .skills-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .skill-card {
+        padding: 1.25rem !important;
+    }
+
+    .tool-card {
+        padding: 1.25rem !important;
+    }
+
+    /* Stats */
+    .hero-stats {
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+
+    /* Projets */
+    .project-card h3 {
+        font-size: 1rem !important;
+        padding: 1rem 1.25rem 0 !important;
+    }
+
+    .project-card p {
+        padding: 0.4rem 1.25rem !important;
+        font-size: 0.85rem !important;
+    }
+
+    /* Timeline encore plus compact */
+    .timeline-item {
+        padding-left: 48px !important;
+    }
+
+    .timeline-marker {
+        width: 36px !important;
+        height: 36px !important;
+        font-size: 0.85rem !important;
+    }
+
+    /* Contact */
+    .contact-info,
+    .contact-form {
+        padding: 1.25rem !important;
+    }
+
+    /* Modales */
+    .project-modal {
+        max-height: 95vh !important;
+    }
+
+    .modal-gallery-wrap {
+        height: 170px !important;
+    }
+
+    .p-tech {
+        font-size: 0.72rem !important;
+        padding: 0.25rem 0.6rem !important;
+    }
+
+    /* BTS SIO */
+    .bts-option-card {
+        padding: 1.1rem !important;
+    }
+
+    .bts-skill-tag {
+        font-size: 0.72rem !important;
+        padding: 0.25rem 0.6rem !important;
+    }
+
+    /* Soft skills */
+    .soft-skills-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+
+    /* About highlights */
+    .about-highlights {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+/* ── BOUTON SIDEBAR — visible uniquement sur mobile ── */
+@media (min-width: 769px) {
+    .sidebar-toggle {
+        display: none !important;
+    }
+}
